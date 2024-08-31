@@ -1,4 +1,5 @@
 # PostComp
 
 ## Mail only those who actually attended
-- survey link
+- WIP: (and rename) wca-competition-orga / aftercomp_mailer.ipynb
+- need survey link
