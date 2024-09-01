@@ -2,16 +2,19 @@ from argparse import ArgumentParser
 from pprint import pprint
 import yaml
 
+# custom
+from ..utils import util
+
 parser = ArgumentParser(description='Generate new competition website tabs.')
-parser.add_argument('-c', '--config',
-                    help='Path to config file')
-parser.add_argument('-d', '--debug', default = False,
+parser.add_argument('-c', '--config', required=True,
+                    help='Name of config file, e.g. rlp25.yml')
+parser.add_argument('-d', '--debug', action='store_true', default = False,
                     help='Get detailed printouts True/False')
 
 args = parser.parse_args()
 
 print()
-print('>> Welcome to CompWorkflow -> PreComp -> generateTabs.py <<')
+print('>> Welcome to CompWorkflow -> PreComp -> generateWebsiteTabs.py <<')
 print()
 print('>> Running with options:')
 print('>>   debug =', args.debug)
@@ -19,12 +22,14 @@ print('>>   config =', args.config)
 
 debug = args.debug
 config_path = args.config
-with open(config_path) as f:
+with open('CompWorkflow/config/'+config_path) as f:
     config = yaml.safe_load(f)
     if debug:
         print()
         print('>> This is the config file:')
         pprint(config)
+
+util.checkOrCreateOutputContainingID(config['comp']['ID'])
 
 def generate_readme():
     md_str = f'''# WCA German State Ranks
