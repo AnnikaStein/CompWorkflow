@@ -4,5 +4,7 @@ comp:
     ID : RheinlandPfalzOpen2025
 mail : rlp-open@googlegroups.com
 setup:
+    aftercomp : Yes
     awards : Yes
     sponsor : Yes
+    unofficial : Yes

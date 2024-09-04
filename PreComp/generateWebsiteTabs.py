@@ -4,12 +4,13 @@ import yaml
 
 # custom
 from ..utils import util
+from ..templates import websiteTabs
 
 parser = ArgumentParser(description='Generate new competition website tabs.')
 parser.add_argument('-c', '--config', required=True,
-                    help='Name of config file, e.g. rlp25.yml')
+                    help='Name of config file, e.g. rlp25.yml (required argument)')
 parser.add_argument('-d', '--debug', action='store_true', default = False,
-                    help='Get detailed printouts True/False')
+                    help='Get detailed printouts (optional flag)')
 
 args = parser.parse_args()
 
@@ -29,30 +30,121 @@ with open('CompWorkflow/config/'+config_path) as f:
         print('>> This is the config file:')
         pprint(config)
 
-util.checkOrCreateOutputContainingID(config['comp']['ID'])
+# performs a check for the output destination
+# such that further writing of files will work
+compID = config['comp']['ID']
+compName = config['comp']['name']
+contact = config['mail']
+util.checkOrCreateOutputFolderContainingID(compID)
 
-def generate_readme():
-    md_str = f'''# WCA German State Ranks
-[![WCA German State Ranks Automation](https://github.com/AnnikaStein/WCA-German-State-Ranks/actions/workflows/automate.yml/badge.svg)](https://github.com/AnnikaStein/WCA-German-State-Ranks/actions/workflows/automate.yml)
-[![pages-build-deployment](https://github.com/AnnikaStein/WCA-German-State-Ranks/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/AnnikaStein/WCA-German-State-Ranks/actions/workflows/pages/pages-build-deployment)
-
-Displaying the PRs of people who have given *explicit consent* (opt-in) to appear in German WCA state rankings. PRs taken from the WCA database via the [unofficial API](https://github.com/robiningelbrecht/wca-rest-api).
-
-## How to appear in these rankings?
-Fill out the form here: [link to enter the ranks](https://docs.google.com/forms/d/e/1FAIpQLSdoLLgBLfTxZIwKJx9QC5XywuMRBreKU4ElbLTvMEZqxRHFcw/viewform).
-
-## You want to participate in the state cup?
-Fill out the form here: [link](https://docs.google.com/forms/d/e/1FAIpQLSdqA8dWufte8_KMMjQVvB0JpeQgKIzr1FH1Dk2-MgjFVEZjdw/viewform).
-
-## Data statement
-> This information is based on competition results owned and maintained by the
-> World Cube Assocation, published at https://worldcubeassociation.org/results
-> as of {updated}.
-
-## Support
-Enjoy what you see? Feel free to support my projects here: [at my Cuboss-Affiliate page](https://cuboss.com/affiliate/?affiliate=hugacuba&r=hugacuba) and save 5% off your order! Direct donations can be made to: [your developer](https://www.paypal.com/paypalme/hugacuba).
+# === *** === *** === REGULAR TABS === *** === *** === #
+tabtitles = '''
+Foto- und Videoaufnahmen / Photo and video recordings
 
 '''
+content = websiteTabs.dpoa(contact)
+util.writeOutputFileForID(compID, 'tab_dpoa.md', content)
 
-    with open('../README.md', 'w') as f:
-        f.write(md_str)
+tabtitles += '''
+FAQ
+
+'''
+content = websiteTabs.faq(compID)
+util.writeOutputFileForID(compID, 'tab_faq.md', content)
+
+tabtitles += '''
+Verpflegung / Food
+
+'''
+content = websiteTabs.food()
+util.writeOutputFileForID(compID, 'tab_food.md', content)
+
+tabtitles += '''
+German Cube Association (GCA)
+
+'''
+content = websiteTabs.gca()
+util.writeOutputFileForID(compID, 'tab_gca.md', content)
+
+tabtitles += '''
+Wichtige Infos für alle / Important info for everyone
+
+'''
+content = websiteTabs.important(contact)
+util.writeOutputFileForID(compID, 'tab_important.md', content)
+
+tabtitles += '''
+Logo & T-Shirts
+
+'''
+content = websiteTabs.logo()
+util.writeOutputFileForID(compID, 'tab_logo.md', content)
+
+tabtitles += '''
+Neuigkeiten / News
+
+'''
+content = websiteTabs.news(compID, contact)
+util.writeOutputFileForID(compID, 'tab_news.md', content)
+
+tabtitles += '''
+Für Neulinge / For Newcomers
+
+'''
+content = websiteTabs.newcomer(compID, contact)
+util.writeOutputFileForID(compID, 'tab_newcomer.md', content)
+
+tabtitles += '''
+Anreise & Unterkunft / Travel & Accomodation
+
+'''
+content = websiteTabs.travel()
+util.writeOutputFileForID(compID, 'tab_travel.md', content)
+
+tabtitles += '''
+Warteliste / Waiting list
+
+'''
+content = websiteTabs.waitlist()
+util.writeOutputFileForID(compID, 'tab_waitlist.md', content)
+
+
+# === *** === *** === PLACEHOLDER TAB === *** === *** === #
+content = websiteTabs.tba()
+util.writeOutputFileForID(compID, 'tab_tba.md', content)
+
+# === *** === *** === SPECIAL TABS === *** === *** === #
+if config['setup']['aftercomp']:
+    tabtitles += '''
+Aftercomp / Dinner
+
+    '''
+    content = websiteTabs.aftercomp()
+    util.writeOutputFileForID(compID, 'tab_aftercomp.md', content)
+
+if config['setup']['awards']:
+    tabtitles += '''
+Auszeichnungen / Awards
+
+    '''
+    content = websiteTabs.awards()
+    util.writeOutputFileForID(compID, 'tab_awards.md', content)
+
+if config['setup']['sponsor']:
+    tabtitles += '''
+Sponsor
+
+    '''
+    content = websiteTabs.sponsor(compName)
+    util.writeOutputFileForID(compID, 'tab_sponsor.md', content)
+
+if config['setup']['unofficial']:
+    tabtitles += '''
+Inoffizielle Events / Unofficial events
+
+    '''
+    content = websiteTabs.unofficial()
+    util.writeOutputFileForID(compID, 'tab_unofficial.md', content)
+
+# === *** === *** === TITLE COLLECTION === *** === *** === #
+util.writeOutputFileForID(compID, 'tab_titles.md', tabtitles)
