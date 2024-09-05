@@ -1,9 +1,9 @@
 def main_info(compID, contact):
     md_str = f'''#### 🇬🇧 English
-We're happy to welcome you to Rheinland-Pfalz Open 2025! For the first time in this federal state, we offer all official WCA events. And we're looking forward to unoffical events and the aftercomp, for which everyone is invided!
+We're happy to welcome you to Rheinland-Pfalz Open 2025! For the first time in this federal state, we offer all official WCA events. And we're looking forward to unoffical events and the aftercomp, everyone is invited!
 ​
 #### 🇩🇪 Deutsch
-Willkommen zur Rheinland-Pfalz Open 2025! Erstmals bieten wir in diesem Bundesland alle offiziellen WCA-Disziplinen an. Wir freuen uns außerdem auf inoffizielle Events und die Aftercomp, zu denen alle herzlich eingeladen sind!
+Willkommen zur Rheinland-Pfalz Open 2025! Erstmals bieten wir in diesem Bundesland alle offiziellen WCA-Disziplinen an. Wir freuen uns außerdem auf inoffizielle Events und die Aftercomp, alle sind herzlich eingeladen!
 ​
 ![](https://www.worldcubeassociation.org/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBajFwIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0f34339ce61c10eae598ba2f23976a7f3bc8543a/LogoTShirt300dpi.png)
 '''
@@ -17,14 +17,15 @@ def main_register(compID, contact, ppURL, EUR):
 1. **[Erstelle einen WCA-Account]**
 (Dieser Schritt gilt NUR für Newcomer und Teilnehmer ohne WCA-Account): Erstelle [hier](https://www.worldcubeassociation.org/users/sign_up) einen WCA-Account. Bitte nutze eine E-Mailadresse mit funktionsfähigem Posteingang, welche du regelmäßig liest. Das gilt für jede einzelne Person, die teilnehmen möchte und noch keinen solchen Account besitzt. Eine Nachricht an uns reicht nicht aus! Zuschauer / Gäste benötigen keinen und können einfach vorbeikommen.
 2. **Zahle die Anmeldegebühr**
-Zahle die Anmeldegebühr in Höhe von {EUR} Euro via PayPal [*über diesen Link*]({ppURL}{EUR}eur) ({ppURL}{EUR}eur). Nutze das Kommentarfeld in Paypal für den Namen des Teilnehmers, so wie er auf der Anmeldeseite erscheinen würde.
+Zahle die Anmeldegebühr in Höhe von {EUR} Euro via PayPal [*über diesen Link*]({ppURL}{EUR}eur) ({ppURL}{EUR}eur). Dies ist jederzeit möglich. Nutze das Kommentarfeld in Paypal für den Namen des Teilnehmers, so wie er auf der Anmeldeseite erscheinen würde.
 3. **Fülle das Anmeldeformular aus**
-Fülle das Anmeldeformular aus und schicke es ab: [klicke hier](https://www.worldcubeassociation.org/competitions/{compID}/register) - ganz nach unten ans Ende der Seite scrollen. Nutze das Kommentarfeld auf der Anmeldeseite, um uns den Paypal-Nutzernamen/-Mail oder die Transaktionsnummer mitzuteilen.
+Fülle das Anmeldeformular aus und schicke es ab: [klicke hier](https://www.worldcubeassociation.org/competitions/{compID}/register) - ganz nach unten ans Ende der Seite scrollen. Das Anmeldeformular ist erst zum Anmeldebeginn freigeschaltet. Nutze das Kommentarfeld auf der Anmeldeseite, um uns den Paypal-Nutzernamen/-Mail oder die Transaktionsnummer mitzuteilen.
 ​
 **Wichtig:**
 * Bitte aktiviere **nicht** den optionalen Käuferschutz, da hierfür eine Gebühr vom gezahlten Eintrittspreis abgezogen wird.
 * Falls der Name bei der Zahlung und der Name im Anmeldeformular nicht identisch sind, gib bitte den Namen des Teilnehmers im Anmeldeformular im letzten Schritt der Zahlungsprozedur an oder nenne die Transaktionsnummer im Kommentarfeld der WCA-Anmeldeseite. Im Zweifel kannst du uns kontaktieren. *Eine Zahlung gilt erst dann als geleistet, wenn wir diese eindeutig zuordnen können.*
 * **Ohne (eindeutig zugeordnete) Zahlung gilt die Anmeldung als nicht vollständig und wird nicht bestätigt.**
+* Teilnehmer werden in der Reihenfolge der vollständigen Anmeldung inkl. Zahlung angenommen.
 ​
 
 ![](https://www.worldcubeassociation.org/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBajVwIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--15151a06f1845351622ff18884f7a991a951f45c/signup_register_pay_help.001.png)
@@ -39,6 +40,8 @@ Fülle das Anmeldeformular aus und schicke es ab: [klicke hier](https://www.worl
 
 * Viele weitere Informationen sind auf der Website in den einzelnen Tabs enthalten. Bitte lese sie aufmerksam, besonders, wenn dies dein erster Wettbewerb ist!
 ​
+* Wenn du Fragen hast, die auch in keinem der weiteren Tabs beantwortet wurden, oder wenn du dich abmelden möchtest, [kontaktiere uns](mailto:{contact}).
+
 
 #### Für Gäste
 Gäste haben freien Eintritt.
@@ -56,7 +59,8 @@ Fill and submit the registration form here: [click here](https://www.worldcubeas
 * Please do **not** activate the optional buyer protection as this will be deducted as a fee from the amount you pay.
 * If the name of the payment and the name in the registration form are not identical, please enter the name of the competitor as stated in the registration form in the final step of the payment procedure or put the transaction ID into the commment section on the website. In case of doubt, feel free to contact us. *A payment is only considered to be made once we can clearly match it.*
 * **The registration is not considered complete and will not be confirmed until a (clearly matched) payment is made.**
-​
+* Competitors are accepted in the order of complete registration including payment. ​
+
 
 **Further information:**
 * At the beginning of the registration period, the public competitor list is not yet representative, because we need time to match all payments manually. Due to this delay, it can happen that by the time you register, the competitor limit has actually been reached already.
@@ -67,6 +71,8 @@ Fill and submit the registration form here: [click here](https://www.worldcubeas
 ​
 * Much more information is stated on the website in the different tabs. Please read them carefully, especially if it's your first competition.
 ​
+* If you have questions for which you didn't find an answer on any tabs on the website, or if you want to unregister from the competition, [contact us](mailto:{contact}).
+
 
 #### For guests
 Guests can attend the competition for free.
@@ -78,9 +84,25 @@ def dpoa(contact):
 
 # 🇩🇪
 
+## 📸 Foto- und Videoaufnahmen
+Auf der Veranstaltung können eventuell **Foto- und Videoaufnahmen**  gemacht werden. Alle Fotos und Videos werden nach der Veranstaltung den Teilnehmenden zur Verfügung gestellt.
+
+**Einverständnis**: Mit deiner Anmeldung erklärst du dich damit einverstanden, dass Fotos oder Videos von dir später veröffentlicht werden können. Gleiches gilt für Gäste, die Teilnehmende begleiten oder generell zuschauen.
+**Unter 18 Jahre alt?** Bitte hol dir das Einverständnis deiner Eltern dazu.
+
+**Bedenken**: Sofern du hierzu Bedenken haben solltest oder nicht einverstanden bist, kontaktiere uns bitte [hier](mailto:{contact}), damit wir das entsprechend berücksichtigen können. Selbstverständlich kannst du dich trotzdem direkt anmelden.
+
 ---
 
 # 🇬🇧
+
+## 📸 Photo and video recordings
+**Photography and video recordings** may be taken at the event. All photos and videos will be made available to participants after the event. The same applies to guests accompanying participants or watching in general.
+
+**Consent**: With your registration you agree that photos or videos of you may be published later.
+**Under 18 years old?** Please get your parents' consent for this.
+
+**Concerns**: If you have any concerns about this or do not agree, please contact us [here](mailto:{contact}) so that we can consider this accordingly. Of course you can still sign up directly.
 '''
     return md_str
 
@@ -127,9 +149,15 @@ def logo():
 
 # 🇩🇪
 
+## 🏷️ Logo und T-Shirt-Bestellung
+Im Vorfeld versenden wir ein Formular, um ein T-Shirt mit dem Logo des Turniers zu bestellen (optional). Prüfe regelmäßig deine E-Mails!
+
 ---
 
 # 🇬🇧
+
+## 🏷️ Logo and t-shirt ordering
+Leading up to the tournament we will distribute a form to order a t-shirt with the logo of the competition (non mandatory). Check your email frequently!
 '''
     return md_str
 
