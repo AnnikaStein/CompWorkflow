@@ -3,7 +3,7 @@ name: Add new comp to CompWorkflow
 about: Whenever you plan a new competition, generate list of tasks and a configuration
   file.
 title: "[NEW COMP]"
-labels: ''
+labels: comp
 assignees: ''
 
 ---
