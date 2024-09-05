@@ -2,6 +2,9 @@ comp:
     name : Rheinland-Pfalz Open 2025
     shortname : RLP Open 2025
     ID : RheinlandPfalzOpen2025
+payment:
+    paypalURLuptoAmount : https://www.paypal.com/paypalme/hugacuba/
+    amountEUR : 20
 mail : rlp-open@googlegroups.com
 setup:
     aftercomp : Yes

@@ -30,12 +30,31 @@ with open('CompWorkflow/config/'+config_path) as f:
         print('>> This is the config file:')
         pprint(config)
 
-# performs a check for the output destination
-# such that further writing of files will work
 compID = config['comp']['ID']
 compName = config['comp']['name']
+ppURL = config['payment']['paypalURLuptoAmount']
+EUR = config['payment']['amountEUR']
 contact = config['mail']
+
+# performs a check for the output destination
+# such that further writing of files will work
 util.checkOrCreateOutputFolderContainingID(compID)
+
+# === *** === *** === MAIN PAGE === *** === *** === #
+tabtitles = '''
+Informationen / Information
+
+'''
+content = websiteTabs.main_info(compID, contact)
+util.writeOutputFileForID(compID, 'main_info.md', content)
+
+tabtitles += '''
+Zusätzliche Bedingungen für die Registrierung / Extra registration requirements
+
+'''
+content = websiteTabs.main_register(compID, contact, ppURL, EUR)
+util.writeOutputFileForID(compID, 'main_register.md', content)
+
 
 # === *** === *** === REGULAR TABS === *** === *** === #
 tabtitles = '''
@@ -113,6 +132,7 @@ util.writeOutputFileForID(compID, 'tab_waitlist.md', content)
 content = websiteTabs.tba()
 util.writeOutputFileForID(compID, 'tab_tba.md', content)
 
+
 # === *** === *** === SPECIAL TABS === *** === *** === #
 if config['setup']['aftercomp']:
     tabtitles += '''
@@ -145,6 +165,7 @@ Inoffizielle Events / Unofficial events
     '''
     content = websiteTabs.unofficial()
     util.writeOutputFileForID(compID, 'tab_unofficial.md', content)
+
 
 # === *** === *** === TITLE COLLECTION === *** === *** === #
 util.writeOutputFileForID(compID, 'tab_titles.md', tabtitles)
