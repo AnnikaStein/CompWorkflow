@@ -35,5 +35,7 @@ assignees: ''
 - [ ] Fill out standard items
 - [ ] Define events
 - [ ] Create schedule
+- [ ] (If big comp) Generate a signup_register_pay_help.png file from the .key template
+- [ ] (Optional) Generate a logo / further assets in high resolution and slightly reduced res
 - [ ] Run `generateWebsiteTabs`
 - [ ] Fill out main page and tabs
