@@ -45,7 +45,7 @@ tabtitles = '''
 Informationen / Information
 
 '''
-content = websiteTabs.main_info(compID, contact)
+content = websiteTabs.main_info(compID, contact, compName)
 util.writeOutputFileForID(compID, 'main_info.md', content)
 
 tabtitles += '''
@@ -58,73 +58,73 @@ util.writeOutputFileForID(compID, 'main_register.md', content)
 
 # === *** === *** === REGULAR TABS === *** === *** === #
 tabtitles = '''
-Foto- und Videoaufnahmen / Photo and video recordings
+📷 Foto- und Videoaufnahmen / Photo and video recordings
 
 '''
 content = websiteTabs.dpoa(contact)
 util.writeOutputFileForID(compID, 'tab_dpoa.md', content)
 
 tabtitles += '''
-FAQ
+⁉️ FAQ
 
 '''
-content = websiteTabs.faq(compID)
+content = websiteTabs.faq(compID, contact)
 util.writeOutputFileForID(compID, 'tab_faq.md', content)
 
 tabtitles += '''
-Verpflegung / Food
+🍕 Verpflegung / Food
 
 '''
 content = websiteTabs.food()
 util.writeOutputFileForID(compID, 'tab_food.md', content)
 
 tabtitles += '''
-German Cube Association (GCA)
+👋 German Cube Association (GCA)
 
 '''
 content = websiteTabs.gca()
 util.writeOutputFileForID(compID, 'tab_gca.md', content)
 
 tabtitles += '''
-Wichtige Infos für alle / Important info for everyone
+ℹ️ Wichtige Infos für alle / Important info for everyone
 
 '''
-content = websiteTabs.important(contact)
+content = websiteTabs.important(contact, compID)
 util.writeOutputFileForID(compID, 'tab_important.md', content)
 
 tabtitles += '''
-Logo & T-Shirts
+👕 Logo & T-Shirts
 
 '''
 content = websiteTabs.logo()
 util.writeOutputFileForID(compID, 'tab_logo.md', content)
 
 tabtitles += '''
-Neuigkeiten / News
+🔥 Neuigkeiten / News
 
 '''
 content = websiteTabs.news(compID, contact)
 util.writeOutputFileForID(compID, 'tab_news.md', content)
 
 tabtitles += '''
-Für Neulinge / For Newcomers
+🐣 Für Neulinge / For Newcomers
 
 '''
 content = websiteTabs.newcomer(compID, contact)
 util.writeOutputFileForID(compID, 'tab_newcomer.md', content)
 
 tabtitles += '''
-Anreise & Unterkunft / Travel & Accomodation
+🚎 Anreise & Unterkunft / Travel & Accomodation
 
 '''
 content = websiteTabs.travel()
 util.writeOutputFileForID(compID, 'tab_travel.md', content)
 
 tabtitles += '''
-Warteliste / Waiting list
+📝 Warteliste / Waiting list
 
 '''
-content = websiteTabs.waitlist()
+content = websiteTabs.waitlist(compID)
 util.writeOutputFileForID(compID, 'tab_waitlist.md', content)
 
 
@@ -136,7 +136,7 @@ util.writeOutputFileForID(compID, 'tab_tba.md', content)
 # === *** === *** === SPECIAL TABS === *** === *** === #
 if config['setup']['aftercomp']:
     tabtitles += '''
-Aftercomp / Dinner
+🌅 Aftercomp / Dinner
 
     '''
     content = websiteTabs.aftercomp()
@@ -144,7 +144,7 @@ Aftercomp / Dinner
 
 if config['setup']['awards']:
     tabtitles += '''
-Auszeichnungen / Awards
+🏆 Auszeichnungen / Awards
 
     '''
     content = websiteTabs.awards()
@@ -152,7 +152,7 @@ Auszeichnungen / Awards
 
 if config['setup']['sponsor']:
     tabtitles += '''
-Sponsor
+🤝 Sponsor
 
     '''
     content = websiteTabs.sponsor(compName)
@@ -160,7 +160,7 @@ Sponsor
 
 if config['setup']['unofficial']:
     tabtitles += '''
-Inoffizielle Events / Unofficial events
+🎲 Inoffizielle Events / Unofficial events
 
     '''
     content = websiteTabs.unofficial()
