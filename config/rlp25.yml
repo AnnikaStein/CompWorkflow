@@ -4,7 +4,7 @@ comp:
     ID : RheinlandPfalzOpen2025
 payment:
     paypalURLuptoAmount : https://www.paypal.com/paypalme/hugacuba/
-    amountEUR : 20
+    amountEUR : 19
 mail : rlp-open@googlegroups.com
 setup:
     aftercomp : Yes

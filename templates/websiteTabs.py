@@ -1,81 +1,104 @@
 def main_info(compID, contact, compName):
     md_str = f'''#### 🇬🇧 English
-We're happy to welcome you to {compName}! For the first time in this federal state, we offer all official WCA events. And we're looking forward to unoffical events and the aftercomp, everyone is invited!
-​
+We're happy to welcome you to {compName}! For the first time in this federal state, we offer all official WCA events. And we're looking forward to unofficial events and the aftercomp, everyone is invited!
+The organizing team wishes you all a lot of fun.
+
+We have compiled [Frequently Asked Questions and Answers here.](https://www.worldcubeassociation.org/competitions/RheinlandPfalzOpen2025#49038-faq)
+
 #### 🇩🇪 Deutsch
 Willkommen zur {compName}! Erstmals bieten wir in diesem Bundesland alle offiziellen WCA-Disziplinen an. Wir freuen uns außerdem auf inoffizielle Events und die Aftercomp, alle sind herzlich eingeladen!
-​
-![](https://www.worldcubeassociation.org/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBajFwIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0f34339ce61c10eae598ba2f23976a7f3bc8543a/LogoTShirt300dpi.png)
+Das Orga-Team wünscht euch allen viel Spaß.
+
+Wir haben [häufig gestellte Fragen und Antworten hier zusammengestellt.](https://www.worldcubeassociation.org/competitions/RheinlandPfalzOpen2025#49038-faq)
+
+![](https://www.worldcubeassociation.org/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MzY5NTAsInB1ciI6ImJsb2JfaWQifX0=--ba949f872b15afba9ca383b8d6a9bb6aa20d6006/Logo_300.png)
 '''
     return md_str
 
 def main_register(compID, contact, ppURL, EUR):
     md_str = f'''*(English version below)*
-​
+
 ### 🇩🇪 Deutsch
-#### Wie melde ich mich an?
+#### ▶️ Wie melde ich mich an?
 1. **[Erstelle einen WCA-Account]**
 (Dieser Schritt gilt NUR für Newcomer und Teilnehmer ohne WCA-Account): Erstelle [hier](https://www.worldcubeassociation.org/users/sign_up) einen WCA-Account. Bitte nutze eine E-Mailadresse mit funktionsfähigem Posteingang, welche du regelmäßig liest. Das gilt für jede einzelne Person, die teilnehmen möchte und noch keinen solchen Account besitzt. Eine Nachricht an uns reicht nicht aus! Zuschauer / Gäste benötigen keinen und können einfach vorbeikommen.
 2. **Zahle die Anmeldegebühr**
-Zahle die Anmeldegebühr in Höhe von {EUR} Euro via PayPal [*über diesen Link*]({ppURL}{EUR}eur) ({ppURL}{EUR}eur). Dies ist jederzeit möglich. Nutze das Kommentarfeld in Paypal für den Namen des Teilnehmers, so wie er auf der Anmeldeseite erscheinen würde.
+Zahle die Anmeldegebühr in Höhe von {EUR} Euro [*über diesen Link*]({ppURL}{EUR}eur) {ppURL}{EUR}eur via PayPal ("Freunde und Familie"). Dies ist jederzeit möglich. Nutze das Kommentarfeld in Paypal für den Namen des Teilnehmers, so wie er auf der Anmeldeseite erscheinen würde.
 3. **Fülle das Anmeldeformular aus**
 Fülle das Anmeldeformular aus und schicke es ab: [klicke hier](https://www.worldcubeassociation.org/competitions/{compID}/register) - ganz nach unten ans Ende der Seite scrollen. Das Anmeldeformular ist erst zum Anmeldebeginn freigeschaltet. Nutze das Kommentarfeld auf der Anmeldeseite, um uns den Paypal-Nutzernamen/-Mail oder die Transaktionsnummer mitzuteilen.
-​
-**Wichtig:**
-* Bitte aktiviere **nicht** den optionalen Käuferschutz, da hierfür eine Gebühr vom gezahlten Eintrittspreis abgezogen wird.
+
+⚠️ **Wichtig:**
+
+* Bitte aktiviere **nicht** den optionalen Käuferschutz, da hierfür eine Gebühr vom gezahlten Eintrittspreis abgezogen wird. Solltest du später bei Abmeldung eine Rückerstattung benötigen, wird nur der Betrag erstattet, den das Organisationsteam erhalten hat (nach Abzug der Gebühren).
+
 * Falls der Name bei der Zahlung und der Name im Anmeldeformular nicht identisch sind, gib bitte den Namen des Teilnehmers im Anmeldeformular im letzten Schritt der Zahlungsprozedur an oder nenne die Transaktionsnummer im Kommentarfeld der WCA-Anmeldeseite. Im Zweifel kannst du uns kontaktieren. *Eine Zahlung gilt erst dann als geleistet, wenn wir diese eindeutig zuordnen können.*
+
 * **Ohne (eindeutig zugeordnete) Zahlung gilt die Anmeldung als nicht vollständig und wird nicht bestätigt.**
+
 * Teilnehmer werden in der Reihenfolge der vollständigen Anmeldung inkl. Zahlung angenommen.
-​
 
-![](https://www.worldcubeassociation.org/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBajVwIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--15151a06f1845351622ff18884f7a991a951f45c/signup_register_pay_help.001.png)
-​
 
-**Weitere Informationen:**
+![](https://www.worldcubeassociation.org/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MzY5MjIsInB1ciI6ImJsb2JfaWQifX0=--78885dfbeffab675e61e73ee078ca283a3b80b7b/signup_register_pay_help.001.png)
+
+
+ℹ️ **Weitere Informationen:**
+
 * Am Anfang der Anmeldephase ist die öffentliche Teilnehmerliste noch nicht repräsentativ, da wir zur manuellen Zahlungszuordnung Zeit benötigen. Wegen dieser Verzögerung kann es sein, dass das Teilnehmerlimit tatsächlich schon vor deiner Anmeldung erreicht wurde.
 
 * Wenn das Teilnehmerlimit bereits erreicht wurde, erhältst du nach Anmeldung und Zahlung einen Platz auf der Warteliste. Danach erhältst du eine E-Mail, sobald ein Platz für dich frei werden sollte. Falls du keinen freien Teilnehmerplatz mehr erlangen solltest, wird die Anmeldegebühr selbstverständlich erstattet.
-​
+
 * Wenn absehbar ist, dass die Warteliste bereits so lang ist, dass weitere Neuanmeldungen nicht mehr angenommen werden, behalten wir uns vor, die Anmeldung früher als angekündigt zu schließen. Vergiss daher nicht, insbesondere wenn du schon früher zahlst, zum Anmeldebeginn das Anmeldeformular auszufüllen!
 
 * Viele weitere Informationen sind auf der Website in den einzelnen Tabs enthalten. Bitte lese sie aufmerksam, besonders, wenn dies dein erster Wettbewerb ist!
-​
+
 * Wenn du Fragen hast, die auch in keinem der weiteren Tabs beantwortet wurden, oder wenn du dich abmelden möchtest, [kontaktiere uns](mailto:{contact}).
 
 
-#### Für Gäste
+#### 👋 Für Gäste
 Gäste haben freien Eintritt.
-​
+
+
+#### 🌳 Bring-your-own-badge
+Auf Competitions wird ganz schön viel Müll produziert und die Plastik-Namensschilder tun ihr Übriges. Wer das Namensschild mit Umhängeband (Lanyard) vom letzten Jahr noch hat, darf es gerne mitbringen und ihr erhaltet dann ein neues Schild mit euren Einteilungen zum Einlegen. Natürlich werden wir auch komplett neue Hüllen/Bänder dabei haben.
+
 ### 🇬🇧 English
-#### How do I register?
+#### ▶️ How do I register?
 1. **[Create a WCA account]**
 (This step is ONLY for newcomers and competitors without a WCA account:) Create a WCA account [here](https://www.worldcubeassociation.org/users/sign_up). Please use an email with a working inbox and which you read frequently. This needs to be done for every person willing to compete, for whom there is no such account yet. Just informing us about additional competitors is not enough, every competitor needs their own account. Visitors / guests don't need one, they can just come.
 2. **Pay the registration fee**
-Pay the registration fee of {EUR} Euro by following [*this link*]({ppURL}{EUR}eur) ({ppURL}{EUR}eur) and proceed with the payment via Paypal.
+Pay the registration fee of {EUR} Euro by following [*this link*]({ppURL}{EUR}eur) {ppURL}{EUR}eur and proceed with the payment via Paypal ("Sending to a friend"). This is always possible. Use the comment field in paypal to tell us for which competitor this payment is, with the name as it would show up on the registration page.
 3. **Fill in the registration form**
-Fill and submit the registration form here: [click here](https://www.worldcubeassociation.org/competitions/{compID}/register) - and scroll all the way down to the bottom of the page.
-​
-**Important:**
-* Please do **not** activate the optional buyer protection as this will be deducted as a fee from the amount you pay.
+Fill and submit the registration form here: [click here](https://www.worldcubeassociation.org/competitions/{compID}/register) - and scroll all the way down to the bottom of the page. This form will be available as soon as registration starts. Use the comment box on the registration form to tell us the Paypal username / email or the transaction number.
+
+⚠️ **Important:**
+
+* Please do **not** activate the optional buyer protection as this will be deducted as a fee from the amount you pay. If you use this and then later on need a refund, you'll be refunded the amount that the organizers received (after deduction of fees).
+
 * If the name of the payment and the name in the registration form are not identical, please enter the name of the competitor as stated in the registration form in the final step of the payment procedure or put the transaction ID into the commment section on the website. In case of doubt, feel free to contact us. *A payment is only considered to be made once we can clearly match it.*
+
 * **The registration is not considered complete and will not be confirmed until a (clearly matched) payment is made.**
-* Competitors are accepted in the order of complete registration including payment. ​
+
+* Competitors are accepted in the order of complete registration including payment.
 
 
-**Further information:**
+ℹ️ **Further information:**
+
 * At the beginning of the registration period, the public competitor list is not yet representative, because we need time to match all payments manually. Due to this delay, it can happen that by the time you register, the competitor limit has actually been reached already.
 
 * If you have registered and paid but the competitor limit has been reached, you will receive a spot on the waiting list. You will be notified via email once a spot for you becomes available. If you do not move up from the waiting list until registration closes, you will get a full refund.
-​
+
 * Once the waiting list is long enough for us to anticipate that new registrations will likely not move up to the competitor's list, we may close the registration earlier than announced. Hence, don't forget to fill out the registration form, especially if you paid a while ago.
-​
+
 * Much more information is stated on the website in the different tabs. Please read them carefully, especially if it's your first competition.
-​
-* If you have questions for which you didn't find an answer on any tabs on the website, or if you want to unregister from the competition, [contact us](mailto:{contact}).
 
+* If you have questions for which you didn't find an answer on any tab on the website, or if you want to unregister from the competition, [contact us](mailto:{contact}).
 
-#### For guests
+#### 👋 For guests
 Guests can attend the competition for free.
+
+
+#### 🌳 Bring-your-own-badge
+Competitions produce a lot of waste and plastic nametags contribute to this issue as well. If you still have your nametag with lanyard from last year, please consider reusing it and bring it with you to this competition. You'll receive a new paper inlay including your assignments. Of course we also have new ones with us just in case.
 '''
     return md_str
 
@@ -292,12 +315,16 @@ def important(contact, compID):
 - Wenn eine Runde läuft, warten alle Teilnehmer der Gruppe in dem Wartebereich, bis sie zum Versuch von einem Judge aufgerufen werden.
 - Wer während einer Runde über die Scrambles spricht, kann disqualifiziert werden!
 
+### ⚠️ Mögliche Änderung von Runden, Zeitlimits, Cutoffs und Bedingungen zum Weiterkommen
+- Die Anzahl Runden, die wir pro Event anbieten können, hängt von der Anzahl der Teilnehmer der ersten Runde ab (siehe [Regel 9m](https://www.worldcubeassociation.org/regulations/#9m), z.B. 100 Teilnehmer um vier Runden durchzuführen). Sollten wir daher die Anzahl geplanter Runden in einer Disziplin tagesaktuell reduzieren müssen, wird die freigewordene Zeit nach Abstimmung unter allen betroffenen Teilnehmern während des Wettbewerbs entweder mit einer anderen Runde, einer Pause, oder einem inoffiziellem Event ersetzt, oder die nachfolgenden Disziplinen verschieben sich entsprechend nach vorne (der Tag endet früher).
+- Bei Abweichungen vom Zeitplan (z.B. bei mehr Anmeldungen oder umgekehrt mehr No-Shows als geplant) sind Änderung an Zeitlimits, Cutoffs und Bedingungen zum Weiterkommen möglich, darüber werden wir aber aktuell informieren.
+
 ### 📲 (Live-)Ergebnisse und Einteilungen
 - Live Ergebnisse sind über [WCA Live](https://live.worldcubeassociation.org/link/competitions/{compID}) verfügbar. Nach dem Wettkampf werden alle Ergebnisse in die Datenbank der WCA hochgeladen, und auf dieser Seite einzusehen sein.
 - Einteilungen in Gruppen findet man immer aktuell bei [competitiongroups](https://www.competitiongroups.com/competitions/{compID}). Deine Einteilungen zum Scramblen/Runnen/Judgen sind unbedingt einzuhalten!
 
 ### ⏰📌 Mehr zum Ablauf
-- Wie für Turniere dieser Größe üblich, werden wir mit mehreren Stages arbeiten. Das sind Bereiche in der Halle, um die gleichzeitig teilnehmenden Personen räumlich aufzuteilen. Achte im Zeitplan auf die Farben. Wenn mehrere Farben zur selben Zeit angezeigt werden, findet die Disziplin auf mehreren Stages statt. Schaue dann online in deiner Einteilung nach, wohin du gehen musst.
+- Wie für Turniere dieser Größe üblich, werden wir mit mehreren Stages arbeiten. Das sind Bereiche in der Halle, um die gleichzeitig teilnehmenden Personen räumlich aufzuteilen. Achte im Zeitplan auf die Farben. Wenn mehrere Farben zur selben Zeit angezeigt werden, findet die Disziplin auf mehreren Stages statt. Schaue dann online in deinen [Einteilungen](https://www.competitiongroups.com/competitions/{compID}) nach, wohin du gehen musst.
 - Du musst nur zu den Events da sein, für die du dich angemeldet hast. Wir empfehlen, mindestens eine halbe Stunde vor deinem ersten Event da zu sein. Wenn du nur an einem Tag kannst, kannst du auch nur an den entsprechenden Events des Tages teilnehmen.
 - Bei Unklarheiten oder wichtigen Fragen vor dem Turnier kannst du dich gerne [an das Organisationsteam wenden](mailto:{contact}).
 
@@ -311,20 +338,24 @@ def important(contact, compID):
 
 ### ⚖️📖 Important excerpt of the regulations for a fair competition
 - We expect you to know the [official WCA regulations](https://www.worldcubeassociation.org/regulations/full).
-- You are expected to help during the competition. For each event you participate in, you will then need to judge at least one other group in the same event. If you see a lack of judges or we call your name, please step in and help! This helps the competition run a lot smoother!
+- You are expected to help during the competition. For each event you participate in, you will then need to help out for at least one other group in the same event. If you see a lack of judges or we call your name, please step in and help! This helps the competition run a lot smoother!
 - Every time there is any blindfolded event, there has to be complete silence! It requires a lot of concentration, so please be silent. If you need to talk or make noise, please leave the venue room where people are solving to do so.
 - No flash photography in the entire venue! Flash is distracting to the competitors. Only pictures without the use of flash are allowed.
 - You are also allowed to film your official attempts, as long as the camera's screen is out of sight.
-- All spectators must remain at least 1,5 meters away from every solving station.
+- All spectators must remain at least 1.5 meters away from every solving station.
 - When a round is in progress, then all competitors in the current group must wait in the competitor waiting area, until they get called up to solve.
 - You are not allowed to talk about the scrambles until the round is done! Otherwise, you might get disqualified.
+
+### ⚠️ Possible change of rounds, time limits, cutoffs and proceeds to next rounds
+- The number of rounds we are allowed to offer per event depends on the number of competitors in the first round of each event (see [Regulation 9m](https://www.worldcubeassociation.org/regulations/#9m), e.g. 100 competitors to do four rounds). Should we have to cut a planned round on the day of the competition, we hold a vote among the competitors on how we use the free time slot. There could be another round of a different event, a break, an unofficial event, or just moving all upcoming rounds earlier (then the day would end earlier).
+- If we deviate from the planned schedule (e.g. significantly more registrations than anticipated or large number of no-shows), we may change time limits, cutoffs and proceeding conditions for next rounds, but we will inform you about this.
 
 ### 📲 (Live) results und assignments
 - Live results are available via [WCA Live](https://live.worldcubeassociation.org/link/competitions/{compID}). All results will be uploaded to the WCA database after the competition, and will be available right here.
 - Group assignments are updated on [competitiongroups](https://www.competitiongroups.com/competitions/{compID}). Your assignments for scrambling/running/juding absolutely need to be followed!
 
 ### ⏰📌 More on the procedures
-- As is common for tournaments of this size, we use multiple stages. Those are specific areas in the venue that help us efficiently distribute the competitors who are competing at the same time. Look at the colours on the schedule. If there are multiple colours shown for the same time frame, the event takes place at multiple stages. Have a look at your assignments online to find out to which one you need to go.
+- As is common for tournaments of this size, we use multiple stages. Those are specific areas in the venue that help us efficiently distribute the competitors who are competing at the same time. Look at the colours on the schedule. If there are multiple colours shown for the same time frame, the event takes place at multiple stages. Have a look at your [assignments online](https://www.competitiongroups.com/competitions/{compID}) to find out to which one you need to go.
 - You only need to be present, when you have to compete, in the events that you're registered for! We recommend that you are present half an hour up to one hour before your first event, since the schedule might change. If you can only be present one of the days, then you can only compete in the events on the given date.
 - Feel free to [contact the organizers](mailto:{contact}) if you have any uncertainties.
 '''
@@ -344,13 +375,16 @@ Im Vorfeld versenden wir ein Formular, um ein T-Shirt mit dem Logo des Turniers 
 
 ## 🏷️ Logo and t-shirt ordering
 Leading up to the tournament we will distribute a form to order a t-shirt with the logo of the competition (non mandatory). Check your email frequently!
+
+![](https://www.worldcubeassociation.org/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MzY5NTAsInB1ciI6ImJsb2JfaWQifX0=--ba949f872b15afba9ca383b8d6a9bb6aa20d6006/Logo_300.png)
 '''
     return md_str
 
 def news(compID, contact):
     md_str = f'''|  | News |
 |------|------|
-| 12.09.2024 | 🇬🇧 Website is public! <br> 🇩🇪 Die Website wurde veröffentlicht!|
+| 12.09.2024 | 🇬🇧 Website is public!
+| | 🇩🇪 Die Website wurde veröffentlicht!|
 '''
     return md_str
 
@@ -469,6 +503,7 @@ Moving up from the waiting list will be done in the order of **complete registra
 (In order of complete registration):
 
 Waiting list is currently empty
+1.
 '''
     return md_str
 
@@ -494,7 +529,7 @@ def aftercomp():
 
 ## 🌅 Aftercomp
 
-Am Samstag-Abend können wir gemeinsam Abendessen bestellen und noch ein paar Stunden mit inoffiziellen Fun-Events verbringen. Ihr seid eingeladen, bis 21:30 Uhr zu bleiben.
+Am Freitag- und Samstag-Abend können wir gemeinsam Abendessen bestellen und noch ein paar Stunden mit inoffiziellen Fun-Events verbringen. Ihr seid eingeladen, bis 21:30 Uhr zu bleiben.
 
 ---
 
@@ -502,7 +537,7 @@ Am Samstag-Abend können wir gemeinsam Abendessen bestellen und noch ein paar St
 
 ## 🌅 Aftercomp
 
-Saturday evening, we can order dinner together and enjoy a couple more hours of unofficial fun events. Feel free to stay until 9:30 pm.
+Friday and Saturday evening, we can order dinner together and enjoy a couple more hours of unofficial fun events. Feel free to stay until 9:30 pm.
 '''
     return md_str
 
@@ -584,9 +619,13 @@ def unofficial():
 
 ## 🎲 Inoffizielle Events
 
-Freitagabend und Samstag-Abend (Sa. dann im Rahmen der Aftercomp) wird es Gelegenheit zur Teilnahme an inoffiziellen Events geben.
+Freitag- und Samstag-Abend (im Rahmen der Aftercomp) wird es Gelegenheit zur Teilnahme an inoffiziellen Events geben.
 
 Wir werden hier in Kürze mehr dazu kommunizieren und auf dem Wettbewerb erklären, wie ihr daran teilnehmen könnt.
+
+Events 🎲
+1. FTO
+2. Kilominx
 
 ---
 
@@ -594,8 +633,12 @@ Wir werden hier in Kürze mehr dazu kommunizieren und auf dem Wettbewerb erklär
 
 ## 🎲 Unofficial events
 
-Friday and Saturday evening (Sat. during the aftercomp), there will be the option to participate in unofficial events.
+Friday and Saturday evening (during the aftercomp), there will be the option to participate in unofficial events.
 
 Soon we will communicate more on this topic here and let you know during the competition how to compete in those events.
+
+Events 🎲
+1. FTO
+2. Kilominx
 '''
     return md_str
