@@ -19,13 +19,16 @@ assignees: ''
 - [ ] Generate a budget sheet (e.g. copy of previous edition)
 - [ ] Create entry in "German WCA Competitions" spreadsheet (tbf)
 
-#### Refine budgeting and bookkeeping
+#### Refine budgeting and bookkeeping, more paperwork
 - [ ] Add estimated costs
 - [ ] Add estimated income
 - [ ] Define registration fee
 - [ ] Define a person handling payments
 - [ ] Sign contract ("Vertrag") with venue
+- [ ] Sign contract ("Vertrag") for insurance
+- [ ] (Sometimes required) ask for permission (local authorities), show proof of insurance
 - [ ] Modify entry in "German WCA Competitions" spreadsheet (fixed)
+- [ ] Contact shop or other companies for sponsorship
 
 #### Standard tasks for CompWorkflow to get started
 - [ ] Fill out the config file
