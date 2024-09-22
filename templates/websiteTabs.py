@@ -29,7 +29,7 @@ Fülle das Anmeldeformular aus und schicke es ab: [klicke hier](https://www.worl
 
 ⚠️ **Wichtig:**
 
-* Bitte aktiviere **nicht** den optionalen Käuferschutz, da hierfür eine Gebühr vom gezahlten Eintrittspreis abgezogen wird. Solltest du später bei Abmeldung eine Rückerstattung benötigen, wird nur der Betrag erstattet, den das Organisationsteam erhalten hat (nach Abzug der Gebühren).
+* Bitte aktiviere **nicht** den optionalen Käuferschutz, da hierfür eine Gebühr vom gezahlten Eintrittspreis abgezogen wird. Solltest du später bei Abmeldung eine Rückerstattung benötigen, wird nur der Betrag erstattet, den das Organisationsteam erhalten hat (nach Abzug der Transaktionsgebühren).
 
 * Falls der Name bei der Zahlung und der Name im Anmeldeformular nicht identisch sind, gib bitte den Namen des Teilnehmers im Anmeldeformular im letzten Schritt der Zahlungsprozedur an oder nenne die Transaktionsnummer im Kommentarfeld der WCA-Anmeldeseite. Im Zweifel kannst du uns kontaktieren. *Eine Zahlung gilt erst dann als geleistet, wenn wir diese eindeutig zuordnen können.*
 
@@ -612,7 +612,7 @@ Weiterhin geht ein 25 € Gutschein an den schnellsten Neuling im 3x3x3 (Durchsc
 '''
     return md_str
 
-def unofficial():
+def unofficial(compID):
     md_str = f'''*(English version below)*
 
 # 🇩🇪
@@ -624,8 +624,15 @@ Freitag- und Samstag-Abend (im Rahmen der Aftercomp) wird es Gelegenheit zur Tei
 Wir werden hier in Kürze mehr dazu kommunizieren und auf dem Wettbewerb erklären, wie ihr daran teilnehmen könnt.
 
 Events 🎲
-1. FTO
+1. Face-Turning Octahedron (FTO)
 2. Kilominx
+
+| FTO | Kilominx |
+| -------- | -------- |
+| Zeitlimit: 5:00.00 | Zeitlimit: 2:30.00 |
+| Cutoff: 2:00.00 | Cutoff: 1:20.00 |
+
+Die Ergebnisse werden auf [Cubing Contests](https://cubingcontests.com/) hochgeladen und in die dortigen Rankings aufgenommen. [Results](https://cubingcontests.com/competitions/{compID})
 
 ---
 
@@ -638,7 +645,14 @@ Friday and Saturday evening (during the aftercomp), there will be the option to 
 Soon we will communicate more on this topic here and let you know during the competition how to compete in those events.
 
 Events 🎲
-1. FTO
+1. Face-Turning Octahedron (FTO)
 2. Kilominx
+
+| FTO | Kilominx |
+| -------- | -------- |
+| Time Limit: 5:00.00 | Time Limit: 2:30.00 |
+| Cutoff: 2:00.00 | Cutoff: 1:20.00 |
+
+The results will be uploaded to [Cubing Contests](https://cubingcontests.com/) and included in the rankings there. [Results](https://cubingcontests.com/competitions/{compID})
 '''
     return md_str

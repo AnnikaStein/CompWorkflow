@@ -1,7 +1,7 @@
 # PreComp
 
 ## Generation of Tabs depending on contact info
-- WIP: generateTabs.py
+- see generateWebsiteTabs.py
 
 ## Scheduling
 

@@ -163,7 +163,7 @@ if config['setup']['unofficial']:
 🎲 Inoffizielle Events / Unofficial events
 
     '''
-    content = websiteTabs.unofficial()
+    content = websiteTabs.unofficial(compID)
     util.writeOutputFileForID(compID, 'tab_unofficial.md', content)
 
 
