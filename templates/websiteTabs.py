@@ -245,7 +245,7 @@ Usually, podium spots receive certificates. If there will be any prizes on top o
     return md_str
 
 def food():
-    md_str = f'''*English version below*
+    md_str = f'''*(English version below)*
 
 # 🇩🇪
 
@@ -570,7 +570,7 @@ Additionally, for selected podium finishers we also hand out cuboss gift cards, 
 
 | 3x3x3 (Main event) | All other events |
 | -------- | -------- |
-| 1. EUR 30 |  1. EUR 30 |
+| 1. EUR 30 |  1. EUR 25 |
 | 2. EUR 25 |   |
 | 3. EUR 20 |   |
 
