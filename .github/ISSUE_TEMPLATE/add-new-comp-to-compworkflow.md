@@ -31,6 +31,7 @@ assignees: ''
 - [ ] Contact shop or other companies for sponsorship
 
 #### Standard tasks for CompWorkflow to get started
+- [ ] Prepare a mailing list or group (as contact option for competitors)
 - [ ] Fill out the config file
 
 #### WCA website
@@ -42,3 +43,7 @@ assignees: ''
 - [ ] (Optional) Generate a logo / further assets in high resolution and slightly reduced res
 - [ ] Run `generateWebsiteTabs`
 - [ ] Fill out main page and tabs
+
+#### Media & Communication
+- [ ] Prepare channels of communication
+- [ ] Prepare social media (e.g. Insta, FB)
