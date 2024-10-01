@@ -352,7 +352,7 @@ def important(contact, compID):
 
 ### 📲 (Live) results und assignments
 - Live results are available via [WCA Live](https://live.worldcubeassociation.org/link/competitions/{compID}). All results will be uploaded to the WCA database after the competition, and will be available right here.
-- Group assignments are updated on [competitiongroups](https://www.competitiongroups.com/competitions/{compID}). Your assignments for scrambling/running/juding absolutely need to be followed!
+- Group assignments are updated on [competitiongroups](https://www.competitiongroups.com/competitions/{compID}). Your assignments for scrambling/running/judging absolutely need to be followed!
 
 ### ⏰📌 More on the procedures
 - As is common for tournaments of this size, we use multiple stages. Those are specific areas in the venue that help us efficiently distribute the competitors who are competing at the same time. Look at the colours on the schedule. If there are multiple colours shown for the same time frame, the event takes place at multiple stages. Have a look at your [assignments online](https://www.competitiongroups.com/competitions/{compID}) to find out to which one you need to go.
@@ -383,8 +383,8 @@ Leading up to the tournament we will distribute a form to order a t-shirt with t
 def news(compID, contact):
     md_str = f'''|  | News |
 |------|------|
-| 12.09.2024 | 🇬🇧 Website is public!
-| | 🇩🇪 Die Website wurde veröffentlicht!|
+| XY.10.2024 | 🇬🇧 Website is public! We will keep you up-to-date with all news here, on [Instagram](https://www.instagram.com/speedcubingrlpsaar/) and with the [Whatsapp-Community](https://chat.whatsapp.com/EZmTlmsA8id1Ed9sPHScDY).|
+| | 🇩🇪 Die Website wurde veröffentlicht! Wir halten euch hier, bei [Instagram](https://www.instagram.com/speedcubingrlpsaar/) und in der [Whatsapp-Community](https://chat.whatsapp.com/EZmTlmsA8id1Ed9sPHScDY) mit allen Neuigkeiten auf dem Laufenden.|
 '''
     return md_str
 
@@ -438,7 +438,7 @@ def travel():
       - Bus 300 von Wittlich nach Bernkastel-Kues, weiter mit Bus 311 von Bernkastel-Kues nach Morbach.
       - Bus 340 von Wittlich nach Morbach, evtl. in Bernkastel-Kues in Bus 341 umsteigen.
     - In Morbach am besten an der Haltestelle "Morbach ZOB" aussteigen, von dort sind es 500m zur Venue.
-- Fahrgemeinschaften sind für dieses Turnier auch eine gute Option.
+- Fahrgemeinschaften sind für dieses Turnier auch eine gute Option. Wir haben eine [Community auf Whatsapp](https://chat.whatsapp.com/EZmTlmsA8id1Ed9sPHScDY) für Competitions in der Region gegründet, dort könnt ihr euch z.B. zu Fahrgemeinschaften zusammentun!
 - ✈️ Der nächste Flughafen, Frankfurt/Hahn, ist etwa 18km entfernt, es gibt Flughafen-Taxis nach Morbach.
 
 
@@ -468,7 +468,7 @@ Unterkünfte in Morbach und Umgebung findet man z.B. bei [der Tourist-Info](http
       - Bus 300 from Wittlich to Bernkastel-Kues and Bus 311 from Bernkastel-Kues to Morbach.
       - Bus 340 from Wittlich to Morbach, potentially change to Bus 341 in Bernkastel-Kues.
     - In Morbach you exit at the stop "Morbach ZOB", from where you walk 500m to the venue.
-- Carpooling is also a suitable option for this competition.
+- Carpooling is also a suitable option for this competition. We have created a [Community on Whatsapp](https://chat.whatsapp.com/EZmTlmsA8id1Ed9sPHScDY) for competitions in the area, there you can look for carpooling options and more!
 - ✈️ The closest airport, Frankfurt/Hahn, is 18km from the venue, you can book a taxi to Morbach.
 
 
@@ -553,11 +553,11 @@ Außerdem erhalten bestimmte Podiumsplätze zusätzlich Cuboss - Gutscheine, der
 
 | 3x3x3 (Main event) | Alle anderen Disziplinen |
 | -------- | -------- |
-| 1. 30 € |  1. 25 € |
-| 2. 25 € |   |
-| 3. 20 € |   |
+| 1. 25 € |  1. 20 € |
+| 2. 20 € |   |
+| 3. 15 € |   |
 
-Ebenfalls ausgezeichnet werden die besten Neulinge des Turniers, wobei der oder die schnellste aus 3x3x3 Runde 1 ebenfalls einen Gutschein erhält (25 €).
+Ebenfalls ausgezeichnet werden die besten Neulinge des Turniers, wobei der oder die schnellste aus 3x3x3 Runde 1 ebenfalls einen Gutschein erhält (20 €).
 
 ---
 
@@ -570,11 +570,11 @@ Additionally, for selected podium finishers we also hand out cuboss gift cards, 
 
 | 3x3x3 (Main event) | All other events |
 | -------- | -------- |
-| 1. EUR 30 |  1. EUR 25 |
-| 2. EUR 25 |   |
-| 3. EUR 20 |   |
+| 1. EUR 25 |  1. EUR 20 |
+| 2. EUR 20 |   |
+| 3. EUR 15 |   |
 
-Furthermore, the best newcomers will be awarded at the competition, out of those, the fastest in 3x3x3 round 1 will receive a gift card valued EUR 25.
+Furthermore, the best newcomers will be awarded at the competition, out of those, the fastest in 3x3x3 round 1 will receive a gift card valued EUR 20.
 '''
     return md_str
 
@@ -587,28 +587,28 @@ def sponsor(compName):
 “{compName}” is sponsored by the cube store [Cuboss.com](https://cuboss.com/?r=wca)! Cuboss is an online cube store based in Sweden, specializing in speedcubes and other types of puzzles, with worldwide delivery available from 4,99 €. Cuboss is sponsoring the competition with gift cards for the medalists in the various event as outlined below:
 
 Podium finishers in 3x3x3 are awarded gift cards from Cuboss as below:
-1st place: EUR 30
-2nd place: EUR 25
-3rd place: EUR 20
-
-Medalists in the other events are awarded gift cards from Cuboss as follows:
 1st place: EUR 25
+2nd place: EUR 20
+3rd place: EUR 15
 
-Furthermore, the best newcomer according to 3x3x3 average in round 1 will be awarded a gift card (EUR 25) and we hold a raffle of further gift cards Sunday before lunch (each valued EUR 25).
+Medalists in the other events (including FTO and Kilominx!) are awarded gift cards from Cuboss as follows:
+1st place: EUR 20
+
+Furthermore, the best newcomer according to 3x3x3 average in round 1 will be awarded a gift card (EUR 20) and each day, we hold a raffle of another gift card before lunch (each valued EUR 20).
 
 #### DEUTSCH
 
 “{compName}” wird vom Cubeshop [Cuboss.com](https://cuboss.com/?r=wca) gesponsort! Cuboss ist ein in Schweden ansässiger Onlineshop, welcher auf Speedcubes und andere Puzzles spezialisiert ist, mit weltweitem Versand bereits ab 4,99€. Cuboss unterstützt den Wettbewerb wie folgt mit Gutscheinen für die Podiumsplätze der jeweiligen Disziplinen:
 
 Das 3x3x3-Podium erhält Cuboss-Gutscheine:
-1. Platz: 30 €
-2. Platz: 25 €
-3. Platz: 20 €
-
-Sieger der anderen Disziplinen erhalten ebenfalls Gutscheine von Cuboss:
 1. Platz: 25 €
+2. Platz: 20 €
+3. Platz: 15 €
 
-Weiterhin geht ein 25 € Gutschein an den schnellsten Neuling im 3x3x3 (Durchschnitt aus Runde 1) und es gibt am Sonntag vor der Mittagspause eine Verlosung der restlichen Gutscheine, jeweils im Wert von 25€.
+Sieger der anderen Disziplinen (inklusive FTO und Kilominx!) erhalten ebenfalls Gutscheine von Cuboss:
+1. Platz: 20 €
+
+Weiterhin geht ein 20 € Gutschein an den schnellsten Neuling im 3x3x3 (Durchschnitt aus Runde 1) und es wird an jedem Tag vor der Mittagspause je Gutschein verlost, jeweils im Wert von 20€.
 '''
     return md_str
 
