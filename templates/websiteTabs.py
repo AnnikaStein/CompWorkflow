@@ -608,7 +608,7 @@ Das 3x3x3-Podium erhält Cuboss-Gutscheine:
 Sieger der anderen Disziplinen (inklusive FTO und Kilominx!) erhalten ebenfalls Gutscheine von Cuboss:
 1. Platz: 20 €
 
-Weiterhin geht ein 20 € Gutschein an den schnellsten Neuling im 3x3x3 (Durchschnitt aus Runde 1) und es wird an jedem Tag vor der Mittagspause je Gutschein verlost, jeweils im Wert von 20€.
+Weiterhin geht ein 20 € Gutschein an den schnellsten Neuling im 3x3x3 (Durchschnitt aus Runde 1) und es wird an jedem Tag vor der Mittagspause je ein Gutschein verlost, jeweils im Wert von 20€.
 '''
     return md_str
 
