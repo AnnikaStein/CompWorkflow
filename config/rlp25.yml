@@ -11,3 +11,10 @@ setup:
     awards : Yes
     sponsor : Yes
     unofficial : Yes
+    gca : Yes
+orga:
+    lostAndFound: something,another thing
+    lostAndFoundGerman: etwas,noch etwas
+    surveyLink: https://something.com
+    systemJRS: scrambling, running and judging
+    systemJRSGerman: Scrambling, Running und Judging

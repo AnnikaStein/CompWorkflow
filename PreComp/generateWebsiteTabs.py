@@ -79,13 +79,6 @@ content = websiteTabs.food()
 util.writeOutputFileForID(compID, 'tab_food.md', content)
 
 tabtitles += '''
-👋 German Cube Association (GCA)
-
-'''
-content = websiteTabs.gca()
-util.writeOutputFileForID(compID, 'tab_gca.md', content)
-
-tabtitles += '''
 ℹ️ Wichtige Infos für alle / Important info for everyone
 
 '''
@@ -93,7 +86,7 @@ content = websiteTabs.important(contact, compID)
 util.writeOutputFileForID(compID, 'tab_important.md', content)
 
 tabtitles += '''
-👕 Logo & T-Shirts
+👕 Logo & Merchandise
 
 '''
 content = websiteTabs.logo()
@@ -166,6 +159,13 @@ if config['setup']['unofficial']:
     content = websiteTabs.unofficial(compID)
     util.writeOutputFileForID(compID, 'tab_unofficial.md', content)
 
+if config['setup']['gca']:
+    tabtitles += '''
+👋 German Cube Association (GCA)
+
+    '''
+    content = websiteTabs.gca()
+    util.writeOutputFileForID(compID, 'tab_gca.md', content)
 
 # === *** === *** === TITLE COLLECTION === *** === *** === #
 util.writeOutputFileForID(compID, 'tab_titles.md', tabtitles)

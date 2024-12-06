@@ -1,0 +1,20 @@
+comp:
+    name : Mainzelcubing 2025
+    shortname : Mainzelcubing 2025
+    ID : Mainzelcubing2025
+payment:
+    paypalURLuptoAmount : https://www.paypal.com/paypalme/hugacuba/
+    amountEUR : 19
+mail : speedcubing.rlp.saar@gmail.com
+setup:
+    aftercomp : Yes
+    awards : Yes
+    sponsor : Yes
+    unofficial : Yes
+    gca : No
+orga:
+    lostAndFound: something
+    lostAndFoundGerman: etwas
+    surveyLink: https://something.com
+    systemJRS: scrambling and judging
+    systemJRSGerman: Scrambling und Judging
