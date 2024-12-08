@@ -2,6 +2,7 @@ comp:
     name : Rheinland-Pfalz Open 2025
     shortname : RLP Open 2025
     ID : RheinlandPfalzOpen2025
+    loc : Morbach
 payment:
     paypalURLuptoAmount : https://www.paypal.com/paypalme/hugacuba/
     amountEUR : 19
@@ -12,9 +13,10 @@ setup:
     sponsor : Yes
     unofficial : Yes
     gca : Yes
+    logo : Yes
 orga:
-    lostAndFound: something,another thing
-    lostAndFoundGerman: etwas,noch etwas
-    surveyLink: https://something.com
-    systemJRS: scrambling, running and judging
-    systemJRSGerman: Scrambling, Running und Judging
+    lostAndFound : something,another thing
+    lostAndFoundGerman : etwas,noch etwas
+    surveyLink : https://something.com
+    systemJRS : scrambling, running and judging
+    systemJRSGerman : Scrambling, Running und Judging

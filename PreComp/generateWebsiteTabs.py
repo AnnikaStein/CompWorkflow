@@ -32,9 +32,11 @@ with open('CompWorkflow/config/'+config_path) as f:
 
 compID = config['comp']['ID']
 compName = config['comp']['name']
+loc = config['comp']['loc']
 ppURL = config['payment']['paypalURLuptoAmount']
 EUR = config['payment']['amountEUR']
 contact = config['mail']
+logoExists = config['setup']['logo']
 
 # performs a check for the output destination
 # such that further writing of files will work
@@ -45,7 +47,7 @@ tabtitles = '''
 Informationen / Information
 
 '''
-content = websiteTabs.main_info(compID, contact, compName)
+content = websiteTabs.main_info(compID, contact, compName, logoExists)
 util.writeOutputFileForID(compID, 'main_info.md', content)
 
 tabtitles += '''
@@ -75,7 +77,7 @@ tabtitles += '''
 🍕 Verpflegung / Food
 
 '''
-content = websiteTabs.food()
+content = websiteTabs.food(loc)
 util.writeOutputFileForID(compID, 'tab_food.md', content)
 
 tabtitles += '''
@@ -110,7 +112,7 @@ tabtitles += '''
 🚎 Anreise & Unterkunft / Travel & Accomodation
 
 '''
-content = websiteTabs.travel()
+content = websiteTabs.travel(loc)
 util.writeOutputFileForID(compID, 'tab_travel.md', content)
 
 tabtitles += '''

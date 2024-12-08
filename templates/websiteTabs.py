@@ -1,17 +1,19 @@
-def main_info(compID, contact, compName):
+def main_info(compID, contact, compName, logoExists):
     md_str = f'''#### 🇬🇧 English
 We're happy to welcome you to {compName}! For the first time in this federal state, we offer all official WCA events. And we're looking forward to unofficial events and the aftercomp, everyone is invited!
 The organizing team wishes you all a lot of fun.
 
-We have compiled [Frequently Asked Questions and Answers here.](https://www.worldcubeassociation.org/competitions/RheinlandPfalzOpen2025#49038-faq)
+We have compiled [Frequently Asked Questions and Answers here.](https://www.worldcubeassociation.org/competitions/{compID}#todo-faq)
 
 #### 🇩🇪 Deutsch
 Willkommen zur {compName}! Erstmals bieten wir in diesem Bundesland alle offiziellen WCA-Disziplinen an. Wir freuen uns außerdem auf inoffizielle Events und die Aftercomp, alle sind herzlich eingeladen!
 Das Orga-Team wünscht euch allen viel Spaß.
 
-Wir haben [häufig gestellte Fragen und Antworten hier zusammengestellt.](https://www.worldcubeassociation.org/competitions/RheinlandPfalzOpen2025#49038-faq)
-
-![](https://www.worldcubeassociation.org/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MzY5NTAsInB1ciI6ImJsb2JfaWQifX0=--ba949f872b15afba9ca383b8d6a9bb6aa20d6006/Logo_300.png)
+Wir haben [häufig gestellte Fragen und Antworten hier zusammengestellt.](https://www.worldcubeassociation.org/competitions/{compID}#todo-faq)
+'''
+    if logoExists:
+        md_str += f'''
+![](https://www.worldcubeassociation.org/rails/active_storage/blobs/redirect/todo_300.png)
 '''
     return md_str
 
@@ -244,8 +246,46 @@ Usually, podium spots receive certificates. If there will be any prizes on top o
 '''
     return md_str
 
-def food():
-    md_str = f'''*(English version below)*
+def food(loc):
+    if loc == 'Morbach':
+        md_str = f'''*(English version below)*
+
+# 🇩🇪
+
+## Verpflegung
+### 🛒 Supermärkte und 🥐 Bäckereien
+- Ihr habt die Qual der Wahl, ob ihr mit 5 Minuten Fußweg lieber zu Wasgau, Lidl, Rewe oder Aldi gehen möchtet. Nebenan ist auch eine Rossmann-Filiale.
+- Ähnlich sieht es bei den Bäckereien aus: hier gibt es Filialen von z.B. Die Lohners, Wildbadmühle, Wasgau Bäckerei; Aldi und Lidl haben ihre eigenen Backwaren-Selbstbedienungstheken; im Ortskern findet man noch weitere Bäckereien.
+
+
+### 🍔 Restaurants und ☕️ Cafés
+- In Morbach und Umgebung gibt es verschiedene Restaurants, die warme Gerichte anbieten: mit einem Fußweg von etwa 10 - 15 Minuten von der Venue erreicht man sowohl ein Bistro, mehrere Dönerläden (die aber auch andere schnelle Gerichte anbieten), ein Asia-Restaurant, oder Speisegaststätten, die sich auf regionale Küche oder Klassiker spezialisiert haben. Über Lieferando findet man Betriebe, die Essen liefern.
+- Wer Lust auf Kaffee, Kuchen oder ein leckeres Eis hat, wird ebenfalls im Ortskern fündig (10 Minuten Fußweg). Persönliche Empfehlungen: Eiscafé Rizzardini, Café Risch und Bäckerei Wildbadmühle (beim Lidl).
+
+
+### 🥤 Getränke und 🍬 Snacks
+- Es wird während des Turniers eine Auswahl an Softdrinks und kleinen Snacks geben.
+
+---
+
+# 🇬🇧
+
+## Food
+### 🛒 Supermarkets and 🥐 bakeries
+- You are spoilt for choice, whether you prefer to go to Wasgau, Lidl, Rewe or Aldi, all just a 5-minute walk away. There is also a Rossmann shop next door.
+- The situation is similar with the bakeries: there are branches of Die Lohners, Wildbadmühle, Wasgau Bäckerei; Aldi and Lidl have their own self-service bakery counters; there are other bakeries in the town centre.
+
+
+### 🍔 Restaurants and ☕️ cafés
+- In Morbach and close-by there are various restaurants offering hot food: within walking distance of 10 - 15 minutes from the venue, you can reach a bistro, several kebap places (they also have other fast food), an asian restaurant, or restaurants specializing in offering regional dishes or typical German classics. With Lieferando (the German "Just Eat") you can find places offering food for delivery.
+- If you are a fan of coffee, pastries or some gelato (italian ice cream), you will find some options in the central area of Morbach (walking distance about 10 minutes). Personal recommendations: Eiscafé Rizzardini, Café Risch und Bäckerei Wildbadmühle (next to Lidl market).
+
+
+### 🥤 Drinks and 🍬 snacks
+- At the competition, there will be a selection of soft drinks and small snacks.
+'''
+    elif loc == 'MZ':
+        md_str = f'''*(English version below)*
 
 # 🇩🇪
 
@@ -324,8 +364,8 @@ def important(contact, compID):
 - Einteilungen in Gruppen findet man immer aktuell bei [competitiongroups](https://www.competitiongroups.com/competitions/{compID}). Deine Einteilungen zum Scramblen/Runnen/Judgen sind unbedingt einzuhalten!
 
 ### ⏰📌 Mehr zum Ablauf
-- Wie für Turniere dieser Größe üblich, werden wir mit mehreren Stages arbeiten. Das sind Bereiche in der Halle, um die gleichzeitig teilnehmenden Personen räumlich aufzuteilen. Achte im Zeitplan auf die Farben. Wenn mehrere Farben zur selben Zeit angezeigt werden, findet die Disziplin auf mehreren Stages statt. Schaue dann online in deinen [Einteilungen](https://www.competitiongroups.com/competitions/{compID}) nach, wohin du gehen musst.
-- Du musst nur zu den Events da sein, für die du dich angemeldet hast. Wir empfehlen, mindestens eine halbe Stunde vor deinem ersten Event da zu sein. Wenn du nur an einem Tag kannst, kannst du auch nur an den entsprechenden Events des Tages teilnehmen.
+- Wie für Turniere dieser Größe üblich, werden wir mit mehreren Stages arbeiten. Das sind Bereiche in der Halle, um die gleichzeitig teilnehmenden Personen räumlich aufzuteilen. Achte im Zeitplan auf die Farben. Wenn mehrere Farben zur selben Zeit angezeigt werden, findet die Disziplin auf mehreren Stages statt. Schaue dann online in deinen [Einteilungen](https://www.competitiongroups.com/competitions/{compID}) nach, wohin du wann gehen musst.
+- Du musst nur zu den Events da sein, für die du dich angemeldet hast bzw. für die du zum Scrambling/Running/Judging eingeteilt bist. Wir empfehlen, mindestens eine halbe Stunde vor deinem ersten Event da zu sein. Wenn du nur an einem Tag kannst, kannst du auch nur an den entsprechenden Events des Tages teilnehmen.
 - Bei Unklarheiten oder wichtigen Fragen vor dem Turnier kannst du dich gerne [an das Organisationsteam wenden](mailto:{contact}).
 
 ---
@@ -355,8 +395,8 @@ def important(contact, compID):
 - Group assignments are updated on [competitiongroups](https://www.competitiongroups.com/competitions/{compID}). Your assignments for scrambling/running/judging absolutely need to be followed!
 
 ### ⏰📌 More on the procedures
-- As is common for tournaments of this size, we use multiple stages. Those are specific areas in the venue that help us efficiently distribute the competitors who are competing at the same time. Look at the colours on the schedule. If there are multiple colours shown for the same time frame, the event takes place at multiple stages. Have a look at your [assignments online](https://www.competitiongroups.com/competitions/{compID}) to find out to which one you need to go.
-- You only need to be present, when you have to compete, in the events that you're registered for! We recommend that you are present half an hour up to one hour before your first event, since the schedule might change. If you can only be present one of the days, then you can only compete in the events on the given date.
+- As is common for tournaments of this size, we use multiple stages. Those are specific areas in the venue that help us efficiently distribute the competitors who are competing at the same time. Look at the colours on the schedule. If there are multiple colours shown for the same time frame, the event takes place at multiple stages. Have a look at your [assignments online](https://www.competitiongroups.com/competitions/{compID}) to find out where you need to go and when.
+- You only need to be present when you have to compete or perform scrambling/running/judging duties, in the events that you're registered for! We recommend that you are present half an hour up to one hour before your first event, since the schedule might change. If you can only be present one of the days, then you can only compete in the events on the given date.
 - Feel free to [contact the organizers](mailto:{contact}) if you have any uncertainties.
 '''
     return md_str
@@ -386,6 +426,7 @@ def news(compID, contact):
 | XY.10.2024 | 🇬🇧 Website is public! We will keep you up-to-date with all news here, on [Instagram](https://www.instagram.com/speedcubingrlpsaar/) and with the [Whatsapp-Community](https://chat.whatsapp.com/EZmTlmsA8id1Ed9sPHScDY).|
 | | 🇩🇪 Die Website wurde veröffentlicht! Wir halten euch hier, bei [Instagram](https://www.instagram.com/speedcubingrlpsaar/) und in der [Whatsapp-Community](https://chat.whatsapp.com/EZmTlmsA8id1Ed9sPHScDY) mit allen Neuigkeiten auf dem Laufenden.|
 '''
+
     return md_str
 
 def newcomer(compID, contact):
@@ -415,8 +456,9 @@ If this is your first WCA competition, please pay attention to the following:
 '''
     return md_str
 
-def travel():
-    md_str = f'''*(English version below)*
+def travel(loc):
+    if loc == 'Morbach':
+        md_str = f'''*(English version below)*
 
 # 🇩🇪
 
@@ -474,6 +516,60 @@ Unterkünfte in Morbach und Umgebung findet man z.B. bei [der Tourist-Info](http
 
 ## Accomodation
 You can find accomodation on the pages of the [local tourist information](https://www.morbach.de/uebernachten-geniessen/). Other places to search for accomodation are for example Google Maps, booking.com or airbnb.de. We can recommend looking for accomodation in the holiday region at the river Mosel, which is a good alternative if you arrive by car.
+'''
+        elif loc == 'MZ':
+            md_str = f'''*(English version below)*
+
+# 🇩🇪
+
+## Anreise
+
+### 🚆🚌✈️ Mit öffentlichen Verkehrsmitteln / andere Möglichkeiten
+- Nach Morbach fahren **Busse** von den beiden nächsten Bahnhöfen Idar-Oberstein oder Wittlich (Wengerohr). Gegenüber letztem Jahr sind weitere frühe Verbindungen von / nach Morbach vorhanden:
+    - Beachtet die [Fahrpläne des VRT](https://www.vrt-info.de/fahrplanauskunft) und schaut nach [aktuellen Ankündigungen](https://www.vrt-info.de/aktuelles). Die relevanten Linien sind hier zusammengefasst:
+      - Bus 840 (Eifel-Hunsrück-Bus) / 845 von Idar-Oberstein (in Idar-Oberstein u.a. Anschluss an RE3 Saarbrücken - **Idar-Oberstein** - Mainz - Frankfurt am Main)
+      - Bus 840 (Eifel-Hunsrück-Bus) von Wittlich Wengerohr (in Wittlich Hbf (= Wengerohr) u.a. Anschluss an Züge zwischen Köln / Koblenz - Cochem - **Wengerohr** - Trier - Saarbrücken - Mannheim oder Trier - Luxemburg)
+      - Bus 300 von Wittlich nach Bernkastel-Kues, weiter mit Bus 311 von Bernkastel-Kues nach Morbach.
+      - Bus 340 von Wittlich nach Morbach, evtl. in Bernkastel-Kues in Bus 341 umsteigen.
+    - In Morbach am besten an der Haltestelle "Morbach ZOB" aussteigen, von dort sind es 500m zur Venue.
+
+
+### 🚙 Mit dem Auto
+- Aus dem Rhein-Main-Gebiet: A61 in Richtung Köln. Von der A61 bei Rheinböllen auf die B50/B327 in Richtung Flughafen Frankfurt/Hahn. Dieser Bundesstraße folgen bis nach Morbach, am Kreisel zweite Ausfahrt, nach 200m entweder zur Halle rechts abbiegen oder auf den wesentlich größeren Parkplatz links einbiegen. Reine Fahrzeit Mainz — Morbach: ~1h.
+- 🇱🇺 Aus Luxemburg: A64 (E44) in Richtung Trier, A602 in Richtung Köln/Saarbrücken, A1 in Richtung Hermeskeil, an der Ausfahrt Mehring auf die B327 in Richtung Flughafen Frankfurt/Hahn. Reine Fahrzeit Luxemburg (Stadt) — Morbach: ~1h.
+- 🇧🇪 Aus Belgien: A60 (E42) in Richtung Frankfurt/Hahn, später wird die Autobahn zur B50. Am Kreisel Ausfahrt zur B327 in Richtung Morbach/Hermeskeil nehmen. Reine Fahrzeit Spa — Morbach: ~1,5h.
+- Aus Köln / von Norden: A61 in Richtung Ludwigshafen. Von der A61 bei Rheinböllen auf die B50/B327 in Richtung Flughafen Frankfurt/Hahn. Reine Fahrzeit Köln — Morbach: ~2h.
+- Von Süden: via A65 und A61 dann weiter wie im ersten Beispiel, oder via A65 und B10 nach Pirmasens, oder auf A6 Richtung Kaiserslautern, bei Landstuhl auf A62 Richtung Norden, bei Neubrücke/Birkenfeld abfahren und B269 nach Morbach nehmen. Reine Fahrzeit Karlsruhe — Morbach: ~2h.
+- 🅿️ **Parkplätze** stehen *kostenlos* zur Verfügung. Einige sind direkt dem Gebäude gegenüber. Am Sportzentrum (der Kreuzung gegenüber) ist ein größerer Parkplatz.
+- Fahrgemeinschaften sind für dieses Turnier auch eine gute Option. Wir haben eine [Community auf Whatsapp](https://chat.whatsapp.com/EZmTlmsA8id1Ed9sPHScDY) für Competitions in der Region gegründet, dort könnt ihr euch z.B. zu Fahrgemeinschaften zusammentun!
+
+
+## Unterkunft
+Unterkünfte in Morbach und Umgebung findet man z.B. bei [der Tourist-Info](https://mainz.de/tourismus/uebernachten/uebernachten.php). Auch ein Blick auf z.B. Google Maps, booking.com oder airbnb.de lohnt sich. Neben den Angeboten in und um Morbach hält die Moselregion auch zahlreiche Unterkünfte bereit. Sofern man mit dem Auto anreist, ist dies eine gute Ausweichmöglichkeit.
+
+---
+
+# 🇬🇧
+
+## Getting there
+
+### 🚆🚌✈️ By public transport
+- Mainz is located in the **Rhein-Main-Area**, about half an hour from Frankfurt (with **Frankfurt Airport**, which is about 28km away, an important hub with many international connections).
+- **Long distance trains and regional trains** connect Mainz (main station) with various cities in Europe, with ICE, IC, EC, RE, RB and "S-Bahn" (suburban railway) services.
+- Once in Mainz (most likely you arrive at Mainz Hbf), there are numerous **busses** and **trams** running in the city, these go almost directly to the venue:
+    - Relevant bus lines: 64, 65 (stop: "Martin-Luther-Straße") or 62 (stop: "Volkspark"), just a short walk
+    - Relevant tram lines: 50, 52, 53 (stop: "Berliner Straße"), bit longer walk
+- Hint: If your regional train stops at Mainz-Römisches Theater, you can take a shortcut and actually walk to the venue directly without need for further public transport.
+
+### 🚙 By car
+- The area is equipped with a dense network of freeways, notably the A60 in the south of Mainz (you'll likely use this one if you come from Rheinland-Pfalz, Saarland or the southern part of Hessia and want to take exit MZ-Weisenau / MZ-Großberg), and A643 in the north-west (from Wiesbaden / Hessia or from the north in general).
+- Construction works are ongoing in and around Mainz, be sure to read the signage and don't blindly trust your navigation system.
+- 🅿️ **Parking spots** are *free of charge*. Some are close to the building across the street.
+- Carpooling is also a suitable option for this competition. We have created a [Community on Whatsapp](https://chat.whatsapp.com/EZmTlmsA8id1Ed9sPHScDY) for competitions in the area, there you can look for carpooling options and more!
+
+
+## Accomodation
+Plenty of accomodation options are available in and around Mainz, the [local tourist information](https://mainz.de/tourismus/uebernachten/uebernachten.php) has compiled a selection for all budget categories. Other places to search for accomodation are for example Google Maps, booking.com or airbnb.de.
 '''
     return md_str
 
