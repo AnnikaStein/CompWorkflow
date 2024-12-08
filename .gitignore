@@ -2,3 +2,5 @@
 output/*
 *DS_Store
 *.ipynb*
+input/*.csv
+input/*.json
