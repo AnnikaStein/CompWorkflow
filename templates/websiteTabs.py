@@ -291,13 +291,13 @@ def food(loc):
 
 ## Verpflegung
 ### 🛒 Supermärkte und 🥐 Bäckereien
-- Ihr habt die Qual der Wahl, ob ihr mit 5 Minuten Fußweg lieber zu Wasgau, Lidl, Rewe oder Aldi gehen möchtet. Nebenan ist auch eine Rossmann-Filiale.
-- Ähnlich sieht es bei den Bäckereien aus: hier gibt es Filialen von z.B. Die Lohners, Wildbadmühle, Wasgau Bäckerei; Aldi und Lidl haben ihre eigenen Backwaren-Selbstbedienungstheken; im Ortskern findet man noch weitere Bäckereien.
+- In der näheren Umgebung gibt es einen Netto Marken-Discount, REWE To Go (an der Tankstelle), tegut... plant dafür etwa 10min Fußweg ein. Mehr Auswahl gibt es in 15-20min Entfernung Richtung Südosten und Süden, wo sich zahlreiche weitere Supermarkt-Ketten befinden.
+- Auch Backwaren findet man in o.g. Märkten. Gängige Bäckereiketten in Mainz wie z.B. Werner's, Lüning, Barbarossa betreiben im Stadtteil Filialen.
 
 
 ### 🍔 Restaurants und ☕️ Cafés
-- In Morbach und Umgebung gibt es verschiedene Restaurants, die warme Gerichte anbieten: mit einem Fußweg von etwa 10 - 15 Minuten von der Venue erreicht man sowohl ein Bistro, mehrere Dönerläden (die aber auch andere schnelle Gerichte anbieten), ein Asia-Restaurant, oder Speisegaststätten, die sich auf regionale Küche oder Klassiker spezialisiert haben. Über Lieferando findet man Betriebe, die Essen liefern.
-- Wer Lust auf Kaffee, Kuchen oder ein leckeres Eis hat, wird ebenfalls im Ortskern fündig (10 Minuten Fußweg). Persönliche Empfehlungen: Eiscafé Rizzardini, Café Risch und Bäckerei Wildbadmühle (beim Lidl).
+- Es gibt fußläufig einige Restaurants (z.B. Burger, Italienisch, Griechisch). Für den kleinen Hunger ist auch REWE To Go geeignet. Wir empfehlen weiterhin für umfangreiche Auswahl auf Lieferdienste zurückzufreifen.
+- Wer etwas mehr Zeit hat: rund um den Bahnhof Römisches Theater (20min zu Fuß) und weiter in der touristisch geprägten Mainzer Altstadt (30min zu Fuß, mit ÖPNV etwas schneller) findet ihr eine Vielzahl an Cafés.
 
 
 ### 🥤 Getränke und 🍬 Snacks
@@ -309,13 +309,13 @@ def food(loc):
 
 ## Food
 ### 🛒 Supermarkets and 🥐 bakeries
-- You are spoilt for choice, whether you prefer to go to Wasgau, Lidl, Rewe or Aldi, all just a 5-minute walk away. There is also a Rossmann shop next door.
-- The situation is similar with the bakeries: there are branches of Die Lohners, Wildbadmühle, Wasgau Bäckerei; Aldi and Lidl have their own self-service bakery counters; there are other bakeries in the town centre.
+- In the surrounding area, there are several supermarkets, look for "Netto Marken-Discount", "REWE To Go" (at the gas station), "tegut..."; those you can reach after about 10min of walking. More options with supermarket franchises are located at 15-20min walking distance, in the south-east or southern direction.
+- Bakery shops are either embedded into those supermarkets, or you can pick one of the popular branches in the neighbourhood like "Werner's", "Lüning", "Barbarossa".
 
 
 ### 🍔 Restaurants and ☕️ cafés
-- In Morbach and close-by there are various restaurants offering hot food: within walking distance of 10 - 15 minutes from the venue, you can reach a bistro, several kebap places (they also have other fast food), an asian restaurant, or restaurants specializing in offering regional dishes or typical German classics. With Lieferando (the German "Just Eat") you can find places offering food for delivery.
-- If you are a fan of coffee, pastries or some gelato (italian ice cream), you will find some options in the central area of Morbach (walking distance about 10 minutes). Personal recommendations: Eiscafé Rizzardini, Café Risch und Bäckerei Wildbadmühle (next to Lidl market).
+- Within walking distance, there are several restaurants (e.g. Burger, Italian, Greek). Small snacks can be found at REWE To Go. Further, we recommend checking out delivery services where you can choose from more options.
+- If you have a bit more time: around the train station "Römisches Theater" (20min walking) and further in the touristic Mainz Old Town (30min walking, bit faster when using public transport) you'll find numerous cafés.
 
 
 ### 🥤 Drinks and 🍬 snacks
@@ -396,7 +396,7 @@ def important(contact, compID):
 
 ### ⏰📌 More on the procedures
 - As is common for tournaments of this size, we use multiple stages. Those are specific areas in the venue that help us efficiently distribute the competitors who are competing at the same time. Look at the colours on the schedule. If there are multiple colours shown for the same time frame, the event takes place at multiple stages. Have a look at your [assignments online](https://www.competitiongroups.com/competitions/{compID}) to find out where you need to go and when.
-- You only need to be present when you have to compete or perform scrambling/running/judging duties, in the events that you're registered for! We recommend that you are present half an hour up to one hour before your first event, since the schedule might change. If you can only be present one of the days, then you can only compete in the events on the given date.
+- You only need to be present when you have to compete or perform scrambling/running/judging duties, in the events that you're registered for! We recommend that you are present half an hour before your first event, since the schedule might change. If you can only be present one of the days, then you can only compete in the events on the given date.
 - Feel free to [contact the organizers](mailto:{contact}) if you have any uncertainties.
 '''
     return md_str
@@ -517,58 +517,66 @@ Unterkünfte in Morbach und Umgebung findet man z.B. bei [der Tourist-Info](http
 ## Accomodation
 You can find accomodation on the pages of the [local tourist information](https://www.morbach.de/uebernachten-geniessen/). Other places to search for accomodation are for example Google Maps, booking.com or airbnb.de. We can recommend looking for accomodation in the holiday region at the river Mosel, which is a good alternative if you arrive by car.
 '''
-        elif loc == 'MZ':
-            md_str = f'''*(English version below)*
+    elif loc == 'MZ':
+        md_str = f'''*(English version below)*
 
 # 🇩🇪
 
-## Anreise
+## 🏫 Wichtiges zur Venue
+Wir nutzen die Räumlichkeiten der 9. Klassenstufe im Theresianum Mainz für den Teilnahme-, Warte- und Aufwärmbereich, und können zum Essen (mitgebracht oder bestellt) in die Mensa im Erdgeschoss gehen. Alle von uns genutzten Bereiche lassen sich sowohl mit Treppen als auch mit einem Aufzug erreichen.
 
-### 🚆🚌✈️ Mit öffentlichen Verkehrsmitteln / andere Möglichkeiten
-- Nach Morbach fahren **Busse** von den beiden nächsten Bahnhöfen Idar-Oberstein oder Wittlich (Wengerohr). Gegenüber letztem Jahr sind weitere frühe Verbindungen von / nach Morbach vorhanden:
-    - Beachtet die [Fahrpläne des VRT](https://www.vrt-info.de/fahrplanauskunft) und schaut nach [aktuellen Ankündigungen](https://www.vrt-info.de/aktuelles). Die relevanten Linien sind hier zusammengefasst:
-      - Bus 840 (Eifel-Hunsrück-Bus) / 845 von Idar-Oberstein (in Idar-Oberstein u.a. Anschluss an RE3 Saarbrücken - **Idar-Oberstein** - Mainz - Frankfurt am Main)
-      - Bus 840 (Eifel-Hunsrück-Bus) von Wittlich Wengerohr (in Wittlich Hbf (= Wengerohr) u.a. Anschluss an Züge zwischen Köln / Koblenz - Cochem - **Wengerohr** - Trier - Saarbrücken - Mannheim oder Trier - Luxemburg)
-      - Bus 300 von Wittlich nach Bernkastel-Kues, weiter mit Bus 311 von Bernkastel-Kues nach Morbach.
-      - Bus 340 von Wittlich nach Morbach, evtl. in Bernkastel-Kues in Bus 341 umsteigen.
-    - In Morbach am besten an der Haltestelle "Morbach ZOB" aussteigen, von dort sind es 500m zur Venue.
+##### 👟 Achtung, Teppichboden!
+Wir kommen als Gäste an eine Schule, in welcher in vielen Räumen Teppichboden verlegt ist. Bitte die Klassenräume in den oberen Stockwerken nur mit sauberen Schuhen betreten (falls vorhanden: optimal sind Haus- oder Turnschuhe zum Wechseln), das ist insbesondere bei schlechtem Wetter zu beachten. Zum Essen bitten wir euch, die Mensa im Erdgeschoss zu nutzen und dies nicht im Teilnahme- / Competitor-Bereich zu tun (Wasser trinken ist natürlich kein Problem). Wir möchten die Räumlichkeiten sauber hinterlassen!
+
+## 🎯 Anreise
+
+### 🚆🚌✈️ Mit öffentlichen Verkehrsmitteln
+- Mainz befindet sich in der **Rhein-Main-Region**, etwa eine halbe Stunde von Frankfurt entfernt (mit dem **Flughafen Frankfurt**, welcher etwa 28km entfernt ist und ein wichtiges Drehkreuz mit vielen internationalen Verbindungen darstellt).
+- **Fern- und Regionalzüge** verbinden Mainz (Hauptbahnhof) mit diversen Städten in Europa, mit Halt von ICE, IC, EC, RE, RB und S-Bahn.
+- Wenn du in Mainz bist (wahrscheinlich kommst du bei Mainz Hbf an), gibt es zahlreiche **Busse** und **Straßenbahnen** in der Stadt, diese bringen dich fast direkt zur Venue:
+    - Relevante Buslinien: 64, 65, 93 (Halt: "Martin-Luther-Straße") oder 62, 92 (Halt: "Volkspark"), nur ein kurzer Fußweg zur Venue
+    - Relevante Straßenbahnlinien: 50, 52, 53 (Halt: "Berliner Straße"), etwas länger zu laufen aber dafür besserer Takt
+- Hinweis: Sollte dein Regionalzug bei Mainz-Römisches Theater anhalten, dann kannst du eine Abkürzung nehmen und von dort direkt zur Venue laufen, ohne von weiteren Verkehrsmitteln Gebrauch machen zu müssen.
 
 
 ### 🚙 Mit dem Auto
-- Aus dem Rhein-Main-Gebiet: A61 in Richtung Köln. Von der A61 bei Rheinböllen auf die B50/B327 in Richtung Flughafen Frankfurt/Hahn. Dieser Bundesstraße folgen bis nach Morbach, am Kreisel zweite Ausfahrt, nach 200m entweder zur Halle rechts abbiegen oder auf den wesentlich größeren Parkplatz links einbiegen. Reine Fahrzeit Mainz — Morbach: ~1h.
-- 🇱🇺 Aus Luxemburg: A64 (E44) in Richtung Trier, A602 in Richtung Köln/Saarbrücken, A1 in Richtung Hermeskeil, an der Ausfahrt Mehring auf die B327 in Richtung Flughafen Frankfurt/Hahn. Reine Fahrzeit Luxemburg (Stadt) — Morbach: ~1h.
-- 🇧🇪 Aus Belgien: A60 (E42) in Richtung Frankfurt/Hahn, später wird die Autobahn zur B50. Am Kreisel Ausfahrt zur B327 in Richtung Morbach/Hermeskeil nehmen. Reine Fahrzeit Spa — Morbach: ~1,5h.
-- Aus Köln / von Norden: A61 in Richtung Ludwigshafen. Von der A61 bei Rheinböllen auf die B50/B327 in Richtung Flughafen Frankfurt/Hahn. Reine Fahrzeit Köln — Morbach: ~2h.
-- Von Süden: via A65 und A61 dann weiter wie im ersten Beispiel, oder via A65 und B10 nach Pirmasens, oder auf A6 Richtung Kaiserslautern, bei Landstuhl auf A62 Richtung Norden, bei Neubrücke/Birkenfeld abfahren und B269 nach Morbach nehmen. Reine Fahrzeit Karlsruhe — Morbach: ~2h.
-- 🅿️ **Parkplätze** stehen *kostenlos* zur Verfügung. Einige sind direkt dem Gebäude gegenüber. Am Sportzentrum (der Kreuzung gegenüber) ist ein größerer Parkplatz.
-- Fahrgemeinschaften sind für dieses Turnier auch eine gute Option. Wir haben eine [Community auf Whatsapp](https://chat.whatsapp.com/EZmTlmsA8id1Ed9sPHScDY) für Competitions in der Region gegründet, dort könnt ihr euch z.B. zu Fahrgemeinschaften zusammentun!
+- Wegen der Nähe zu Frankfurt gibt es in der Region ein dichtes Autobahnnetz, besonders relevant ist die A60 im Süden von Mainz (nutzt du voraussichtlich, wenn deine Route via A61 durch Rheinland-Pfalz, aus dem Saarland oder vom dem südlichen Hessen herführt, und die Abfahrt ist entweder MZ-Hechtsheim-Ost oder MZ-Weisenau / MZ-Großberg). Die A643 im Nordwesten (von Wiesbaden / Hessen oder generell aus dem Norden) trifft am Dreieck Mainz auf die A60, von dort in Richtung Frankfurt / Darmstadt bis zu o.g. Abfahrten fahren. Wenn deine Route über die A63 führt, kannst du diese weiter als B40 in Richtung Innenstadt entlang fahren, um dann in "An der Goldgrube" und anschließend "Oberer Laubenheimer Weg" abzubiegen.
+- In Mainz und Umgebung finden zahlreiche Baumaßnahmen statt, beachte die Beschilderungen und vertraue nicht blind dem Navi.
+- 🅿️ Eine begrenzte Anzahl an **Parkplätzen** steht an der Schule *kostenlos* zur Verfügung. Wenn der Schulhof voll ist, kannst du nach weiteren Plätzen in den Straßen der Umgebung schauen (aber beachte die Parkregelungen).
+- Fahrgemeinschaften sind für dieses Turnier bzw. die Region insgesamt auch eine gute Option. Wir haben eine [Community auf Whatsapp](https://chat.whatsapp.com/EZmTlmsA8id1Ed9sPHScDY) für Competitions in der Region gegründet, dort könnt ihr euch z.B. zu Fahrgemeinschaften zusammentun!
 
 
-## Unterkunft
-Unterkünfte in Morbach und Umgebung findet man z.B. bei [der Tourist-Info](https://mainz.de/tourismus/uebernachten/uebernachten.php). Auch ein Blick auf z.B. Google Maps, booking.com oder airbnb.de lohnt sich. Neben den Angeboten in und um Morbach hält die Moselregion auch zahlreiche Unterkünfte bereit. Sofern man mit dem Auto anreist, ist dies eine gute Ausweichmöglichkeit.
+## 🏨 Unterkunft
+Viele Unterkünfte aus allen Preiskategorien in Mainz und Umgebung findet man z.B. bei [der Tourist-Info](https://mainz.de/tourismus/uebernachten/uebernachten.php). Auch ein Blick auf z.B. Google Maps, booking.com oder airbnb.de lohnt sich.
 
 ---
 
 # 🇬🇧
 
-## Getting there
+## 🏫 About the venue
+We use the premises of the ninth graders at Theresianum Mainz for competitor, waiting and warmup areas, while the canteen on the ground floor is available for eating your own or ordered food. All areas used by us are accessible either via stairs or escalator.
+
+#### 👟 Caution, carpeted floor!
+We are guests in a school, where many rooms are equipped with carpeted floor. Considering the class rooms upstairs, please only step in with clean shoes (if available: optimal would be if you bring slippers, sneakers etc. to change them on site), especially in bad weather. Food shall not be consumed upstairs at the competitor areas, use the canteen on the ground floor instead (you may of course drink water upstairs). We want to leave the premises clean!
+
+## 🎯 Getting there
 
 ### 🚆🚌✈️ By public transport
 - Mainz is located in the **Rhein-Main-Area**, about half an hour from Frankfurt (with **Frankfurt Airport**, which is about 28km away, an important hub with many international connections).
 - **Long distance trains and regional trains** connect Mainz (main station) with various cities in Europe, with ICE, IC, EC, RE, RB and "S-Bahn" (suburban railway) services.
 - Once in Mainz (most likely you arrive at Mainz Hbf), there are numerous **busses** and **trams** running in the city, these go almost directly to the venue:
-    - Relevant bus lines: 64, 65 (stop: "Martin-Luther-Straße") or 62 (stop: "Volkspark"), just a short walk
-    - Relevant tram lines: 50, 52, 53 (stop: "Berliner Straße"), bit longer walk
+    - Relevant bus lines: 64, 65, 93 (stop: "Martin-Luther-Straße") or 62, 92 (stop: "Volkspark"), just a short walk
+    - Relevant tram lines: 50, 52, 53 (stop: "Berliner Straße"), bit longer walk but better frequency
 - Hint: If your regional train stops at Mainz-Römisches Theater, you can take a shortcut and actually walk to the venue directly without need for further public transport.
 
 ### 🚙 By car
-- The area is equipped with a dense network of freeways, notably the A60 in the south of Mainz (you'll likely use this one if you come from Rheinland-Pfalz, Saarland or the southern part of Hessia and want to take exit MZ-Weisenau / MZ-Großberg), and A643 in the north-west (from Wiesbaden / Hessia or from the north in general).
+- Due to its proximity to Frankfurt, the area is equipped with a dense network of freeways, notably the A60 in the south of Mainz (you'll likely use this one if you come from Rheinland-Pfalz via A61, Saarland or the southern part of Hessia and want to take exit MZ-Hechtsheim-Ost or MZ-Weisenau / MZ-Großberg), and A643 in the north-west (from Wiesbaden / Hessia or from the north in general), from which you can change to A60 at "Dreieck Mainz", leave the junction in direction Frankfurt / Darmstadt and exit as described above. If you route includes A63, you can choose to continue until the freeway turns into B40 (direction city center) and take the exit into "An der Goldgrube" and change to "Oberer Laubenheimer Weg".
 - Construction works are ongoing in and around Mainz, be sure to read the signage and don't blindly trust your navigation system.
-- 🅿️ **Parking spots** are *free of charge*. Some are close to the building across the street.
-- Carpooling is also a suitable option for this competition. We have created a [Community on Whatsapp](https://chat.whatsapp.com/EZmTlmsA8id1Ed9sPHScDY) for competitions in the area, there you can look for carpooling options and more!
+- 🅿️ **Parking spots** at the school are *free of charge*, but limited. If the school yard is exhausted, you may find more spots in the surrounding streets (but mind the signs).
+- Carpooling is also a suitable option for this competition, and the region in general. We have created a [Community on Whatsapp](https://chat.whatsapp.com/EZmTlmsA8id1Ed9sPHScDY) for competitions in the area, there you can look for carpooling options and more!
 
 
-## Accomodation
+## 🏨 Accomodation
 Plenty of accomodation options are available in and around Mainz, the [local tourist information](https://mainz.de/tourismus/uebernachten/uebernachten.php) has compiled a selection for all budget categories. Other places to search for accomodation are for example Google Maps, booking.com or airbnb.de.
 '''
     return md_str

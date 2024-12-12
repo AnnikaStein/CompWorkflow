@@ -11,9 +11,9 @@ setup:
     aftercomp : Yes
     awards : Yes
     sponsor : Yes
-    unofficial : Yes
+    unofficial : No
     gca : No
-    logo : No
+    logo : Yes
 orga:
     lostAndFound : something
     lostAndFoundGerman : etwas
