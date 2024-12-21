@@ -1,5 +1,17 @@
 # PostComp
 
 ## Mail only those who actually attended
-- WIP: (and rename) wca-competition-orga / aftercomp_mailer.ipynb
-- need survey link
+__Command__
+```shell
+python -m CompWorkflow.PostComp.aftercompMail -c mzc25.yml --debug
+```
+
+__Requirements__
+- needs survey link in config to proceed
+- needs registration.csv in /input folder to proceed
+- needs results json in /input folder to proceed
+
+__Outputs__  
+inside /output/<compID> there will be
+- mail_aftercomp_recipients.txt (contains all emails, semicolon-separated to insert into mail program)
+- mail_aftercomp.txt (content of the mail in German and English)

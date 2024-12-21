@@ -84,7 +84,9 @@ assignees: ''
 - [ ] Handle refunds
 
 #### For comp itself
-- [ ] Modify schedule
+- [ ] Contact beverage supplier with estimated order
+- [ ] Perform newcomer-check with DD
+- [ ] Modify schedule
 - [ ] Create groups / assignments
 - [ ] Distribute who brings material
 - [ ] Print or Digital? scramble preparation
