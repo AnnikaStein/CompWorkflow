@@ -336,7 +336,9 @@ def gca():
 '''
     return md_str
 
-def important(contact, compID):
+def important(contact, compID, multiStage):
+    deMultiStageExtra = 'Wie für Turniere dieser Größe üblich, werden wir mit mehreren Stages arbeiten. Das sind Bereiche in der Halle, um die gleichzeitig teilnehmenden Personen räumlich aufzuteilen. Achte im Zeitplan auf die Farben. Wenn mehrere Farben zur selben Zeit angezeigt werden, findet die Disziplin auf mehreren Stages statt. ' if multiStage else ''
+    enMultiStageExtra = 'As is common for tournaments of this size, we use multiple stages. Those are specific areas in the venue that help us efficiently distribute the competitors who are competing at the same time. Look at the colours on the schedule. If there are multiple colours shown for the same time frame, the event takes place at multiple stages. ' if multiStage else ''
     md_str = f'''*(English version below)*
 
 # 🇩🇪
@@ -364,7 +366,7 @@ def important(contact, compID):
 - Einteilungen in Gruppen findet man immer aktuell bei [competitiongroups](https://www.competitiongroups.com/competitions/{compID}). Deine Einteilungen zum Scramblen/Runnen/Judgen sind unbedingt einzuhalten!
 
 ### ⏰📌 Mehr zum Ablauf
-- Wie für Turniere dieser Größe üblich, werden wir mit mehreren Stages arbeiten. Das sind Bereiche in der Halle, um die gleichzeitig teilnehmenden Personen räumlich aufzuteilen. Achte im Zeitplan auf die Farben. Wenn mehrere Farben zur selben Zeit angezeigt werden, findet die Disziplin auf mehreren Stages statt. Schaue dann online in deinen [Einteilungen](https://www.competitiongroups.com/competitions/{compID}) nach, wohin du wann gehen musst.
+- {deMultiStageExtra}Schaue online in deinen [Einteilungen](https://www.competitiongroups.com/competitions/{compID}) nach, wohin du wann gehen musst.
 - Du musst nur zu den Events da sein, für die du dich angemeldet hast bzw. für die du zum Scrambling/Running/Judging eingeteilt bist. Wir empfehlen, mindestens eine halbe Stunde vor deinem ersten Event da zu sein. Wenn du nur an einem Tag kannst, kannst du auch nur an den entsprechenden Events des Tages teilnehmen.
 - Bei Unklarheiten oder wichtigen Fragen vor dem Turnier kannst du dich gerne [an das Organisationsteam wenden](mailto:{contact}).
 
@@ -395,7 +397,7 @@ def important(contact, compID):
 - Group assignments are updated on [competitiongroups](https://www.competitiongroups.com/competitions/{compID}). Your assignments for scrambling/running/judging absolutely need to be followed!
 
 ### ⏰📌 More on the procedures
-- As is common for tournaments of this size, we use multiple stages. Those are specific areas in the venue that help us efficiently distribute the competitors who are competing at the same time. Look at the colours on the schedule. If there are multiple colours shown for the same time frame, the event takes place at multiple stages. Have a look at your [assignments online](https://www.competitiongroups.com/competitions/{compID}) to find out where you need to go and when.
+- {enMultiStageExtra}Have a look at your [assignments online](https://www.competitiongroups.com/competitions/{compID}) to find out where you need to go and when.
 - You only need to be present when you have to compete or perform scrambling/running/judging duties, in the events that you're registered for! We recommend that you are present half an hour before your first event, since the schedule might change. If you can only be present one of the days, then you can only compete in the events on the given date.
 - Feel free to [contact the organizers](mailto:{contact}) if you have any uncertainties.
 '''
@@ -542,7 +544,7 @@ Wir kommen als Gäste an eine Schule, in welcher in vielen Räumen Teppichboden 
 ### 🚙 Mit dem Auto
 - Wegen der Nähe zu Frankfurt gibt es in der Region ein dichtes Autobahnnetz, besonders relevant ist die A60 im Süden von Mainz (nutzt du voraussichtlich, wenn deine Route via A61 durch Rheinland-Pfalz, aus dem Saarland oder vom dem südlichen Hessen herführt, und die Abfahrt ist entweder MZ-Hechtsheim-Ost oder MZ-Weisenau / MZ-Großberg). Die A643 im Nordwesten (von Wiesbaden / Hessen oder generell aus dem Norden) trifft am Dreieck Mainz auf die A60, von dort in Richtung Frankfurt / Darmstadt bis zu o.g. Abfahrten fahren. Wenn deine Route über die A63 führt, kannst du diese weiter als B40 in Richtung Innenstadt entlang fahren, um dann in "An der Goldgrube" und anschließend "Oberer Laubenheimer Weg" abzubiegen.
 - In Mainz und Umgebung finden zahlreiche Baumaßnahmen statt, beachte die Beschilderungen und vertraue nicht blind dem Navi.
-- 🅿️ Eine begrenzte Anzahl an **Parkplätzen** steht an der Schule *kostenlos* zur Verfügung. Wenn der Schulhof voll ist, kannst du nach weiteren Plätzen in den Straßen der Umgebung schauen (aber beachte die Parkregelungen).
+- 🅿️ Eine begrenzte Anzahl an **Parkplätzen** steht an der Schule *kostenlos* zur Verfügung (nur die markierten Plätze können genutzt werden!). Wenn der Schulhof voll ist, kannst du nach weiteren Plätzen in den Straßen der Umgebung schauen (aber beachte die Parkregelungen).
 - Fahrgemeinschaften sind für dieses Turnier bzw. die Region insgesamt auch eine gute Option. Wir haben eine [Community auf Whatsapp](https://chat.whatsapp.com/EZmTlmsA8id1Ed9sPHScDY) für Competitions in der Region gegründet, dort könnt ihr euch z.B. zu Fahrgemeinschaften zusammentun!
 
 
@@ -572,7 +574,7 @@ We are guests in a school, where many rooms are equipped with carpeted floor. Co
 ### 🚙 By car
 - Due to its proximity to Frankfurt, the area is equipped with a dense network of freeways, notably the A60 in the south of Mainz (you'll likely use this one if you come from Rheinland-Pfalz via A61, Saarland or the southern part of Hessia and want to take exit MZ-Hechtsheim-Ost or MZ-Weisenau / MZ-Großberg), and A643 in the north-west (from Wiesbaden / Hessia or from the north in general), from which you can change to A60 at "Dreieck Mainz", leave the junction in direction Frankfurt / Darmstadt and exit as described above. If you route includes A63, you can choose to continue until the freeway turns into B40 (direction city center) and take the exit into "An der Goldgrube" and change to "Oberer Laubenheimer Weg".
 - Construction works are ongoing in and around Mainz, be sure to read the signage and don't blindly trust your navigation system.
-- 🅿️ **Parking spots** at the school are *free of charge*, but limited. If the school yard is exhausted, you may find more spots in the surrounding streets (but mind the signs).
+- 🅿️ **Parking spots** at the school are *free of charge*, but limited (you shall only use the marked ones!). If the school yard is exhausted, you may find more spots in the surrounding streets (but mind the signs).
 - Carpooling is also a suitable option for this competition, and the region in general. We have created a [Community on Whatsapp](https://chat.whatsapp.com/EZmTlmsA8id1Ed9sPHScDY) for competitions in the area, there you can look for carpooling options and more!
 
 

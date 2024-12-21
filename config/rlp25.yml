@@ -14,6 +14,7 @@ setup:
     unofficial : Yes
     gca : Yes
     logo : Yes
+    multiStage : Yes
 orga:
     lostAndFound : something,another thing
     lostAndFoundGerman : etwas,noch etwas

@@ -37,6 +37,7 @@ ppURL = config['payment']['paypalURLuptoAmount']
 EUR = config['payment']['amountEUR']
 contact = config['mail']
 logoExists = config['setup']['logo']
+multiStage = config['setup']['multiStage']
 
 # performs a check for the output destination
 # such that further writing of files will work
@@ -84,7 +85,7 @@ tabtitles += '''
 ℹ️ Wichtige Infos für alle / Important info for everyone
 
 '''
-content = websiteTabs.important(contact, compID)
+content = websiteTabs.important(contact, compID, multiStage)
 util.writeOutputFileForID(compID, 'tab_important.md', content)
 
 tabtitles += '''
