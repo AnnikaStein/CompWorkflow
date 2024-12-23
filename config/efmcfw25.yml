@@ -1,0 +1,23 @@
+comp:
+    name : Europe FMC Friends - Winter 2025
+    shortname : Europe FMC Friends - Winter 2025
+    ID : EuropeFMCFriendsWinter2025
+    loc : MZ
+payment:
+    paypalURLuptoAmount : https://paypal.me/dunni21/
+    amountEUR : 9
+mail : speedcubing.rlp.saar@gmail.com
+setup:
+    aftercomp : Yes
+    awards : No
+    sponsor : No
+    unofficial : Yes
+    gca : No
+    logo : Yes
+    multiStage : No
+orga:
+    lostAndFound : something
+    lostAndFoundGerman : etwas
+    surveyLink : https://docs.google.com/forms/d/e/1FAIpQLSeuqhPvlih_0KJYy2wSKFfcYV8Ccysjc7vlMNze1FGPYr5V0g/viewform?usp=preview
+    systemJRS : nothing
+    systemJRSGerman : Nichts
