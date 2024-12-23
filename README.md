@@ -24,3 +24,7 @@ python -m CompWorkflow.PostComp.aftercompMail -c mzc25.yml --debug
 ```
 
 Mind the `-m` and the dot-notation to ensure things are run as a module (that sees the sibling modules).
+
+## Extras
+### Certificates
+Texts to fill into goosly's website "wca-certificates" are placed in `templates/certificates.md`.
