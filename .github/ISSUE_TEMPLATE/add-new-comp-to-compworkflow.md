@@ -85,6 +85,7 @@ assignees: ''
 
 #### For comp itself
 - [ ] Contact beverage supplier with estimated order
+- [ ] Import to WCA Live
 - [ ] Perform newcomer-check with DD
 - [ ] Modify schedule
 - [ ] Create groups / assignments
