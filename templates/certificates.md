@@ -71,11 +71,11 @@ Blank output (to write with pen): certificate_EFMCFW25_toPrintInAdvance.pdf
 ```
 [
 "\n\n\n\n\n\n\n\n",
-{"text": "certificate.delegate, ", "fontSize": "16", "bold": "true"},
+{"text": "Annika Stein and others, ", "fontSize": "16", "bold": "true"},
 {"text": "on behalf of the ", "fontSize": "16"},
 {"text": "World Cube Association,\n", "fontSize": "16", "bold": "true"},
 {"text": "and ", "fontSize": "16"},
-{"text": "certificate.organizers", "fontSize": "16", "bold": "true"},
+{"text": "Dunhui Xiao, Annika Stein and others", "fontSize": "16", "bold": "true"},
 {"text": ", on behalf of the organisation team of\n", "fontSize": "16"},
 {"text": "certificate.competitionName", "fontSize": "16", "bold": "true"},
 {"text": ", certify that\n", "fontSize": "16"},
