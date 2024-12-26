@@ -63,6 +63,7 @@ assignees: ''
 
 #### More bookkeeping
 - [ ] (Sometimes required) send insurance certificate to local authorities / venue provider (show proof of insurance)
+- [ ] (Sometimes requires) pay deposit ("Kaution") for venue
 - [ ] Modify entry in "German WCA Competitions" spreadsheet (announced)
 
 #### (Optional) Unofficial events
