@@ -4,3 +4,4 @@ output/*
 *.ipynb*
 input/*.csv
 input/*.json
+oauth/*.py
