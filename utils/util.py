@@ -11,3 +11,8 @@ def writeOutputFileForID(comp_id, fname, content):
 def writeOutputJSONForID(comp_id, fname, content):
     with open(f'{os.path.dirname(os.path.realpath(__file__))}/../output/{comp_id}/{fname}', 'w') as f:
         json.dump(content, f)
+
+def getSortedListOfListsByNthColumn(unsorted_list, column):
+    sortList = unsorted_list.copy()
+    sortList.sort(key=lambda x: x[column])
+    return sortList
