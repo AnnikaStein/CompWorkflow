@@ -1,4 +1,5 @@
 pandas
 dominate
 markdown
+pycountry
 pyyaml

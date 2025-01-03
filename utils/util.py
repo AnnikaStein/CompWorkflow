@@ -16,3 +16,17 @@ def getSortedListOfListsByNthColumn(unsorted_list, column):
     sortList = unsorted_list.copy()
     sortList.sort(key=lambda x: x[column])
     return sortList
+
+def numeric_order_assignments(a_string):
+    if len(a_string) == 0 or a_string == ' ':
+        return a_string
+    x = a_string.split(',')
+    x = [int(k) for k in x]
+    x.sort()
+    x = ', '.join(map(str, x)) 
+    return x
+
+def flatten(myList):
+    return [x for sub in myList for x in sub]
+
+printAssignmentsEVENTORDER = ['333', '222', '444', '555', '666', '777', '333bf', '333fm', '333oh', 'clock', 'minx', 'pyram', 'skewb', 'sq1', '444bf', '555bf', '333mbf']

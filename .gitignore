@@ -1,7 +1,13 @@
 *.pyc
-output/*
 *DS_Store
 *.ipynb*
+
 input/*.csv
 input/*.json
+
 oauth/*.py
+
+output/*
+
+templates/*.tex
+templates/*.pdf

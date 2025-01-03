@@ -11,7 +11,6 @@ parser.add_argument('-c', '--config', required=True,
                     help='Name of config file, e.g. rlp25.yml (required argument)')
 parser.add_argument('-d', '--debug', action='store_true', default = False,
                     help='Get detailed printouts (optional flag)')
-
 args = parser.parse_args()
 
 print()

@@ -18,10 +18,42 @@ inside /output/<compID> there will be
 
 ## Scheduling
 
+## Private Competition WCIF
+__Command__
+```shell
+python -m CompWorkflow.PreComp.loadPrivateWCIF -c rlp25.yml --debug
+```
+
+__Requirements__
+- needs config/<compID>.yml to proceed
+- oauth setup as described in main readme
+
+__Outputs__  
+inside /output/<compID> there will be
+- wcif_private.json directly from the v0 WCA API for the competition described in the config
+
 ## Comp info (newcomers, foreigners, returners with little experience only, daily attendance)
 - WIP: (and rename) wca-competition-orga / competition_info.ipynb
 
 ## Grouping cross-check
 
+## Registration list (all / returners, sorted by registrationId / name)
+__Command__
+```shell
+python -m CompWorkflow.PreComp.generateRegistrationList -c rlp25.yml --debug
+```
+
+__Requirements__
+- needs config/<compID>.yml to proceed
+- private comp WCIF step carried out already
+
+__Outputs__  
+inside /output/<compID> there will be
+- four csv files with different registration lists (depending on inclusion of returners and sorting strategy)
+
+__ToDo__
+- write tex and later on compile as pdf to print out
+
 ## Nametag generation with front and back
 - Just need to automate: TagTex
+- can probably reuse the registration list part or merge the steps as they use similar info

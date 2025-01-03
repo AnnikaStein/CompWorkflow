@@ -5,15 +5,13 @@ import getpass, json, pycountry, requests, yaml
 
 # custom
 from ..utils import util
-from ..templates import websiteTabs
 from ..oauth import myOAuthApplication
 
-parser = ArgumentParser(description='Load private competition WCIF json.')
+parser = ArgumentParser(description='Generate registration list from existing WCIF.')
 parser.add_argument('-c', '--config', required=True,
                     help='Name of config file, e.g. rlp25.yml (required argument)')
 parser.add_argument('-d', '--debug', action='store_true', default = False,
                     help='Get detailed printouts (optional flag)')
-
 args = parser.parse_args()
 
 print()

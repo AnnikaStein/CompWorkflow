@@ -4,7 +4,6 @@ import getpass, json, requests, yaml
 
 # custom
 from ..utils import util
-from ..templates import websiteTabs
 from ..oauth import myOAuthApplication
 
 parser = ArgumentParser(description='Load private competition WCIF json.')
@@ -14,7 +13,6 @@ parser.add_argument('-g', '--grant_type', default = 'password',
                     help='Choose grant_type for API request (optional flag). Default: password, alternative: authorization_code')
 parser.add_argument('-d', '--debug', action='store_true', default = False,
                     help='Get detailed printouts (optional flag)')
-
 args = parser.parse_args()
 
 print()
