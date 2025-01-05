@@ -14,6 +14,7 @@ setup:
     unofficial : Yes
     gca : No
     logo : Yes
+    logoPath : /Users/annikastein/Documents/Speedcubing/Competitions/FMCFriends25/Logo/fmc_logo.png
     multiStage : No
 orga:
     lostAndFound : something

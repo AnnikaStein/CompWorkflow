@@ -14,7 +14,11 @@ parser.add_argument('-d', '--debug', action='store_true', default = False,
 args = parser.parse_args()
 
 print()
+print('*='*80)
+print()
 print('>> Welcome to CompWorkflow -> PreComp -> generateWebsiteTabs.py <<')
+print()
+print('*='*80)
 print()
 print('>> Running with options:')
 print('>>   debug =', args.debug)

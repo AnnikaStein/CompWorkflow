@@ -16,7 +16,11 @@ parser.add_argument('-d', '--debug', action='store_true', default = False,
 args = parser.parse_args()
 
 print()
+print('*='*80)
+print()
 print('>> Welcome to CompWorkflow -> PreComp -> loadPrivateWCIF.py <<')
+print()
+print('*='*80)
 print()
 print('>> Running with options:')
 print('>>   debug =', args.debug)
@@ -57,7 +61,6 @@ def get_access_token():
         applicationDetails['username'] = (None, wca_mail)
         applicationDetails['password'] = (None, wca_password)
 
-    # elif grant_type == 'authorization_code':
     request1 = requests.post(access_token_url, files=applicationDetails)
     print(request1.text)
     return json.loads(request1.text)['access_token']

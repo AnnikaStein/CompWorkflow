@@ -31,12 +31,31 @@ Different steps have their associated scripts in one of the directories
 - `DuringComp`
 - `PostComp`
 
-and all scripts can be called individually as modules. Additionally, multiple steps can be merged and called at the same time, at the level of the steps outlined above.
+and all scripts can be called individually as modules. Additionally, multiple steps can be merged and called at the same time, at the level of the steps outlined above and with diverse combinations.
 
 Each competition has a corresponding YAML configuration file in the `config` directory.
 
 ## Examples
+### Call a combination of modules to do multiple related steps at once
+You can perform multiple tasks with one call to a runner script, from anywhere on your machine. It's quick, but it always uses the default arguments per python module.
+
+General command:
+```shell
+source <some-path-to-the-script>/runWorkflow.sh <combination-name> <yaml-config-file>
+```
+Example command:
+```shell
+source CompWorkflow/runWorkflow.sh PrePrint rlp25.yml
+```
+
+Currently implemented combinations:
+
+- `PreComp`: `generateWebsiteTabs / loadPrivateWCIF / generateRegistrationList / generateNametags`
+- `PreAnnounce`: `generateWebsiteTabs`
+- `PrePrint`: `loadPrivateWCIF / generateRegistrationList / generateNametags`
+
 ### Call a single module of a given step
+This only works from the parent directory of `CompWorkflow`. This offers most flexibility to customize the parameters of each step.
 ```shell
 python -m CompWorkflow.PreComp.generateWebsiteTabs -c rlp25.yml --debug
 ```

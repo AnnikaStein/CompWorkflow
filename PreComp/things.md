@@ -1,5 +1,7 @@
 # PreComp
 
+---
+
 ## Generation of Tabs depending on config
 __Command__
 ```shell
@@ -16,7 +18,11 @@ inside /output/<compID> there will be
 - many tab_<...>.md files (content to fill in various tabs)
 - tab_titles.md (titles of the tabs to appear on the navigation bar)
 
+---
+
 ## Scheduling
+
+---
 
 ## Private Competition WCIF
 __Command__
@@ -32,10 +38,16 @@ __Outputs__
 inside /output/<compID> there will be
 - wcif_private.json directly from the v0 WCA API for the competition described in the config
 
+---
+
 ## Comp info (newcomers, foreigners, returners with little experience only, daily attendance)
 - WIP: (and rename) wca-competition-orga / competition_info.ipynb
 
+---
+
 ## Grouping cross-check
+
+---
 
 ## Registration list (all / returners, sorted by registrationId / name)
 __Command__
@@ -54,6 +66,18 @@ inside /output/<compID> there will be
 __ToDo__
 - write tex and later on compile as pdf to print out
 
+---
+
 ## Nametag generation with front and back
-- Just need to automate: TagTex
-- can probably reuse the registration list part or merge the steps as they use similar info
+__Command__
+```shell
+python -m CompWorkflow.PreComp.generateNametags -c rlp25.yml --debug
+```
+
+__Requirements__
+- needs config/<compID>.yml to proceed
+- private comp WCIF step carried out already
+
+__Outputs__  
+inside /output/<compID> there will be
+- three tex files for frontsides, backsides, merged pdf to each be compiled (merger last)

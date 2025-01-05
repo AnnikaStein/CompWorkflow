@@ -14,6 +14,7 @@ setup:
     unofficial : No
     gca : No
     logo : Yes
+    logoPath : /Users/annikastein/Documents/Speedcubing/Competitions/Mainzelcubing25/Logo/MZC25_Logo_600.png
     multiStage : No
 orga:
     lostAndFound : something

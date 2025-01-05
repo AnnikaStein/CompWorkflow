@@ -1,5 +1,7 @@
 # PostComp
 
+---
+
 ## Mail only those who actually attended
 __Command__
 ```shell
