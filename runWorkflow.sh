@@ -23,6 +23,7 @@ if  [[ $1 == "PreComp" ]]; then
     python -m CompWorkflow.PreComp.loadPrivateWCIF -c $2 --debug
     python -m CompWorkflow.PreComp.generateRegistrationList -c $2 --debug
     python -m CompWorkflow.PreComp.generateNametags -c $2 --debug
+    python -m CompWorkflow.PreComp.generateStats -c $2 --debug
 elif  [[ $1 == "PreAnnounce" ]]; then
     echo " "
     echo ">> Running PreAnnounce python scripts now."
@@ -37,6 +38,7 @@ elif  [[ $1 == "PrePrint" ]]; then
     python -m CompWorkflow.PreComp.loadPrivateWCIF -c $2 --debug
     python -m CompWorkflow.PreComp.generateRegistrationList -c $2 --debug
     python -m CompWorkflow.PreComp.generateNametags -c $2 --debug
+    python -m CompWorkflow.PreComp.generateStats -c $2 --debug
 elif  [[ $1 == "DuringComp" ]]; then
     echo " "
     echo ">> Running all DuringComp python scripts now."

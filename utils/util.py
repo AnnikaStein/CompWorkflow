@@ -29,4 +29,9 @@ def numeric_order_assignments(a_string):
 def flatten(myList):
     return [x for sub in myList for x in sub]
 
+def getUniqueListEntriesSorted(original_list):
+    new_list = list(set(original_list))
+    new_list.sort()
+    return new_list
+
 printAssignmentsEVENTORDER = ['333', '222', '444', '555', '666', '777', '333bf', '333fm', '333oh', 'clock', 'minx', 'pyram', 'skewb', 'sq1', '444bf', '555bf', '333mbf']
