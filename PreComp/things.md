@@ -41,7 +41,19 @@ inside /output/<compID> there will be
 ---
 
 ## Comp info (newcomers, foreigners, returners with little experience only, daily attendance)
-- WIP: (and rename) wca-competition-orga / competition_info.ipynb
+__Command__
+```shell
+python -m CompWorkflow.PreComp.generateStats -c rlp25.yml --debug
+```
+
+__Requirements__
+- needs config/<compID>.yml to proceed
+- private comp WCIF step carried out already
+
+__Outputs__  
+inside /output/<compID> there will be
+- three json files: dailyAttendance, event_nComp, genderHistogram
+- one txt with all statistics computed in that step, including info relevant for media like "Pressemitteilung"
 
 ---
 

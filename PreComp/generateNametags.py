@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 from pprint import pprint
 import urllib.request as libreq
-import getpass, json, math, pycountry, re, requests, yaml
+import getpass, json, math, os, pycountry, re, requests, yaml
 
 # custom
 from ..utils import util
@@ -372,11 +372,22 @@ merged_tex = nametags_tex.merged_nametags(merged_tex_inside)
 util.writeOutputFileForID(compID, f'labels-{compID}-merged.tex', merged_tex)
 print()
 print()
-print(f'>> Nametags for {compName} successfully saved.')
+print(f'>> Nametag tex files for {compName} successfully saved.')
 print()
 print()
-print(f'>> Go ahead by compiling the following files from .tex to .pdf with pdflatex.')
+print(f'>> Going ahead by compiling the following files from .tex to .pdf with pdflatex.')
 print(f'    labels-{compID}-frontsides.tex')
 print(f'    labels-{compID}-backsides.tex')
 print(f'    labels-{compID}-merged.tex')
+print()
+print()
+print(f'>> Compiling front sides.')
+util.compilePdflatex(compID, f'labels-{compID}-frontsides.tex')
+print(f'>> Compiling back sides.')
+util.compilePdflatex(compID, f'labels-{compID}-backsides.tex')
+print(f'>> Compiling merged pdf.')
+util.compilePdflatex(compID, f'labels-{compID}-merged.tex')
+print()
+print()
+print(f'>> Nametag tex files for {compName} successfully saved.')
 print()

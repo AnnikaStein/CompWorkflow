@@ -57,12 +57,19 @@ writeStatsString = ''
 # how experienced the competitor is
 persons = wcif_private['persons']
 competitors = []
+gender = []
 for person in persons:
     if person['registrantId'] != None:
         if person['registration']['status'] == 'accepted' and person['registration']['isCompeting'] == True:
             competitors.append(person)
+            gender.append(person['gender'])
             
-# basic demography for media            
+# basic demography for media
+writeStatsString += '>> gender distribution\n\n'
+genderHistogram = util.countOccurenceInListWithDict(gender)
+writeStatsString += '>> genderHistogram ' + str(genderHistogram) + '\n\n'
+util.writeOutputJSONForID(compID, f'genderHistogram.json', genderHistogram)
+
 competitors_birthdaySorted = sorted(competitors, key=lambda competitors: competitors['birthdate'], reverse=True)
 youngestCompetitor = competitors_birthdaySorted[:3]
 oldestCompetitor = competitors_birthdaySorted[-3:]
@@ -160,9 +167,10 @@ for regId in competitor_presentDays.keys():
         if d in competitor_presentDays[regId]:
             # this competitor is present on this day
             dailyAttendance[d]['total_people'] += 1
-            dailyAttendance[d]['nGuests'] += competitors[competitor_Index]['registration']['guests']
             dailyAttendance[d]['competitors'].append(regId)
             dailyAttendance[d]['nCompetitors'] += 1
+            dailyAttendance[d]['nGuests'] += competitors[competitor_Index]['registration']['guests']
+            dailyAttendance[d]['total_people'] += competitors[competitor_Index]['registration']['guests']
             if competitors[competitor_Index]['wcaId'] == None:
                 dailyAttendance[d]['newcomers'].append(regId)
                 dailyAttendance[d]['nNewcomers'] += 1

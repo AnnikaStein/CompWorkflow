@@ -17,7 +17,7 @@ fi
 if  [[ $1 == "PreComp" ]]; then
     echo " "
     echo ">> Running all PreComp python scripts now."
-    echo ">> These are generateWebsiteTabs / loadPrivateWCIF / generateRegistrationList / generateNametags"
+    echo ">> These are generateWebsiteTabs / loadPrivateWCIF / generateRegistrationList / generateNametags / generateStats"
     echo " "
     python -m CompWorkflow.PreComp.generateWebsiteTabs -c $2 --debug
     python -m CompWorkflow.PreComp.loadPrivateWCIF -c $2 --debug
@@ -33,7 +33,7 @@ elif  [[ $1 == "PreAnnounce" ]]; then
 elif  [[ $1 == "PrePrint" ]]; then
     echo " "
     echo ">> Running PrePrint python scripts now."
-    echo ">> These are loadPrivateWCIF / generateRegistrationList / generateNametags"
+    echo ">> These are loadPrivateWCIF / generateRegistrationList / generateNametags / generateStats"
     echo " "
     python -m CompWorkflow.PreComp.loadPrivateWCIF -c $2 --debug
     python -m CompWorkflow.PreComp.generateRegistrationList -c $2 --debug
