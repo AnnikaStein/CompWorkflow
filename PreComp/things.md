@@ -93,3 +93,5 @@ __Requirements__
 __Outputs__  
 inside /output/<compID> there will be
 - three tex files for frontsides, backsides, merged pdf to each be compiled (merger last)
+- three pdf files frontsides, backsides, merged
+- auxiliary files generated during pdflatex compilation

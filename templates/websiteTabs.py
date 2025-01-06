@@ -440,7 +440,7 @@ def newcomer(compID, contact):
 Falls dies dein erstes WCA Turnier sein sollte, beachte bitte die folgenden Punkte:
 
 - Alle Neulinge sind dazu verpflichtet, ein **Ausweisdokument** an der Anmeldung vorzuzeigen (Regulation [2e](https://www.worldcubeassociation.org/regulations/#2e))). Aus dem Dokument müssen Name, Nationalität und Geburtsdatum hervorgehen.
-- Alle Neulinge sind eindringlich gebeten, am **Tutorial** (siehe Zeitplan) teilzunehmen. Wir werden euch zur Unterstützung außerdem [diesen Flyer](https://drive.google.com/file/d/1NVO-icO_VEObBvKCGAN-gZo-HXHXEMqY/view?usp=sharing) austeilen.
+- Alle Neulinge sind eindringlich gebeten, am **Tutorial** (siehe Zeitplan) teilzunehmen. Wir werden euch zur Unterstützung außerdem [diesen Flyer](https://raw.githubusercontent.com/Speedcubing-RLP-Saar/speedcubing-rlp-saar.github.io/refs/heads/main/docs/flyer2025.pdf) austeilen.
 - Jeder sollte bereits vor dem Turnier mindestens einmal die **[offiziellen Regeln der WCA](https://www.worldcubeassociation.org/regulations/translations/german/)** gelesen haben. Zusätzlich empfehlen wir euch einen Blick in das [WCA Competition Tutorial](https://documents.worldcubeassociation.org/edudoc/competitor-tutorial/tutorial.pdf) bzw. unsere deutschsprachige [Teilnehmer-Anleitung](https://speedcubing-rlp-saar.github.io/tutorials/index.html). Dort findet ihr wichtige Infos zum Ablauf und zur Teilnahme am Wettbewerb. Weiterhin bietet zum Beispiel auch [dieses Video-Tutorial](https://www.youtube.com/watch?v=dPL3eV-A0ww) einen guten unterstützenden Einblick.
 - Keine Angst: während des Turniers besteht die Möglichkeit, sich mit dem offiziellen Equipment (Stackmat-Timer) vertraut zu machen und Fragen zu stellen.
 
