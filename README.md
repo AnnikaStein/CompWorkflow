@@ -50,9 +50,9 @@ source CompWorkflow/runWorkflow.sh PrePrint rlp25.yml
 
 Currently implemented combinations:
 
-- `PreComp`: `generateWebsiteTabs / loadPrivateWCIF / generateRegistrationList / generateNametags`
-- `PreAnnounce`: `generateWebsiteTabs`
-- `PrePrint`: `loadPrivateWCIF / generateRegistrationList / generateNametags`
+- `PreComp`: `generateWebsiteTabs / loadPrivateWCIF / generateRegistrationList / generateNametags / generateStats`
+    - `PreAnnounce`: `generateWebsiteTabs`
+    - `PrePrint`: `loadPrivateWCIF / generateRegistrationList / generateNametags / generateStats`
 
 ### Call a single module of a given step
 This only works from the parent directory of `CompWorkflow`. This offers most flexibility to customize the parameters of each step.
