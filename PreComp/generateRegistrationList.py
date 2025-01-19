@@ -54,9 +54,6 @@ nPersons = len(wcif_private['persons'])
 for p in range(nPersons):
     person = wcif_private['persons'][p]
     if person['registration'] != None:
-        # note for future self (ToDo): for the contrary, non-competing registrations
-        # (like Mum) :-) just use the name and country plus maybe country-flags of spoken languages?
-        # but only for nametags, not for the registration list
         if wcif_private['registrationInfo']['openTime'] < str(datetime.now()):
             # reg open
             if person['registration']['status'] == 'accepted' and person['registration']['isCompeting'] == True:
