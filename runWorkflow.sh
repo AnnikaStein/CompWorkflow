@@ -30,6 +30,12 @@ elif  [[ $1 == "PreAnnounce" ]]; then
     echo ">> This is generateWebsiteTabs"
     echo " "
     python -m CompWorkflow.PreComp.generateWebsiteTabs -c $2 --debug
+elif  [[ $1 == "PreAssign" ]]; then
+    echo " "
+    echo ">> Running PreAssign python scripts now."
+    echo ">> This is patchGroupifierExtensionToPrivateWCIF"
+    echo " "
+    python -m CompWorkflow.PreComp.patchGroupifierExtensionToPrivateWCIF -c $2 --debug
 elif  [[ $1 == "PrePrint" ]]; then
     echo " "
     echo ">> Running PrePrint python scripts now."
