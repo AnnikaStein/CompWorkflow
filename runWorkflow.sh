@@ -47,8 +47,10 @@ elif  [[ $1 == "DuringComp" ]]; then
 elif  [[ $1 == "PostComp" ]]; then
     echo " "
     echo ">> Running all PostComp python scripts now."
-    echo ">> These are "
+    echo ">> These are loadPrivateWCIF / aftercompMail"
     echo " "
+    python -m CompWorkflow.PreComp.loadPrivateWCIF -c $2 --debug
+    python -m CompWorkflow.PostComp.aftercompMail -c $2 --debug
 fi
 
 # Go back to original directory from which this runner was called
