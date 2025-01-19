@@ -10,8 +10,6 @@ python -m CompWorkflow.PostComp.aftercompMail -c mzc25.yml --debug
 
 __Requirements__
 - needs survey link in config to proceed
-- needs registration.csv in /input folder to proceed
-- needs results json in /input folder to proceed
 
 __Outputs__  
 inside /output/<compID> there will be
