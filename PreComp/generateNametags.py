@@ -92,10 +92,6 @@ if order_by == 'name':
     persons = sorted(persons, key=lambda persons: persons['name'])
 
 actual_competitors = []
-# ToDo use this as an additional label
-# hence loop also over non_competing later
-# even later, they should be added to nPersons to calc even / odd emptylabel
-# and the printout at the end (number of actual competitors) is currently wrong, includes also registered but not accepted people
 non_competing = []
 registrantIds = []
 for i,item in enumerate(persons):

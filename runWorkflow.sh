@@ -21,6 +21,7 @@ if  [[ $1 == "PreComp" ]]; then
     echo " "
     python -m CompWorkflow.PreComp.generateWebsiteTabs -c $2 --debug
     python -m CompWorkflow.PreComp.loadPrivateWCIF -c $2 --debug
+    python -m CompWorkflow.PreComp.patchGroupifierExtensionToPrivateWCIF -c $2 --debug
     python -m CompWorkflow.PreComp.generateRegistrationList -c $2 --debug
     python -m CompWorkflow.PreComp.generateNametags -c $2 --debug
     python -m CompWorkflow.PreComp.generateStats -c $2 --debug

@@ -12,7 +12,7 @@ setup:
     awards : Yes
     sponsor : Yes
     unofficial : Yes
-    gca : Yes
+    gca : No
     logo : Yes
     logoPath : /Users/annikastein/Documents/Speedcubing/Competitions/RLP25/Logo/Logo_600.png
     multiStage : Yes
