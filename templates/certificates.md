@@ -41,7 +41,7 @@ Blank output (to write with pen): certificate_MZC25_toPrintInAdvance.pdf
 ```
 [
 "\n\n\n\n\n\n\n\n",
-{"text": "Annika Stein and Carlo Glod, ", "fontSize": "16", "bold": "true"},
+{"text": "Annika Stein, ", "fontSize": "16", "bold": "true"},
 {"text": "on behalf of the ", "fontSize": "16"},
 {"text": "World Cube Association,\n", "fontSize": "16", "bold": "true"},
 {"text": "and ", "fontSize": "16"},
