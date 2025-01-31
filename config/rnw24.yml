@@ -1,8 +1,8 @@
 comp:
-    name : Rheinland-Pfalz Open 2025
-    shortname : RLP Open 2025
-    ID : RheinlandPfalzOpen2025
-    loc : Morbach
+    name : Rhein-Neckar Winter 2024
+    shortname : RNW 2024
+    ID : RheinNeckarWinter2024
+    loc : Laudenbach
 payment:
     paypalURLuptoAmount : https://www.paypal.com/paypalme/hugacuba/
     amountEUR : 19

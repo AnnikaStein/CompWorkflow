@@ -1,4 +1,4 @@
-def aftercomp(compID, contact, compName, shortName, LaF, LaFGerman, surveyLink, systemJRS, systemJRSGerman):
+def aftercomp(compID, contact, compName, shortName, LaF, LaFGerman, surveyLink, partCertLink, systemJRS, systemJRSGerman):
     str = f'''---- English Version Below ----
 
 Liebe Teilnehmer der {compName},
@@ -8,6 +8,10 @@ Der Wettbewerb liegt nun einige Tage hinter uns und wir hoffen, dass ihr Spaß h
 Die Ergebnisse des Turniers wurden bereits in die WCA-Datenbank übertragen und sind hier zu finden:
 
 https://www.worldcubeassociation.org/competitions/{compID}
+
+Für alle, die am Wochenende teilgenommenn haben, wurden zudem Teilnahme-Urkunden erstellt, welche eure persönlichen besten Rankings enthalten:
+
+{partCertLink}
 
 Falls ihr persönliche Gegenstände vermisst, wendet euch doch bitte mit einer möglichst genauen Beschreibung an {contact} und wir werden sehen, ob wir euch helfen können.
 '''
@@ -39,6 +43,10 @@ A few days have passed since the competition took place and we hope that you had
 The results have already been added to the WCA database and can be found here:
 
 https://www.worldcubeassociation.org/competitions/{compID}
+
+For all those who competed this weekend participant certificates have been created. Those contain your personal best rankings:
+
+{partCertLink}
 
 If you’re missing any personal belongings, please contact us at {contact} along with a detailed description of the item; we will try our best to help you.
 '''
