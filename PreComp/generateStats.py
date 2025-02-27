@@ -63,7 +63,7 @@ for person in persons:
         if person['registration']['status'] == 'accepted' and person['registration']['isCompeting'] == True:
             competitors.append(person)
             gender.append(person['gender'])
-            
+
 # basic demography for media
 writeStatsString += '>> gender distribution\n\n'
 genderHistogram = util.countOccurenceInListWithDict(gender)
@@ -111,7 +111,6 @@ for v in schedule['venues']:
                         if startingDayOfEvent < event_startsOn[ev]:
                             event_startsOn[ev] = startingDayOfEvent
 
-#print('event_startsOn', event_startsOn)
 allDays = []
 for ev in event_startsOn.keys():
     allDays.append(event_startsOn[ev])
@@ -193,7 +192,7 @@ for regId in competitor_presentDays.keys():
                     if returner_isInexperienced:
                         dailyAttendance[d]['foreign_inexperienced_returners'].append(regId)
                         dailyAttendance[d]['nForeign_inexperienced_returners'] += 1
-                
+
 
 writeStatsString += '>> is_attending_all_days ' + str(len(is_attending_all_days)) + '\n\n'
 

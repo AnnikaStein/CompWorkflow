@@ -57,6 +57,25 @@ inside /output/<compID> there will be
 
 ---
 
+## Grouping (assignments C/J/R/S and more)
+__ToDo__
+- (y) write Groupifier Competition Config
+- (y) write Groupifier Stations Config
+- number of groups / heats per round
+    - (y) find rooms/stages
+    - (y) build schedule into python
+    - (y) number of stations per stage (in config)
+    - (y) grab number of competitors per event (read in the event_nComp.json)
+    - write for each event and each round the groups
+- grouping to compete
+- orga / dele competing -> better in a later heat
+- alternating extra-tasks like scoretaking, delegate / stage lead
+- scramblers
+- runners
+- judges
+
+---
+
 ## Grouping cross-check
 
 ---

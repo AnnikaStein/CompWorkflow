@@ -1,4 +1,4 @@
-import json, os
+import json, math, os
 
 # Operations with files, directories and os
 
@@ -68,7 +68,16 @@ def getLatinNameFromFullName(full_name):
     latin_name = full_name.split(' (')[0]
     return latin_name
 
+# Operations with numbers
+
+def customRoundHeat(nHeat, decimals = 0, noShowPerHeat = 0.1):
+    multiplier = 10 ** decimals
+    noShowReducedHeat = nHeat - noShowPerHeat
+    nRoundedHeat = math.ceil(noShowReducedHeat * multiplier) / multiplier
+    return nRoundedHeat
+
 # Definitions
 
 printAssignmentsEVENTORDER = ['333', '222', '444', '555', '666', '777', '333bf', '333fm', '333oh', 'clock', 'minx', 'pyram', 'skewb', 'sq1', '444bf', '555bf', '333mbf']
 shortEvents = ['222','pyram','skewb']
+nogroupsEvents = ['333fm', '333mbf']

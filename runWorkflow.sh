@@ -22,9 +22,9 @@ if  [[ $1 == "PreComp" ]]; then
     python -m CompWorkflow.PreComp.generateWebsiteTabs -c $2 --debug
     python -m CompWorkflow.PreComp.loadPrivateWCIF -c $2 --debug
     python -m CompWorkflow.PreComp.patchGroupifierExtensionToPrivateWCIF -c $2 --debug
+    python -m CompWorkflow.PreComp.generateStats -c $2 --debug
     python -m CompWorkflow.PreComp.generateRegistrationList -c $2 --debug
     python -m CompWorkflow.PreComp.generateNametags -c $2 --debug
-    python -m CompWorkflow.PreComp.generateStats -c $2 --debug
 elif  [[ $1 == "PreAnnounce" ]]; then
     echo " "
     echo ">> Running PreAnnounce python scripts now."
@@ -37,15 +37,18 @@ elif  [[ $1 == "PreAssign" ]]; then
     echo ">> This is patchGroupifierExtensionToPrivateWCIF"
     echo " "
     python -m CompWorkflow.PreComp.patchGroupifierExtensionToPrivateWCIF -c $2 --debug
+    python -m CompWorkflow.PreComp.generateStats -c $2 --debug
+    # create groups, per event and stage
+    # fill groups with competitors and tasks
 elif  [[ $1 == "PrePrint" ]]; then
     echo " "
     echo ">> Running PrePrint python scripts now."
     echo ">> These are loadPrivateWCIF / generateRegistrationList / generateNametags / generateStats"
     echo " "
     python -m CompWorkflow.PreComp.loadPrivateWCIF -c $2 --debug
+    python -m CompWorkflow.PreComp.generateStats -c $2 --debug
     python -m CompWorkflow.PreComp.generateRegistrationList -c $2 --debug
     python -m CompWorkflow.PreComp.generateNametags -c $2 --debug
-    python -m CompWorkflow.PreComp.generateStats -c $2 --debug
 elif  [[ $1 == "DuringComp" ]]; then
     echo " "
     echo ">> Running all DuringComp python scripts now."

@@ -16,6 +16,7 @@ setup:
     logo : Yes
     logoPath : /Users/annikastein/Documents/Speedcubing/Competitions/FMCFriends25/Logo/fmc_logo.png
     multiStage : No
+    stationsPerStage : 0
 orga:
     lostAndFound : something
     lostAndFoundGerman : etwas

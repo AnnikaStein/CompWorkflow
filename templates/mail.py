@@ -9,7 +9,7 @@ Die Ergebnisse des Turniers wurden bereits in die WCA-Datenbank übertragen und 
 
 https://www.worldcubeassociation.org/competitions/{compID}
 
-Für alle, die am Wochenende teilgenommenn haben, wurden zudem Teilnahme-Urkunden erstellt, welche eure persönlichen besten Rankings enthalten:
+Für alle, die am Wochenende teilgenommen haben, wurden zudem Teilnahme-Urkunden erstellt, welche eure persönlichen besten Rankings enthalten:
 
 {partCertLink}
 

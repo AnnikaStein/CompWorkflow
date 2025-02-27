@@ -1,7 +1,7 @@
 comp:
-    name : Mainzelcubing 2025
-    shortname : Mainzelcubing 2025
-    ID : Mainzelcubing2025
+    name : Template 2025
+    shortname : Template 2025
+    ID : Template2025
     loc : MZ
 payment:
     paypalURLuptoAmount : https://www.paypal.com/paypalme/hugacuba/
@@ -16,7 +16,7 @@ setup:
     logo : Yes
     logoPath : /Users/annikastein/Documents/Speedcubing/Competitions/Mainzelcubing25/Logo/MZC25_Logo_600.png
     multiStage : No
-    stationsPerStage : 18
+    stationsPerStage : 10
 orga:
     lostAndFound : something
     lostAndFoundGerman : etwas

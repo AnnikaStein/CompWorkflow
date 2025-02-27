@@ -61,7 +61,7 @@ for p in range(nPersons):
                 registration_list_csvString += f'"{person["name"]}",{person["birthdate"]},{pycountry.countries.get(alpha_2=person["countryIso2"]).name},{person["wcaId"]},,\n'
                 if person["wcaId"] == None:
                     registration_list_NewcomersOnly_.append([person["name"],person["birthdate"],pycountry.countries.get(alpha_2=person["countryIso2"]).name])
-                    registration_list_NewcomersOnly_csvString += f'"{person["name"]}",{person["birthdate"]},{pycountry.countries.get(alpha_2=person["countryIso2"]).name},,\n'
+                    registration_list_NewcomersOnly_csvString += f'"{person["name"]}",{person["birthdate"]},"{pycountry.countries.get(alpha_2=person["countryIso2"]).name}",,\n'
         else:
             # reg not open yet
             if person['registration']['isCompeting'] == True:
@@ -69,7 +69,7 @@ for p in range(nPersons):
                 registration_list_csvString += f'"{person["name"]}",{person["birthdate"]},{pycountry.countries.get(alpha_2=person["countryIso2"]).name},{person["wcaId"]},,\n'
                 if person["wcaId"] == None:
                     registration_list_NewcomersOnly_.append([person["name"],person["birthdate"],pycountry.countries.get(alpha_2=person["countryIso2"]).name])
-                    registration_list_NewcomersOnly_csvString += f'"{person["name"]}",{person["birthdate"]},{pycountry.countries.get(alpha_2=person["countryIso2"]).name},,\n'
+                    registration_list_NewcomersOnly_csvString += f'"{person["name"]}",{person["birthdate"]},"{pycountry.countries.get(alpha_2=person["countryIso2"]).name}",,\n'
 
 
 registration_list_csvString_sorted = 'Name,Birthdate,Country,WCA ID,Checked?,Comment\n'
@@ -77,9 +77,9 @@ registration_list_NewcomersOnly_csvString_sorted = 'Name,Birthdate,Country,Check
 registration_list_sorted = util.getSortedListOfListsByNthColumn(registration_list_, 0)
 registration_list_NewcomersOnly_sorted = util.getSortedListOfListsByNthColumn(registration_list_NewcomersOnly_, 0)
 for comp in registration_list_sorted:
-    registration_list_csvString_sorted += f'"{comp[0]}",{comp[1]},{comp[2]},{comp[3]},,\n'
+    registration_list_csvString_sorted += f'"{comp[0]}","{comp[1]}","{comp[2]}","{comp[3]}",,\n'
 for newc in registration_list_NewcomersOnly_sorted:
-    registration_list_NewcomersOnly_csvString_sorted += f'"{newc[0]}",{newc[1]},{newc[2]},,\n'
+    registration_list_NewcomersOnly_csvString_sorted += f'"{newc[0]}","{newc[1]}","{newc[2]}",,\n'
 
 
 # === *** === *** === SAVE REGISTRATION LIST (csv) === *** === *** === #
