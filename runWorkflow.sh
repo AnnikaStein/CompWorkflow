@@ -16,34 +16,36 @@ fi
 
 if  [[ $1 == "PreComp" ]]; then
     echo " "
-    echo ">> Running all PreComp python scripts now."
-    echo ">> These are generateWebsiteTabs / loadPrivateWCIF / generateRegistrationList / generateNametags / generateStats"
+    echo ">> Running all PreComp python scripts now. Usually, this is not done all at once!"
+    echo ">> These are generateWebsiteTabs / readWritePrivateWCIF / loadPrivateWCIF / patchGroupifierCompetitionConfigRoomConfigToPrivateWCIF / generateStats / generateRegistrationList / generateNametags"
     echo " "
     python -m CompWorkflow.PreComp.generateWebsiteTabs -c $2 --debug
+    python -m CompWorkflow.PreComp.readWritePrivateWCIF -c $2 --debug
     python -m CompWorkflow.PreComp.loadPrivateWCIF -c $2 --debug
-    python -m CompWorkflow.PreComp.patchGroupifierExtensionToPrivateWCIF -c $2 --debug
+    python -m CompWorkflow.PreComp.patchGroupifierCompetitionConfigRoomConfigToPrivateWCIF -c $2 --debug
     python -m CompWorkflow.PreComp.generateStats -c $2 --debug
     python -m CompWorkflow.PreComp.generateRegistrationList -c $2 --debug
     python -m CompWorkflow.PreComp.generateNametags -c $2 --debug
-elif  [[ $1 == "PreAnnounce" ]]; then
+elif  [[ $1 == "PreAnnounced" ]]; then
     echo " "
-    echo ">> Running PreAnnounce python scripts now."
-    echo ">> This is generateWebsiteTabs"
+    echo ">> Running PreAnnounced python scripts now. Do this when filling the website with information and test communication from/to WCIF."
+    echo ">> This is generateWebsiteTabs / readWritePrivateWCIF"
     echo " "
     python -m CompWorkflow.PreComp.generateWebsiteTabs -c $2 --debug
-elif  [[ $1 == "PreAssign" ]]; then
+    python -m CompWorkflow.PreComp.readWritePrivateWCIF -c $2 --debug
+elif  [[ $1 == "PreAssigned" ]]; then
     echo " "
-    echo ">> Running PreAssign python scripts now."
-    echo ">> This is patchGroupifierExtensionToPrivateWCIF"
+    echo ">> Running PreAssigned python scripts now. Do this after online registration started."
+    echo ">> These are patchGroupifierCompetitionConfigRoomConfigToPrivateWCIF / generateStats"
     echo " "
-    python -m CompWorkflow.PreComp.patchGroupifierExtensionToPrivateWCIF -c $2 --debug
+    python -m CompWorkflow.PreComp.patchGroupifierCompetitionConfigRoomConfigToPrivateWCIF -c $2 --debug
     python -m CompWorkflow.PreComp.generateStats -c $2 --debug
     # create groups, per event and stage
     # fill groups with competitors and tasks
-elif  [[ $1 == "PrePrint" ]]; then
+elif  [[ $1 == "PrePrinted" ]]; then
     echo " "
-    echo ">> Running PrePrint python scripts now."
-    echo ">> These are loadPrivateWCIF / generateRegistrationList / generateNametags / generateStats"
+    echo ">> Running PrePrinted python scripts now. Do this when grouping / assignments are done."
+    echo ">> These are loadPrivateWCIF / generateStats / generateRegistrationList / generateNametags"
     echo " "
     python -m CompWorkflow.PreComp.loadPrivateWCIF -c $2 --debug
     python -m CompWorkflow.PreComp.generateStats -c $2 --debug

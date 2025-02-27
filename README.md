@@ -50,10 +50,10 @@ source CompWorkflow/runWorkflow.sh PrePrint rlp25.yml
 
 Currently implemented combinations:
 
-- `PreComp`: `generateWebsiteTabs / loadPrivateWCIF / patchGroupifierExtensionToPrivateWCIF / generateRegistrationList / generateNametags / generateStats`
-    - `PreAnnounce`: `generateWebsiteTabs`
-    - `PreAssign`: `patchGroupifierExtensionToPrivateWCIF`
-    - `PrePrint`: `loadPrivateWCIF / generateRegistrationList / generateNametags / generateStats`
+- `PreComp`: `generateWebsiteTabs / readWritePrivateWCIF / loadPrivateWCIF / patchGroupifierCompetitionConfigRoomConfigToPrivateWCIF / generateStats / generateRegistrationList / generateNametags`
+    - `PreAnnounced`: `generateWebsiteTabs / readWritePrivateWCIF`
+    - `PreAssigned`: `patchGroupifierCompetitionConfigRoomConfigToPrivateWCIF / generateStats`
+    - `PrePrinted`: `loadPrivateWCIF / generateStats / generateRegistrationList / generateNametags`
 - `PostComp`: `loadPrivateWCIF / aftercompMail`
 
 ### Call a single module of a given step
