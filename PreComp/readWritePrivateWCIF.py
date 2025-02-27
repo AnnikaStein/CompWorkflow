@@ -8,6 +8,7 @@ from ..utils import api, util
 # NOTE: This is a basic test to check if reading and writing the same WCIF works
 # Not for production purposes.
 
+# === *** === *** === BOILERPLATE WELCOME === *** === *** === #
 parser = ArgumentParser(description='Read/write private competition WCIF json.')
 parser.add_argument('-c', '--config', required=True,
                     help='Name of config file, e.g. rlp25.yml (required argument)')
@@ -47,6 +48,7 @@ compName = config['comp']['name']
 # such that further writing of files will work
 util.checkOrCreateOutputFolderContainingID(compID)
 
+# === *** === *** === ACTUAL SCRIPT STARTS === *** === *** === #
 # === *** === *** === API REQUEST FUNCTIONS === *** === *** === #
 competition_information = api.fetch_information(compID, grant_type)
 

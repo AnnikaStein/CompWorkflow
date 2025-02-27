@@ -6,6 +6,7 @@ import yaml
 from ..utils import util
 from ..templates import websiteTabs
 
+# === *** === *** === BOILERPLATE WELCOME === *** === *** === #
 parser = ArgumentParser(description='Generate new competition website tabs.')
 parser.add_argument('-c', '--config', required=True,
                     help='Name of config file, e.g. rlp25.yml (required argument)')
@@ -46,6 +47,7 @@ multiStage = config['setup']['multiStage']
 # such that further writing of files will work
 util.checkOrCreateOutputFolderContainingID(compID)
 
+# === *** === *** === ACTUAL SCRIPT STARTS === *** === *** === #
 # === *** === *** === MAIN PAGE === *** === *** === #
 tabtitles = '''
 Informationen / Information

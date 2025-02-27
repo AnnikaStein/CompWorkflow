@@ -1,12 +1,12 @@
 from argparse import ArgumentParser
 from datetime import datetime
 from pprint import pprint
-import getpass, json, pycountry, requests, yaml
+import json, pycountry, yaml
 
 # custom
 from ..utils import util
-from ..oauth import myOAuthApplication
 
+# === *** === *** === BOILERPLATE WELCOME === *** === *** === #
 parser = ArgumentParser(description='Generate registration list from existing WCIF.')
 parser.add_argument('-c', '--config', required=True,
                     help='Name of config file, e.g. rlp25.yml (required argument)')
@@ -42,6 +42,7 @@ compName = config['comp']['name']
 # such that further writing of files will work
 util.checkOrCreateOutputFolderContainingID(compID)
 
+# === *** === *** === ACTUAL SCRIPT STARTS === *** === *** === #
 # === *** === *** === LOAD WCIF === *** === *** === #
 with open(f'CompWorkflow/output/{compID}/wcif_private.json') as file:
     wcif_private = json.load(file)

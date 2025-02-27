@@ -5,6 +5,7 @@ import yaml
 # custom
 from ..utils import api, util
 
+# === *** === *** === BOILERPLATE WELCOME === *** === *** === #
 parser = ArgumentParser(description='Patch private competition WCIF json with Groupifier extension.')
 parser.add_argument('-c', '--config', required=True,
                     help='Name of config file, e.g. rlp25.yml (required argument)')
@@ -44,6 +45,8 @@ compName = config['comp']['name']
 # such that further writing of files will work
 util.checkOrCreateOutputFolderContainingID(compID)
 
+
+# === *** === *** === ACTUAL SCRIPT STARTS === *** === *** === #
 if ',' in str(config['setup']['stationsPerStage']):
     stationsPerStage = config['setup']['stationsPerStage'].split(",")
 else:

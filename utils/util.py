@@ -78,6 +78,42 @@ def customRoundHeat(nHeat, decimals = 0, noShowPerHeat = 0.1):
 
 # Definitions
 
-printAssignmentsEVENTORDER = ['333', '222', '444', '555', '666', '777', '333bf', '333fm', '333oh', 'clock', 'minx', 'pyram', 'skewb', 'sq1', '444bf', '555bf', '333mbf']
+printAssignmentsEVENTORDER = ['333', '222', '444', '555', '666', '777', '333bf', '333oh', 'clock', 'minx', 'pyram', 'skewb', 'sq1', '444bf', '555bf', '333mbf']
 shortEvents = ['222','pyram','skewb']
 nogroupsEvents = ['333fm', '333mbf']
+noassignmentsEvents = ['333fm']
+
+# MaybeDo
+# # Boilerplate code
+#
+# def welcome(args):
+#     print()
+#     print('*='*80)
+#     print()
+#     print('>> Welcome to CompWorkflow -> PreComp -> loadPrivateWCIF.py <<')
+#     print()
+#     print('*='*80)
+#     print()
+#     print('>> Running with options:')
+#     for arg in vars(args):
+#         print(f'>>   {arg} = {getattr(args, arg)}', getattr(args, arg))
+#
+#     debug = args.debug
+#     config_path = args.config
+#     grant_type = args.grant_type
+#
+#     with open('CompWorkflow/config/'+config_path) as f:
+#         config = yaml.safe_load(f)
+#         if debug:
+#             print()
+#             print('>> This is the config file:')
+#             pprint(config)
+#
+#     compID = config['comp']['ID']
+#     compName = config['comp']['name']
+#
+#     # performs a check for the output destination
+#     # such that further writing of files will work
+#     util.checkOrCreateOutputFolderContainingID(compID)
+#
+#     return config, compID, compName

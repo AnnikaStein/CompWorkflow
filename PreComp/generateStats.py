@@ -1,15 +1,12 @@
 from argparse import ArgumentParser
-from collections import OrderedDict
-from datetime import datetime
-import numpy as np
-import pandas as pd
 from pprint import pprint
 import urllib.request as libreq
-import getpass, json, math, pycountry, re, requests, yaml
+import json, yaml
 
 # custom
 from ..utils import util
 
+# === *** === *** === BOILERPLATE WELCOME === *** === *** === #
 parser = ArgumentParser(description='Generate nametags for competition.')
 parser.add_argument('-c', '--config', required=True,
                     help='Name of config file, e.g. rlp25.yml (required argument)')
@@ -45,6 +42,7 @@ compName = config['comp']['name']
 # such that further writing of files will work
 util.checkOrCreateOutputFolderContainingID(compID)
 
+# === *** === *** === ACTUAL SCRIPT STARTS === *** === *** === #
 # === *** === *** === LOAD WCIF === *** === *** === #
 with open(f'CompWorkflow/output/{compID}/wcif_private.json') as file:
     wcif_private = json.load(file)
