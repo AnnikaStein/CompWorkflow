@@ -1,3 +1,63 @@
+def firstNewsletterEveryone(compName, shortName, fristStorno, deadlineStorno, zeitBis, timeUntil):
+    str = f'''---- English Version Below ------
+
+Liebe Teilnehmende,
+
+in {zeitBis} ist es soweit und die {compName} finden statt.
+
+Da das Teilnehmerlimit bereits erreicht wurde, möchten wir dich bitten, uns so bald wie möglich mitzuteilen, falls du doch nicht kommen kannst.
+So kann jemand von der Warteliste nachrücken! Wenn deine Anmeldung vor {fristStorno} storniert wird, wirst du eine Rückerstattung von 100 % der Anmeldegebühr erhalten. Antworte in diesem Fall einfach auf diese Email.
+
+Viele Grüße
+
+Euer {shortName} Orgateam
+
+--------
+
+Dear participants,
+
+In {timeUntil}, {compName} will take place.
+
+As the participant limit has already been reached, we would like to ask you to let us know as soon as possible in case you cannot attend the competition.
+This way someone from the waiting list can get a competitor spot! If your registration is cancelled before {deadlineStorno}, you will receive a 100% refund of the registration fee. In that case, simply answer this email.
+
+Best regards,
+
+Your {shortName} team
+
+'''
+    return str
+
+def finalNewsletterEveryone(compID, contact, compName, shortName, fristStorno, deadlineStorno, zeitBis, timeUntil):
+    str = f'''---- English Version Below ------
+
+Liebe Teilnehmende,
+
+in {XX} ist es soweit und die {compName} finden statt.
+
+Da das Teilnehmerlimit bereits erreicht wurde, möchten wir dich bitten, uns so bald wie möglich mitzuteilen, falls du doch nicht kommen kannst.
+So kann jemand von der Warteliste nachrücken! Wenn deine Anmeldung vor {fristStorno} storniert wird, wirst du eine Rückerstattung von 100 % der Anmeldegebühr erhalten.
+
+Viele Grüße
+
+Euer {shortName} Orgateam
+
+--------
+
+Dear participants,
+
+In {XX}, the {compName} will take place.
+
+As the participant limit has already been reached, we would like to ask you to let us know as soon as possible in case you cannot attend the competition.
+This way someone from the waiting list can get a competitor spot! If your registration is cancelled before {deadlineStorno}, you will receive a 100% refund of the registration fee.
+
+Best regards,
+
+Your {shortName} team
+
+'''
+    return str
+
 def aftercomp(compID, contact, compName, shortName, LaF, LaFGerman, surveyLink, partCertLink, systemJRS, systemJRSGerman):
     str = f'''---- English Version Below ----
 

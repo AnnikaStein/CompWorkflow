@@ -54,6 +54,7 @@ backgroundImg_path = config['orga']['certificateBgPath']
 # such that further writing of files will work
 util.checkOrCreateOutputFolderContainingID(compID)
 
+# === *** === *** === ACTUAL SCRIPT STARTS === *** === *** === #
 # === *** === *** === LOAD WCIF === *** === *** === #
 with open(f'CompWorkflow/output/{compID}/wcif_private.json') as file:
     wcif_private = json.load(file)

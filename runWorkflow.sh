@@ -36,10 +36,11 @@ elif  [[ $1 == "PreAnnounced" ]]; then
 elif  [[ $1 == "PreAssigned" ]]; then
     echo " "
     echo ">> Running PreAssigned python scripts now. Do this after online registration started."
-    echo ">> These are patchGroupifierCompetitionConfigRoomConfigToPrivateWCIF / generateStats"
+    echo ">> These are loadPrivateWCIF / generateStats / patchGroupifierCompetitionConfigRoomConfigToPrivateWCIF"
     echo " "
-    python -m CompWorkflow.PreComp.patchGroupifierCompetitionConfigRoomConfigToPrivateWCIF -c $2 --debug
+    python -m CompWorkflow.PreComp.loadPrivateWCIF -c $2 --debug
     python -m CompWorkflow.PreComp.generateStats -c $2 --debug
+    python -m CompWorkflow.PreComp.patchGroupifierCompetitionConfigRoomConfigToPrivateWCIF -c $2 --debug
     # create groups, per event and stage
     # fill groups with competitors and tasks
 elif  [[ $1 == "PrePrinted" ]]; then

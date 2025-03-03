@@ -143,3 +143,7 @@ if compID == 'Template2025':
 
     print()
     print('>> WCIF for {} successfully patched with Groupifier Stations.'.format(compName))
+
+
+competition_information = api.fetch_information(compID, grant_type)
+util.writeOutputJSONForID(compID, f'wcif_private.json', competition_information)

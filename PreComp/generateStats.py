@@ -176,20 +176,30 @@ for regId in competitor_presentDays.keys():
                     dailyAttendance[d]['nForeign_newcomers'] += 1
             else:
                 returner_wcaID = competitors[competitor_Index]['wcaId']
-                with libreq.urlopen(f'https://raw.githubusercontent.com/robiningelbrecht/wca-rest-api/master/api/persons/{returner_wcaID}.json') as file:
-                    returner_Json = json.load(file)
-                dailyAttendance[d]['returners'].append(regId)
-                dailyAttendance[d]['nReturners'] += 1
-                returner_isInexperienced = int(returner_Json['numberOfCompetitions']) <= 2
-                if returner_isInexperienced:
-                    dailyAttendance[d]['inexperienced_returners'].append(regId)
-                    dailyAttendance[d]['nInexperienced_returners'] += 1
-                if competitors[competitor_Index]['countryIso2'] != 'DE':
-                    dailyAttendance[d]['foreign_returners'].append(regId)
-                    dailyAttendance[d]['nForeign_returners'] += 1
+                try:
+                    with libreq.urlopen(f'https://raw.githubusercontent.com/robiningelbrecht/wca-rest-api/master/api/persons/{returner_wcaID}.json') as file:
+                        returner_Json = json.load(file)
+                    dailyAttendance[d]['returners'].append(regId)
+                    dailyAttendance[d]['nReturners'] += 1
+                    returner_isInexperienced = int(returner_Json['numberOfCompetitions']) <= 2
                     if returner_isInexperienced:
-                        dailyAttendance[d]['foreign_inexperienced_returners'].append(regId)
-                        dailyAttendance[d]['nForeign_inexperienced_returners'] += 1
+                        dailyAttendance[d]['inexperienced_returners'].append(regId)
+                        dailyAttendance[d]['nInexperienced_returners'] += 1
+                    if competitors[competitor_Index]['countryIso2'] != 'DE':
+                        dailyAttendance[d]['foreign_returners'].append(regId)
+                        dailyAttendance[d]['nForeign_returners'] += 1
+                        if returner_isInexperienced:
+                            dailyAttendance[d]['foreign_inexperienced_returners'].append(regId)
+                            dailyAttendance[d]['nForeign_inexperienced_returners'] += 1
+                except:
+                    # if a competitor just recently competed, results are uploaded
+                    # but not yet in the database export / API available
+                    # treat this person like a newcomer
+                    dailyAttendance[d]['newcomers'].append(regId)
+                    dailyAttendance[d]['nNewcomers'] += 1
+                    if competitors[competitor_Index]['countryIso2'] != 'DE':
+                        dailyAttendance[d]['foreign_newcomers'].append(regId)
+                        dailyAttendance[d]['nForeign_newcomers'] += 1
 
 
 writeStatsString += '>> is_attending_all_days ' + str(len(is_attending_all_days)) + '\n\n'

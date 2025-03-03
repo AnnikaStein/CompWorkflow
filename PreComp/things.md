@@ -66,7 +66,9 @@ __ToDo__
     - (y) build schedule into python
     - (y) number of stations per stage (in config)
     - (y) grab number of competitors per event (read in the event_nComp.json)
-    - write for each event and each round the groups
+    - write for each event and each round the groups: the group activityId is generated on the fly,
+      from the currentActivityId = maxActivityId(wcif) PLUS a zero-indexed counter through all new activities PLUS 1
+    - write the number of scramblesets (= number of heats)
 - grouping to compete
 - orga / dele competing -> better in a later heat
 - alternating extra-tasks like scoretaking, delegate / stage lead
