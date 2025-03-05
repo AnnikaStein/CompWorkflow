@@ -45,7 +45,7 @@ source <some-path-to-the-script>/runWorkflow.sh <combination-name> <yaml-config-
 ```
 Example command:
 ```shell
-source CompWorkflow/runWorkflow.sh PrePrint rlp25.yml
+source CompWorkflow/runWorkflow.sh PrePrinted rlp25.yml
 ```
 
 Currently implemented combinations:

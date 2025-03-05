@@ -61,14 +61,16 @@ inside /output/<compID> there will be
 __ToDo__
 - (y) write Groupifier Competition Config
 - (y) write Groupifier Stations Config
-- number of groups / heats per round
+- groups / heats per round
     - (y) find rooms/stages
     - (y) build schedule into python
     - (y) number of stations per stage (in config)
     - (y) grab number of competitors per event (read in the event_nComp.json)
-    - write for each event and each round the groups: the group activityId is generated on the fly,
-      from the currentActivityId = maxActivityId(wcif) PLUS a zero-indexed counter through all new activities PLUS 1
-    - write the number of scramblesets (= number of heats)
+    - (y) write the number of scramblesets (= number of heats)
+    - write for each event and each round the groups:
+        - (y) write ActivityConfig
+        - the group activityId is generated on the fly,
+          from the currentActivityId = maxActivityId(wcif) PLUS a zero-indexed counter through all new activities PLUS 1
 - grouping to compete
 - orga / dele competing -> better in a later heat
 - alternating extra-tasks like scoretaking, delegate / stage lead

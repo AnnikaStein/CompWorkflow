@@ -1,3 +1,11 @@
 graphics:
     svgsPath : /Users/annikastein/github/WCA-German-State-Ranks/assets/event-svg/
     qrcodePath : /Users/annikastein/github/my-comp/figures/square_qr.png
+
+minAgeS: 13
+minAgeR: 11
+minAgeJ: 11
+
+neverS: 2023BREU01
+neverR: 2023BREU01
+neverJ:

@@ -46,6 +46,11 @@ if ',' in str(config['setup']['stationsPerStage']):
 else:
     stationsPerStage = [config['setup']['stationsPerStage']]
 
+if ',' in str(config['setup']['assignRoles']):
+    assignRoles = config['setup']['assignRoles'].split(",")
+else:
+    assignRoles = [config['setup']['assignRoles']]
+
 # performs a check for the output destination
 # such that further writing of files will work
 util.checkOrCreateOutputFolderContainingID(compID)
@@ -99,6 +104,7 @@ print(f'>> maxCurrentNumberOfDeepActivities = {maxCurrentNumberOfDeepActivities}
 print()
 print('eve, roundNumber, peopleInRound, heatsDecimal, heatsRounded')
 heatsDict = {}
+rolesDict = {}
 for rou, rouValue in evRound_dict.items():
     eve = rou.split('-r')[0]
     if eve not in util.nogroupsEvents:
@@ -131,11 +137,34 @@ for rou, rouValue in evRound_dict.items():
             evRound_dict[rou][staInd] = [(staIndInd + 1) + h * len(rouValue) for h in range(heatsRounded)]
         # add number of created groups (chiAct)
         maxCurrentNumberOfDeepActivities += len(rouValue) * heatsRounded
+        peopleInGroup = math.ceil(peopleInRound / (heatsRounded * len(rouValue)))
+
+        capacityForGroupifierConfig = 1 / heatsRounded
+
+        nScramblers = 0
+        if 's' in assignRoles:
+            nScramblers = util.customRoundAssignees(peopleInGroup, eve, assignRoles, int(stationsPerStage[0]), roleType = 's')
+
+        nRunners = 0
+        if 'r' in assignRoles:
+            nRunners = util.customRoundAssignees(peopleInGroup, eve, assignRoles, int(stationsPerStage[0]), roleType = 'r')
+
+        assignJudges = False
+        nJudges = 0
+        if 'j' in assignRoles:
+            assignJudges = True
+            nJudges = util.customRoundAssignees(peopleInGroup, eve, assignRoles, int(stationsPerStage[0]), roleType = 'j')
+
+        rolesDict[rou] = {
+            'capacity' : capacityForGroupifierConfig,
+            'groups' : heatsRounded,
+            'scramblers' : nScramblers,
+            'runners' : nRunners,
+            'assignJudges' : assignJudges,
+            'judges' : nJudges
+        }
     else:
         continue
-
-#for ev in eventsAtComp:
-    # walk through schedule from WCIF
 
 # === *** === *** === PATCH ScrambleSetCount for every round === *** === *** === #
 eventsListForPayloadScrambleSets = []
@@ -160,8 +189,75 @@ for e in wcif_private['events']:
         eDict['rounds'].append(rDict)
     eventsListForPayloadScrambleSets.append(eDict)
 
-payloadScrambleSets = {"events": eventsListForPayloadScrambleSets}
-api.patch_information(compID, grant_type, payloadScrambleSets)
+# === *** === *** === PATCH ActivityConfig for every round === *** === *** === #
+activitiesWithRoles = rolesDict.keys()
+venuesListForPayloadActivityConfig = []
+for v in wcif_private['schedule']['venues']:
+    vDict = {
+        "id": v['id'],
+        "name": v['name'],
+        "latitudeMicrodegrees": v['latitudeMicrodegrees'],
+        "longitudeMicrodegrees": v['longitudeMicrodegrees'],
+        "countryIso2": v['countryIso2'],
+        "timezone": v['timezone'],
+        "rooms": [],
+        "extensions": v['extensions']
+    }
+    for iR,r in enumerate(v['rooms']):
+        rDict = {
+            "id": r['id'],
+            "name": r['name'],
+            "color": r['color'],
+            "activities": [],
+            "extensions": r['extensions']
+        }
+        for a in r['activities']:
+            thisActivityCode = a['activityCode']
+            if thisActivityCode in activitiesWithRoles:
+                aDict = {
+                    "id": a['id'],
+                    "name": a['name'],
+                    "activityCode": thisActivityCode,
+                    "startTime": a['startTime'],
+                    "endTime": a['endTime'],
+                    "childActivities": a['childActivities'],
+                    "extensions": [
+                      {
+                        "id": "groupifier.ActivityConfig",
+                        "specUrl": "https://groupifier.jonatanklosko.com/wcif-extensions/ActivityConfig.json",
+                        "data": {
+                          "capacity": rolesDict[thisActivityCode]['capacity'],
+                          "groups": rolesDict[thisActivityCode]['groups'],
+                          "scramblers": rolesDict[thisActivityCode]['scramblers'],
+                          "runners": rolesDict[thisActivityCode]['runners'],
+                          "assignJudges": rolesDict[thisActivityCode]['assignJudges']
+                        }
+                      }
+                    ]
+                }
+            else:
+                aDict = {
+                    "id": a['id'],
+                    "name": a['name'],
+                    "activityCode": thisActivityCode,
+                    "startTime": a['startTime'],
+                    "endTime": a['endTime'],
+                    "childActivities": a['childActivities'],
+                    "extensions": a['extensions']
+                }
+            rDict['activities'].append(aDict)
+        vDict['rooms'].append(rDict)
+    venuesListForPayloadActivityConfig.append(vDict)
+
+payload = {
+    "events": eventsListForPayloadScrambleSets,
+    "schedule": {
+        "startDate": wcif_private['schedule']['startDate'],
+        "numberOfDays": wcif_private['schedule']['numberOfDays'],
+        "venues": venuesListForPayloadActivityConfig
+    }
+}
+api.patch_information(compID, grant_type, payload)
 
 print()
-print('>> WCIF for {} successfully patched with ScrambleSets.'.format(compName))
+print('>> WCIF for {} successfully patched with ScrambleSets & ActivityConfig.'.format(compName))

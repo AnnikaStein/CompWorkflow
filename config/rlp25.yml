@@ -17,6 +17,7 @@ setup:
     logoPath : /Users/annikastein/Documents/Speedcubing/Competitions/RLP25/Logo/Logo_600.png
     multiStage : Yes
     stationsPerStage : 18,18
+    assignRoles : s,r,j
 orga:
     lostAndFound : something,another thing
     lostAndFoundGerman : etwas,noch etwas

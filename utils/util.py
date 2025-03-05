@@ -76,6 +76,29 @@ def customRoundHeat(nHeat, decimals = 0, noShowPerHeat = 0.1):
     nRoundedHeat = math.ceil(noShowReducedHeat * multiplier) / multiplier
     return nRoundedHeat
 
+def customRoundAssignees(nGroup, event, system, nStations, roleType):
+    if roleType == 's':
+        if event in shortEvents:
+            targetPuzzlesPerAssignee = 6
+        else:
+            targetPuzzlesPerAssignee = 5
+        nAssignees = min(5,max(2, math.ceil(nGroup / targetPuzzlesPerAssignee)))
+
+    elif roleType == 'r':
+        if event in shortEvents:
+            targetPuzzlesPerAssignee = 6
+        else:
+            targetPuzzlesPerAssignee = 5
+        nAssignees = max(2, math.ceil(nGroup / targetPuzzlesPerAssignee) - 1)
+
+    else: # roleType == 'j'
+        if system == ['s','r','j']:
+            nAssignees = min(nStations, nGroup)
+        elif system == ['s','j']:
+            nAssignees = nGroup + 2
+
+    return nAssignees
+
 # Definitions
 
 printAssignmentsEVENTORDER = ['333', '222', '444', '555', '666', '777', '333bf', '333oh', 'clock', 'minx', 'pyram', 'skewb', 'sq1', '444bf', '555bf', '333mbf']
