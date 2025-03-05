@@ -40,7 +40,6 @@ def patch_information(compID, grant_type, payload):
     authorization = 'Bearer ' + access_token
     headers3 = {'Authorization': authorization, 'content-type': 'application/json'}
     competition_url = f'https://www.worldcubeassociation.org/api/v0/competitions/{compID}/wcif'
-    print(payload)
-    response = requests.patch(competition_url, data=json.dumps(payload), headers=headers3)
     pprint(payload)
+    response = requests.patch(competition_url, data=json.dumps(payload), headers=headers3)
     print('>> Patch response:', response.status_code, response.reason)

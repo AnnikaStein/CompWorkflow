@@ -138,12 +138,14 @@ payloadStations = {"schedule": {
     "venues": venuesListForPayloadStations
   }
 }
-if compID == 'Template2025':
-    api.patch_information(compID, grant_type, payloadStations)
+api.patch_information(compID, grant_type, payloadStations)
 
-    print()
-    print('>> WCIF for {} successfully patched with Groupifier Stations.'.format(compName))
+print()
+print('>> WCIF for {} successfully patched with Groupifier Stations.'.format(compName))
 
 
 competition_information = api.fetch_information(compID, grant_type)
 util.writeOutputJSONForID(compID, f'wcif_private.json', competition_information)
+
+print()
+print('>> Information about {} successfully saved.'.format(compName))

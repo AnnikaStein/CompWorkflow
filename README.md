@@ -52,7 +52,7 @@ Currently implemented combinations:
 
 - `PreComp`: `generateWebsiteTabs / readWritePrivateWCIF / loadPrivateWCIF / patchGroupifierCompetitionConfigRoomConfigToPrivateWCIF / generateStats / generateRegistrationList / generateNametags`
     - `PreAnnounced`: `generateWebsiteTabs / readWritePrivateWCIF`
-    - `PreAssigned`: `loadPrivateWCIF / generateStats / patchGroupifierCompetitionConfigRoomConfigToPrivateWCIF`
+    - `PreAssigned`: `patchGroupifierCompetitionConfigRoomConfigToPrivateWCIF / generateStats / generateGroups`
     - `PrePrinted`: `loadPrivateWCIF / generateStats / generateRegistrationList / generateNametags`
 - `PostComp`: `loadPrivateWCIF / aftercompMail`
 
