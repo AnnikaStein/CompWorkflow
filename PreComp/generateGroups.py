@@ -1,6 +1,8 @@
 from argparse import ArgumentParser
 from pprint import pprint
 import json, math, yaml
+from datetime import datetime
+from dateutil import rrule
 
 # custom
 from ..utils import api, util
@@ -135,8 +137,7 @@ for rou, rouValue in evRound_dict.items():
         # distribute heats into stages
         for staIndInd, staInd in enumerate(rouValue):
             evRound_dict[rou][staInd] = [(staIndInd + 1) + h * len(rouValue) for h in range(heatsRounded)]
-        # add number of created groups (chiAct)
-        maxCurrentNumberOfDeepActivities += len(rouValue) * heatsRounded
+
         peopleInGroup = math.ceil(peopleInRound / (heatsRounded * len(rouValue)))
 
         capacityForGroupifierConfig = 1 / heatsRounded
@@ -214,13 +215,36 @@ for v in wcif_private['schedule']['venues']:
         for a in r['activities']:
             thisActivityCode = a['activityCode']
             if thisActivityCode in activitiesWithRoles:
+                groupsInThisRoom = evRound_dict[thisActivityCode][r['id'] - 1]
+                endDate = datetime.strptime(a['endTime'], '%Y-%m-%dT%H:%M:%SZ')
+                startDate = datetime.strptime(a['startTime'], '%Y-%m-%dT%H:%M:%SZ')
+                activityDurationInSeconds = (endDate - startDate).total_seconds()
+                heatDurationInSeconds = activityDurationInSeconds / len(groupsInThisRoom)
+                heatPartitionDates = list(rrule.rrule(rrule.SECONDLY, interval = int(heatDurationInSeconds), dtstart = startDate, until = endDate))
+                thisChildActivities = []
+                for groupInd, group in enumerate(groupsInThisRoom):
+                    # this iterates through this room's+act childActivities,
+                    # which is the same as the number of heats & groups in this room (at this stage)
+                    maxCurrentNumberOfDeepActivities += 1
+                    stT = heatPartitionDates[groupInd].strftime('%Y-%m-%dT%H:%M:%SZ')
+                    enT = heatPartitionDates[groupInd + 1].strftime('%Y-%m-%dT%H:%M:%SZ')
+                    chDict = {
+                        "id": maxCurrentNumberOfDeepActivities,
+                        "name": a['name'] + f', Group {group}',
+                        "activityCode": a['activityCode'] + f'-g{group}',
+                        "startTime": stT,
+                        "endTime": enT,
+                        "childActivities": [],
+                        "extensions": []
+                    }
+                    thisChildActivities.append(chDict)
                 aDict = {
                     "id": a['id'],
                     "name": a['name'],
                     "activityCode": thisActivityCode,
                     "startTime": a['startTime'],
                     "endTime": a['endTime'],
-                    "childActivities": a['childActivities'],
+                    "childActivities": thisChildActivities,
                     "extensions": [
                       {
                         "id": "groupifier.ActivityConfig",
