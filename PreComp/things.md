@@ -67,9 +67,9 @@ __ToDo__
     - (y) number of stations per stage (in config)
     - (y) grab number of competitors per event (read in the event_nComp.json)
     - (y) write the number of scramblesets (= number of heats)
-    - write for each event and each round the groups:
+    - (y) write for each event and each round the groups:
         - (y) write ActivityConfig
-        - the group activityId is generated on the fly,
+        - (y) the group activityId is generated on the fly,
           from the currentActivityId = maxActivityId(wcif) PLUS a zero-indexed counter through all new activities PLUS 1
 - grouping to compete
 - orga / dele competing -> better in a later heat

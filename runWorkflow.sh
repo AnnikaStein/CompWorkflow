@@ -17,13 +17,14 @@ fi
 if  [[ $1 == "PreComp" ]]; then
     echo " "
     echo ">> Running all PreComp python scripts now. Usually, this is not done all at once!"
-    echo ">> These are generateWebsiteTabs / readWritePrivateWCIF / loadPrivateWCIF / patchGroupifierCompetitionConfigRoomConfigToPrivateWCIF / generateStats / generateRegistrationList / generateNametags"
+    echo ">> These are generateWebsiteTabs / readWritePrivateWCIF / loadPrivateWCIF / patchGroupifierCompetitionConfigRoomConfigToPrivateWCIF / generateStats / generateGroups / generateRegistrationList / generateNametags"
     echo " "
     python -m CompWorkflow.PreComp.generateWebsiteTabs -c $2 --debug
     python -m CompWorkflow.PreComp.readWritePrivateWCIF -c $2 --debug
     python -m CompWorkflow.PreComp.loadPrivateWCIF -c $2 --debug
     python -m CompWorkflow.PreComp.patchGroupifierCompetitionConfigRoomConfigToPrivateWCIF -c $2 --debug
     python -m CompWorkflow.PreComp.generateStats -c $2 --debug
+    python -m CompWorkflow.PreComp.generateGroups -c $2 --debug
     python -m CompWorkflow.PreComp.generateRegistrationList -c $2 --debug
     python -m CompWorkflow.PreComp.generateNametags -c $2 --debug
 elif  [[ $1 == "PreAnnounced" ]]; then

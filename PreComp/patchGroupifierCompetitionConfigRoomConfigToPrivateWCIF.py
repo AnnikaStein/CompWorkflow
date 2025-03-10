@@ -97,14 +97,14 @@ for v in competition_information['schedule']['venues']:
         "countryIso2": v['countryIso2'],
         "timezone": v['timezone'],
         "rooms": [],
-        "extensions": []
+        "extensions": v['extensions']
     }
     for iR,r in enumerate(v['rooms']):
         rDict = {
             "id": r['id'],
             "name": r['name'],
             "color": r['color'],
-            "activities": [],
+            "activities": r['activities'],
             "extensions": [
               {
                 "id": "groupifier.RoomConfig",
@@ -115,20 +115,6 @@ for v in competition_information['schedule']['venues']:
               }
             ]
         }
-        for a in r['activities']:
-            # at the beginning, each activity is only built up to round level
-            aDict = {
-                "id": a['id'],
-                "name": a['name'],
-                "activityCode": a['activityCode'],
-                "startTime": a['startTime'],
-                "endTime": a['endTime'],
-                "childActivities": [],
-                "extensions": []
-            }
-            # no childActivities yet
-            # extensions to activities yet, i.e. no grouping config
-            rDict['activities'].append(aDict)
         vDict['rooms'].append(rDict)
     venuesListForPayloadStations.append(vDict)
 
