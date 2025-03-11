@@ -167,6 +167,31 @@ for rou, rouValue in evRound_dict.items():
     else:
         continue
 
+has_existing_evRound_dict = True
+try:
+    with open(f'CompWorkflow/output/{compID}/evRound_dict.json') as file:
+        existing_evRound_dict = json.load(file)
+    # print('Existing evRound_dict')
+    # pprint(existing_evRound_dict)
+    # print('New evRound_dict')
+    # pprint(evRound_dict)
+    util.writeOutputJSONForID(compID, f'evRound_dict.json', evRound_dict)
+    with open(f'CompWorkflow/output/{compID}/evRound_dict.json') as file:
+        current_evRound_dict = json.load(file)
+except:
+    existing_evRound_dict = None
+    has_existing_evRound_dict = False
+
+updatedRounds = {}
+if has_existing_evRound_dict:
+    # check if there is sth to do, i.e. is there a round with new nHeats
+    if existing_evRound_dict != current_evRound_dict:
+        updatedRounds = {k: current_evRound_dict[k] for k in current_evRound_dict if k in existing_evRound_dict and current_evRound_dict[k] != existing_evRound_dict[k]}
+
+# save result
+util.writeOutputJSONForID(compID, f'evRound_dict.json', evRound_dict)
+
+
 # === *** === *** === PATCH ScrambleSetCount for every round === *** === *** === #
 eventsListForPayloadScrambleSets = []
 for e in wcif_private['events']:
@@ -215,50 +240,63 @@ for v in wcif_private['schedule']['venues']:
         for a in r['activities']:
             thisActivityCode = a['activityCode']
             if thisActivityCode in activitiesWithRoles:
-                groupsInThisRoom = evRound_dict[thisActivityCode][r['id'] - 1]
-                endDate = datetime.strptime(a['endTime'], '%Y-%m-%dT%H:%M:%SZ')
-                startDate = datetime.strptime(a['startTime'], '%Y-%m-%dT%H:%M:%SZ')
-                activityDurationInSeconds = (endDate - startDate).total_seconds()
-                heatDurationInSeconds = activityDurationInSeconds / len(groupsInThisRoom)
-                heatPartitionDates = list(rrule.rrule(rrule.SECONDLY, interval = int(heatDurationInSeconds), dtstart = startDate, until = endDate))
-                thisChildActivities = []
-                for groupInd, group in enumerate(groupsInThisRoom):
-                    # this iterates through this room's+act childActivities,
-                    # which is the same as the number of heats & groups in this room (at this stage)
-                    maxCurrentNumberOfDeepActivities += 1
-                    stT = heatPartitionDates[groupInd].strftime('%Y-%m-%dT%H:%M:%SZ')
-                    enT = heatPartitionDates[groupInd + 1].strftime('%Y-%m-%dT%H:%M:%SZ')
-                    chDict = {
-                        "id": maxCurrentNumberOfDeepActivities,
-                        "name": a['name'] + f', Group {group}',
-                        "activityCode": a['activityCode'] + f'-g{group}',
-                        "startTime": stT,
-                        "endTime": enT,
-                        "childActivities": [],
-                        "extensions": []
-                    }
-                    thisChildActivities.append(chDict)
-                aDict = {
-                    "id": a['id'],
-                    "name": a['name'],
-                    "activityCode": thisActivityCode,
-                    "startTime": a['startTime'],
-                    "endTime": a['endTime'],
-                    "childActivities": thisChildActivities,
-                    "extensions": [
-                      {
-                        "id": "groupifier.ActivityConfig",
-                        "specUrl": "https://groupifier.jonatanklosko.com/wcif-extensions/ActivityConfig.json",
-                        "data": {
-                          "capacity": rolesDict[thisActivityCode]['capacity'],
-                          "groups": rolesDict[thisActivityCode]['groups'],
-                          "scramblers": rolesDict[thisActivityCode]['scramblers'],
-                          "runners": rolesDict[thisActivityCode]['runners'],
-                          "assignJudges": rolesDict[thisActivityCode]['assignJudges']
+                if has_existing_evRound_dict == False or thisActivityCode in updatedRounds.keys():
+                    print(f'>> has_existing_evRound_dict = {has_existing_evRound_dict}, thisActivityCode = {thisActivityCode}, updatedRounds = {updatedRounds}')
+                    groupsInThisRoom = evRound_dict[thisActivityCode][r['id'] - 1]
+                    endDate = datetime.strptime(a['endTime'], '%Y-%m-%dT%H:%M:%SZ')
+                    startDate = datetime.strptime(a['startTime'], '%Y-%m-%dT%H:%M:%SZ')
+                    activityDurationInSeconds = (endDate - startDate).total_seconds()
+                    heatDurationInSeconds = activityDurationInSeconds / len(groupsInThisRoom)
+                    heatPartitionDates = list(rrule.rrule(rrule.SECONDLY, interval = int(heatDurationInSeconds), dtstart = startDate, until = endDate))
+                    thisChildActivities = []
+                    for groupInd, group in enumerate(groupsInThisRoom):
+                        # this iterates through this room's+act childActivities,
+                        # which is the same as the number of heats & groups in this room (at this stage)
+                        maxCurrentNumberOfDeepActivities += 1
+                        stT = heatPartitionDates[groupInd].strftime('%Y-%m-%dT%H:%M:%SZ')
+                        enT = heatPartitionDates[groupInd + 1].strftime('%Y-%m-%dT%H:%M:%SZ')
+                        chDict = {
+                            "id": maxCurrentNumberOfDeepActivities,
+                            "name": a['name'] + f', Group {group}',
+                            "activityCode": a['activityCode'] + f'-g{group}',
+                            "startTime": stT,
+                            "endTime": enT,
+                            "childActivities": [],
+                            "extensions": []
                         }
-                      }
-                    ]
-                }
+                        thisChildActivities.append(chDict)
+
+                    aDict = {
+                        "id": a['id'],
+                        "name": a['name'],
+                        "activityCode": thisActivityCode,
+                        "startTime": a['startTime'],
+                        "endTime": a['endTime'],
+                        "childActivities": thisChildActivities,
+                        "extensions": [
+                          {
+                            "id": "groupifier.ActivityConfig",
+                            "specUrl": "https://groupifier.jonatanklosko.com/wcif-extensions/ActivityConfig.json",
+                            "data": {
+                              "capacity": rolesDict[thisActivityCode]['capacity'],
+                              "groups": rolesDict[thisActivityCode]['groups'],
+                              "scramblers": rolesDict[thisActivityCode]['scramblers'],
+                              "runners": rolesDict[thisActivityCode]['runners'],
+                              "assignJudges": rolesDict[thisActivityCode]['assignJudges']
+                            }
+                          }
+                        ]
+                    }
+                else:
+                    aDict = {
+                        "id": a['id'],
+                        "name": a['name'],
+                        "activityCode": thisActivityCode,
+                        "startTime": a['startTime'],
+                        "endTime": a['endTime'],
+                        "childActivities": a['childActivities'],
+                        "extensions": a['extensions']
+                    }
             else:
                 aDict = {
                     "id": a['id'],
