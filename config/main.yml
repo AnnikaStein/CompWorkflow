@@ -6,6 +6,58 @@ minAgeS: 13
 minAgeR: 11
 minAgeJ: 11
 
+minPrevCompS: 2
+minPrevCompThisEventS: 1
+minPrevCompR: 0
+minPrevCompThisEventR: 0
+minPrevCompJ: 0
+minPrevCompThisEventJ: 0
+
 neverS: 2023BREU01
 neverR: 2023BREU01
 neverJ:
+
+assignmentStrategies:
+    percentPodiumToPreserveInBestHeat: 10.0 # min of that and size of the heat of course
+    roundFinal:
+        222: psych
+        333: psych
+        333oh: psych
+        333bf: psych
+        444: psych
+        555: scramblerOptimizedPreservePodium
+        666: scramblerOptimizedPreservePodium
+        777: scramblerOptimizedPreservePodium
+        clock: scramblerOptimizedPreservePodium
+        sq1: scramblerOptimizedPreservePodium
+        minx: scramblerOptimizedPreservePodium
+        pyram: psych
+        skewb: psych
+    roundBeforeFinal:
+        222: psych
+        333: psych
+        333oh: psych
+        333bf: psych
+        444: psych
+        555: scramblerOptimizedPreservePodium
+        666: scramblerOptimizedPreservePodium
+        777: scramblerOptimizedPreservePodium
+        clock: scramblerOptimizedPreservePodium
+        sq1: scramblerOptimizedPreservePodium
+        minx: scramblerOptimizedPreservePodium
+        pyram: psych
+        skewb: psych
+    otherRounds:
+        222: psych
+        333: psych
+        333oh: psych
+        333bf: psych
+        444: psych
+        555: scramblerOptimized
+        666: scramblerOptimized
+        777: scramblerOptimized
+        clock: scramblerOptimized
+        sq1: scramblerOptimized
+        minx: scramblerOptimized
+        pyram: psych
+        skewb: psych

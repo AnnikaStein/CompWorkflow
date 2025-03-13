@@ -58,10 +58,39 @@ inside /output/<compID> there will be
 ---
 
 ## Grouping (assignments C/J/R/S and more)
+__Command(s)__
+```shell
+python -m CompWorkflow.PreComp.patchGroupifierCompetitionConfigRoomConfigToPrivateWCIF -c rlp25.yml --debug
+```
+
+__Requirements__
+- needs config/<compID>.yml to proceed
+
+__Outputs__  
+inside /output/<compID> there will be
+- json file: wcif_private  
+patch of the WCIF
+
+
+__Command(s)__
+```shell
+python -m CompWorkflow.PreComp.generateGroups -c rlp25.yml --debug
+```
+
+__Requirements__
+- needs config/<compID>.yml to proceed
+- private comp WCIF step carried out already
+- generateStats already done to grab competitor info
+
+__Outputs__  
+inside /output/<compID> there will be
+- json file: evRound_dict  
+patch of the WCIF
+
 __ToDo__
 - (y) write Groupifier Competition Config
 - (y) write Groupifier Stations Config
-- groups / heats per round
+- (y) groups / heats per round
     - (y) find rooms/stages
     - (y) build schedule into python
     - (y) number of stations per stage (in config)

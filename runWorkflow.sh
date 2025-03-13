@@ -42,6 +42,7 @@ elif  [[ $1 == "PreAssigned" ]]; then
     python -m CompWorkflow.PreComp.patchGroupifierCompetitionConfigRoomConfigToPrivateWCIF -c $2 --debug
     python -m CompWorkflow.PreComp.generateStats -c $2 --debug
     python -m CompWorkflow.PreComp.generateGroups -c $2 --debug
+    python -m CompWorkflow.PreComp.generatePsych -c $2 --debug
 elif  [[ $1 == "PrePrinted" ]]; then
     echo " "
     echo ">> Running PrePrinted python scripts now. Do this when grouping / assignments are done."

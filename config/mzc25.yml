@@ -16,7 +16,7 @@ setup:
     logo : Yes
     logoPath : /Users/annikastein/Documents/Speedcubing/Competitions/Mainzelcubing25/Logo/MZC25_Logo_600.png
     multiStage : No
-    stationsPerStage : 18
+    stationsPerStage : 16
     assignRoles : s,r,j
 orga:
     lostAndFound : something

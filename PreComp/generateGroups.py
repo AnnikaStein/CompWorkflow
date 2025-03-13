@@ -111,26 +111,66 @@ for rou, rouValue in evRound_dict.items():
     eve = rou.split('-r')[0]
     if eve not in util.nogroupsEvents:
         roundNumber = 1 if '-r1' in rou else (2 if ('-r2' in rou) else (3 if ('-r3' in rou) else 4))
-        if roundNumber > 1:
-            previousRoundNumberZeroCounted = roundNumber - 2
+        if roundNumber == 2:
+            previousRoundNumberZeroCounted = 0
             for ev in wcif_private['events']:
                 if ev['id'] == eve:
                     ac = ev['rounds'][previousRoundNumberZeroCounted]['advancementCondition']
                     if ac['type'] == 'percent':
-                        peopleInRound = math.floor(event_nComp[eve] * ac['level'] / 100)
+                        peopleInSecondRound = math.floor(event_nComp[eve] * ac['level'] / 100)
                     elif ac['type'] == 'ranking':
-                        peopleInRound = ac['level']
+                        peopleInSecondRound = ac['level']
+            peopleInRound = peopleInSecondRound
+        elif roundNumber == 3:
+            previousRoundNumberZeroCounted = 1
+            for ev in wcif_private['events']:
+                if ev['id'] == eve:
+                    ac = ev['rounds'][0]['advancementCondition']
+                    if ac['type'] == 'percent':
+                        peopleInSecondRound = math.floor(event_nComp[eve] * ac['level'] / 100)
+                    elif ac['type'] == 'ranking':
+                        peopleInSecondRound = ac['level']
+                    ac_ = ev['rounds'][previousRoundNumberZeroCounted]['advancementCondition']
+                    if ac_['type'] == 'percent':
+                        peopleInThirdRound = math.floor(peopleInSecondRound * ac_['level'] / 100)
+                    elif ac_['type'] == 'ranking':
+                        peopleInThirdRound = ac_['level']
+            peopleInRound = peopleInThirdRound
+        elif roundNumber == 4:
+            previousRoundNumberZeroCounted = 2
+            for ev in wcif_private['events']:
+                if ev['id'] == eve:
+                    ac = ev['rounds'][0]['advancementCondition']
+                    if ac['type'] == 'percent':
+                        peopleInSecondRound = math.floor(event_nComp[eve] * ac['level'] / 100)
+                    elif ac['type'] == 'ranking':
+                        peopleInSecondRound = ac['level']
+                        
+                    ac_ = ev['rounds'][1]['advancementCondition']
+                    if ac_['type'] == 'percent':
+                        peopleInThirdRound = math.floor(peopleInSecondRound * ac_['level'] / 100)
+                    elif ac_['type'] == 'ranking':
+                        peopleInThirdRound = ac_['level']
+
+                    ac__ = ev['rounds'][previousRoundNumberZeroCounted]['advancementCondition']
+                    if ac__['type'] == 'percent':
+                        peopleInFourthRound = math.floor(peopleInThirdRound * ac__['level'] / 100)
+                    elif ac__['type'] == 'ranking':
+                        peopleInFourthRound = ac_['level']
+            peopleInRound = peopleInFourthRound
         else:
             peopleInRound = event_nComp[eve]
         # how many heats needed?
         availStations = sum([int(stationsPerStage[staInd]) for staInd in rouValue])
         if eve in util.shortEvents:
             factor = 2.0
+            minHeatsFirstRound = 2 if roundNumber < len([1 for k in evRound_dict.keys() if eve in k]) else 1
         else:
             factor = 1.5
+            minHeatsFirstRound = 1
         capacityInHeat = availStations * factor
         heatsDecimal = peopleInRound / capacityInHeat
-        heatsRounded = int(util.customRoundHeat(heatsDecimal))
+        heatsRounded = max(minHeatsFirstRound, int(util.customRoundHeat(heatsDecimal)))
         print(eve, roundNumber, peopleInRound, heatsDecimal, heatsRounded)
         roundForHeatsDict = eve + f'-r{roundNumber}'
         heatsDict[roundForHeatsDict] = heatsRounded
