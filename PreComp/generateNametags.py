@@ -315,7 +315,7 @@ for p in person_slicing:
                     else:
                         # even row light grey
                         backside_tex_inside += '\\rowcolor[HTML]{EFEFEF}'
-                    backside_tex_inside += '\\includesvg[height=1em]{' + svgs_path + list(assignmentsSorted.keys())[d] + '.svg}' + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d]][0])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d]][1])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d]][2])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d]][3])) + '&' + '\\includesvg[height=1em]{' + svgs_path + list(assignmentsSorted.keys())[d+8] + '.svg}' + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d+8]][0])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d+8]][1])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d+8]][2])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d+8]][3])) + '\\\\ \\hline'
+                    backside_tex_inside += '\\raisebox{-0.15em}{\\includesvg[height=1em]{' + svgs_path + list(assignmentsSorted.keys())[d] + '.svg}}' + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d]][0])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d]][1])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d]][2])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d]][3])) + '&' + '\\raisebox{-0.15em}{\\includesvg[height=1em]{' + svgs_path + list(assignmentsSorted.keys())[d+8] + '.svg}}' + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d+8]][0])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d+8]][1])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d+8]][2])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d+8]][3])) + '\\\\ \\hline'
                     table_row_counter += 1
                 for d in range(n_double,8):
                     if table_row_counter % 2 == 1:
@@ -324,7 +324,7 @@ for p in person_slicing:
                     else:
                         # even row light grey
                         backside_tex_inside += '\\rowcolor[HTML]{EFEFEF}'
-                    backside_tex_inside += '\\includesvg[height=1em]{' + svgs_path + list(assignmentsSorted.keys())[d] + '.svg}' + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d]][0])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d]][1])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d]][2])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d]][3])) + '& & & & & \\\\ \\hline'
+                    backside_tex_inside += '\\raisebox{-0.15em}{\\includesvg[height=1em]{' + svgs_path + list(assignmentsSorted.keys())[d] + '.svg}}' + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d]][0])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d]][1])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d]][2])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[list(assignmentsSorted.keys())[d]][3])) + '& & & & & \\\\ \\hline'
                     table_row_counter += 1
             else:
                 # one-column format
@@ -337,7 +337,7 @@ for p in person_slicing:
                     else:
                         # even row light grey
                         backside_tex_inside += '\\rowcolor[HTML]{EFEFEF}'
-                    backside_tex_inside += '\\includesvg[height=1em]{' + svgs_path + k + '.svg}' + '&' + util.numeric_order_assignments(str(assignmentsSorted[k][0])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[k][1])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[k][2])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[k][3])) + '\\\\ \\hline'
+                    backside_tex_inside += '\\raisebox{-0.2em}{\\includesvg[height=1em]{' + svgs_path + k + '.svg}}' + '&' + util.numeric_order_assignments(str(assignmentsSorted[k][0])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[k][1])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[k][2])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[k][3])) + '\\\\ \\hline'
                     table_row_counter += 1
 
 
