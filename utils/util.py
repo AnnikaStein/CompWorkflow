@@ -118,7 +118,7 @@ def customRoundAssignees(nGroup, event, system, nStations, roleType):
 
 createAssignmentsEVENTORDER = ['333fm','333mbf', '444bf', '555bf', 'sq1', 'clock', '777', '666', '555', 'minx', '333bf', '444', '333oh', 'skewb', 'pyram', '333', '222']
 printAssignmentsEVENTORDER = ['333', '222', '444', '555', '666', '777', '333bf', '333oh', 'clock', 'minx', 'pyram', 'skewb', 'sq1', '444bf', '555bf', '333mbf']
-shortEvents = ['222','pyram','skewb']
+shortEvents = ['333bf','222','pyram','skewb']
 nogroupsEvents = ['333fm', '333mbf']
 noassignmentsEvents = ['333fm']
 sortBySingleAverage = ['333bf', '444bf', '555bf']

@@ -164,7 +164,10 @@ for rou, rouValue in evRound_dict.items():
         availStations = sum([int(stationsPerStage[staInd]) for staInd in rouValue])
         if eve in util.shortEvents:
             factor = 2.0
-            minHeatsFirstRound = 2 if roundNumber < len([1 for k in evRound_dict.keys() if eve in k]) else 1
+            if eve != '333bf':
+                minHeatsFirstRound = 2 if roundNumber < len([1 for k in evRound_dict.keys() if eve in k]) else 1
+            else:
+                minHeatsFirstRound = 2 if roundNumber == 1 else 1
         else:
             factor = 1.5
             minHeatsFirstRound = 1
