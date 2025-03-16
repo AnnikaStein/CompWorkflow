@@ -17,6 +17,10 @@ setup:
     logoPath : /Users/annikastein/Documents/Speedcubing/Competitions/RLP25/Logo/Logo_600.png
     multiStage : Yes
     stationsPerStage : 12,12
+    assignRoles : s,r,j
+    feedMbfJudgesFrom: noone
+    feed444bfJudgesFrom: noone
+    feed555bfJudgesFrom: noone
 orga:
     lostAndFound : something,another thing
     lostAndFoundGerman : etwas,noch etwas
@@ -25,3 +29,5 @@ orga:
     systemJRS : scrambling, running and judging
     systemJRSGerman : Scrambling, Running und Judging
     certificateBgPath : /Users/annikastein/Documents/Speedcubing/Competitions/RLP25/Urkunden/certificate_RLP25.jpg
+    fristStorno: Dienstag, 18. März 2025 um 08:00 MEZ
+    deadlineStorno: Tuesday, March 18, 2025 at 8:00 AM GMT+1

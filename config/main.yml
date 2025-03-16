@@ -1,5 +1,5 @@
 graphics:
-    svgsPath : /Users/annikastein/github/WCA-German-State-Ranks/assets/event-svg/
+    svgsPath : /Users/annikastein/github/WCA-German-State-Ranks-priv/assets/event-svg/
     qrcodePath : /Users/annikastein/github/my-comp/figures/square_qr.png
 
 minAgeS: 13
@@ -20,44 +20,50 @@ neverJ:
 assignmentStrategies:
     percentPodiumToPreserveInBestHeat: 10.0 # min of that and size of the heat of course
     roundFinal:
-        222: psych
-        333: psych
+        "222": psych
+        "333": psych
         333oh: psych
         333bf: psych
-        444: psych
-        555: scramblerOptimizedPreservePodium
-        666: scramblerOptimizedPreservePodium
-        777: scramblerOptimizedPreservePodium
+        "444": psych
+        "555": scramblerOptimizedPreservePodium
+        "666": scramblerOptimizedPreservePodium
+        "777": scramblerOptimizedPreservePodium
         clock: scramblerOptimizedPreservePodium
         sq1: scramblerOptimizedPreservePodium
         minx: scramblerOptimizedPreservePodium
         pyram: psych
         skewb: psych
+        444bf: psych
+        555bf: psych
     roundBeforeFinal:
-        222: psych
-        333: psych
+        "222": psych
+        "333": psych
         333oh: psych
         333bf: psych
-        444: psych
-        555: scramblerOptimizedPreservePodium
-        666: scramblerOptimizedPreservePodium
-        777: scramblerOptimizedPreservePodium
+        "444": psych
+        "555": scramblerOptimizedPreservePodium
+        "666": scramblerOptimizedPreservePodium
+        "777": scramblerOptimizedPreservePodium
         clock: scramblerOptimizedPreservePodium
         sq1: scramblerOptimizedPreservePodium
         minx: scramblerOptimizedPreservePodium
         pyram: psych
         skewb: psych
+        444bf: psych
+        555bf: psych
     otherRounds:
-        222: psych
-        333: psych
+        "222": psych
+        "333": psych
         333oh: psych
         333bf: psych
-        444: psych
-        555: scramblerOptimized
-        666: scramblerOptimized
-        777: scramblerOptimized
+        "444": psych
+        "555": scramblerOptimized
+        "666": scramblerOptimized
+        "777": scramblerOptimized
         clock: scramblerOptimized
         sq1: scramblerOptimized
         minx: scramblerOptimized
         pyram: psych
         skewb: psych
+        444bf: psych
+        555bf: psych

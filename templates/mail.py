@@ -1,9 +1,9 @@
 def firstNewsletterEveryone(compName, shortName, fristStorno, deadlineStorno, zeitBis, timeUntil):
-    str = f'''---- English Version Below ------
+    str = f'''------ English Version Below ------
 
 Liebe Teilnehmende,
 
-in {zeitBis} ist es soweit und die {compName} finden statt.
+in {zeitBis} ist es soweit und {compName} findet statt.
 
 Da das Teilnehmerlimit bereits erreicht wurde, möchten wir dich bitten, uns so bald wie möglich mitzuteilen, falls du doch nicht kommen kannst.
 So kann jemand von der Warteliste nachrücken! Wenn deine Anmeldung vor {fristStorno} storniert wird, wirst du eine Rückerstattung von 100 % der Anmeldegebühr erhalten. Antworte in diesem Fall einfach auf diese Email.
@@ -29,11 +29,11 @@ Your {shortName} team
     return str
 
 def finalNewsletterEveryone(compID, contact, compName, shortName, fristStorno, deadlineStorno, zeitBis, timeUntil):
-    str = f'''---- English Version Below ------
+    str = f'''------ English Version Below ------
 
 Liebe Teilnehmende,
 
-in {XX} ist es soweit und die {compName} finden statt.
+in {XX} ist es soweit und {compName} findet statt.
 
 Da das Teilnehmerlimit bereits erreicht wurde, möchten wir dich bitten, uns so bald wie möglich mitzuteilen, falls du doch nicht kommen kannst.
 So kann jemand von der Warteliste nachrücken! Wenn deine Anmeldung vor {fristStorno} storniert wird, wirst du eine Rückerstattung von 100 % der Anmeldegebühr erhalten.

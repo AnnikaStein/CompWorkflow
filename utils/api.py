@@ -7,7 +7,7 @@ from pprint import pprint
 
 access_token_url = myOAuthApplication.access_token_url
 applicationDetails = myOAuthApplication.applicationDetails
-def get_access_token(grant_type):
+def get_access_token(grant_type, debug = False):
     applicationDetails['grant_type'] = (None, grant_type)
     if grant_type == 'password':
         print()
@@ -20,8 +20,9 @@ def get_access_token(grant_type):
         applicationDetails['password'] = (None, wca_password)
 
     request1 = requests.post(access_token_url, files=applicationDetails)
-    print()
-    print(request1.text)
+    if debug:
+        print()
+        print(request1.text)
     return json.loads(request1.text)['access_token']
 
 def fetch_information(compID, grant_type):
@@ -35,11 +36,12 @@ def fetch_information(compID, grant_type):
 
     return json.loads(request2.text)
 
-def patch_information(compID, grant_type, payload):
+def patch_information(compID, grant_type, payload, debug = False):
     access_token = get_access_token(grant_type)
     authorization = 'Bearer ' + access_token
     headers3 = {'Authorization': authorization, 'content-type': 'application/json'}
     competition_url = f'https://www.worldcubeassociation.org/api/v0/competitions/{compID}/wcif'
-    pprint(payload)
+    if debug:
+        pprint(payload)
     response = requests.patch(competition_url, data=json.dumps(payload), headers=headers3)
     print('>> Patch response:', response.status_code, response.reason)

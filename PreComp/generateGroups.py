@@ -145,7 +145,7 @@ for rou, rouValue in evRound_dict.items():
                         peopleInSecondRound = math.floor(event_nComp[eve] * ac['level'] / 100)
                     elif ac['type'] == 'ranking':
                         peopleInSecondRound = ac['level']
-                        
+
                     ac_ = ev['rounds'][1]['advancementCondition']
                     if ac_['type'] == 'percent':
                         peopleInThirdRound = math.floor(peopleInSecondRound * ac_['level'] / 100)
@@ -226,10 +226,12 @@ updatedRounds = {}
 if has_existing_evRound_dict:
     # check if there is sth to do, i.e. is there a round with new nHeats
     if existing_evRound_dict != current_evRound_dict:
+        print('>> Existing != current')
         updatedRounds = {k: current_evRound_dict[k] for k in current_evRound_dict if k in existing_evRound_dict and current_evRound_dict[k] != existing_evRound_dict[k]}
 
 # save result
 util.writeOutputJSONForID(compID, f'evRound_dict.json', evRound_dict)
+util.writeOutputJSONForID(compID, f'heatsDict.json', heatsDict)
 
 
 # === *** === *** === PATCH ScrambleSetCount for every round === *** === *** === #
@@ -280,6 +282,9 @@ for v in wcif_private['schedule']['venues']:
         for a in r['activities']:
             thisActivityCode = a['activityCode']
             if thisActivityCode in activitiesWithRoles:
+                print('has_existing_evRound_dict',has_existing_evRound_dict)
+                print('thisActivityCode',thisActivityCode)
+                print('updatedRounds.keys()',updatedRounds.keys())
                 if has_existing_evRound_dict == False or thisActivityCode in updatedRounds.keys():
                     print(f'>> has_existing_evRound_dict = {has_existing_evRound_dict}, thisActivityCode = {thisActivityCode}, updatedRounds = {updatedRounds}')
                     groupsInThisRoom = evRound_dict[thisActivityCode][r['id'] - 1]

@@ -18,6 +18,9 @@ setup:
     multiStage : Yes
     stationsPerStage : 18,18
     assignRoles : s,r,j
+    feedMbfJudgesFrom: 333fm, minx, 444bf, 555bf
+    feed444bfJudgesFrom: 333fm, minx, 333mbf
+    feed555bfJudgesFrom: 333fm, minx, 333mbf
 orga:
     lostAndFound : something,another thing
     lostAndFoundGerman : etwas,noch etwas

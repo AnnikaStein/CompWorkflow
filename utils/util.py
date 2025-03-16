@@ -39,6 +39,21 @@ def getSortedListOfListsByNthColumn(unsorted_list, column):
 def flatten(myList):
     return [x for sub in myList for x in sub]
 
+def chunks(l, n):
+    d, r = divmod(len(l), n)
+    listOfChunks = []
+    for i in range(n):
+        si = (d+1)*(i if i < r else r) + d*(0 if i < r else i - r)
+        listOfChunks.append(l[si:si+(d+1 if i < r else d)])
+    return listOfChunks
+
+def getUniqueListEntries(original_list):
+    new_list = list(set(original_list))
+    return new_list
+
+def getUniqueListEntriesOfDicts(listOfDicts, uniqueKey):
+    return list({v[uniqueKey]:v for v in listOfDicts}.values())
+
 def getUniqueListEntriesSorted(original_list):
     new_list = list(set(original_list))
     new_list.sort()
@@ -101,7 +116,7 @@ def customRoundAssignees(nGroup, event, system, nStations, roleType):
 
 # Definitions
 
-createAssignmentsEVENTORDER = ['333mbf', '444bf', '555bf', 'sq1', 'clock', '777', '666', '555', 'minx', '333bf', '444', '333oh', 'skewb', 'pyram', '333', '222']
+createAssignmentsEVENTORDER = ['333fm','333mbf', '444bf', '555bf', 'sq1', 'clock', '777', '666', '555', 'minx', '333bf', '444', '333oh', 'skewb', 'pyram', '333', '222']
 printAssignmentsEVENTORDER = ['333', '222', '444', '555', '666', '777', '333bf', '333oh', 'clock', 'minx', 'pyram', 'skewb', 'sq1', '444bf', '555bf', '333mbf']
 shortEvents = ['222','pyram','skewb']
 nogroupsEvents = ['333fm', '333mbf']

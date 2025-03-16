@@ -18,6 +18,9 @@ setup:
     multiStage : No
     stationsPerStage : 10
     assignRoles : s,r,j
+    feedMbfJudgesFrom: noone
+    feed444bfJudgesFrom: noone
+    feed555bfJudgesFrom: noone
 orga:
     lostAndFound : something
     lostAndFoundGerman : etwas
