@@ -14,9 +14,9 @@ parser.add_argument('-c', '--config', required=True,
                     help='Name of config file, e.g. rlp25.yml (required argument)')
 parser.add_argument('-m', '--mailType', required=True,
                     help='Type of precomp mail (firstNewsletterEveryone, finalNewsletterEveryone)')
-parser.add_argument('-xDE', '--zeitBis', required=True,
+parser.add_argument('-xDE', '--zeitBis', required=False,
                     help='Time until competition (in GERMAN)')
-parser.add_argument('-xEN', '--timeUntil', required=True,
+parser.add_argument('-xEN', '--timeUntil', required=False,
                     help='Time until competition (in ENGLISH)')
 parser.add_argument('-d', '--debug', action='store_true', default = False,
                     help='Get detailed printouts (optional flag)')
@@ -36,8 +36,9 @@ print('>>   timeUntil =', args.timeUntil)
 debug = args.debug
 config_path = args.config
 mailType = args.mailType
-zeitBis = args.zeitBis
-timeUntil = args.timeUntil
+if mailType != 'finalNewsletterEveryone':
+    zeitBis = args.zeitBis
+    timeUntil = args.timeUntil
 with open('CompWorkflow/config/'+config_path) as f:
     config = yaml.safe_load(f)
     if debug:
@@ -55,6 +56,12 @@ deadlineStorno = config['orga']['deadlineStorno']
 systemJRSGerman = config['orga']['systemJRSGerman']
 systemJRS = config['orga']['systemJRS']
 
+openingDE = config['orga']['openingDE']
+openingEN = config['orga']['openingEN']
+
+tutorialWhenDE = config['orga']['tutorialWhenDE']
+tutorialWhenEN = config['orga']['tutorialWhenEN']
+
 # performs a check for the output destination
 # such that further writing of files will work
 util.checkOrCreateOutputFolderContainingID(compID)
@@ -69,7 +76,7 @@ with open(f'CompWorkflow/output/{compID}/wcif_private.json') as file:
 if mailType == 'firstNewsletterEveryone':
     content = mail.firstNewsletterEveryone(compName, shortName, fristStorno, deadlineStorno, zeitBis, timeUntil)
 elif mailType == 'finalNewsletterEveryone':
-    content = mail.finalNewsletterEveryone(compID, contact, compName, shortName, fristStorno, deadlineStorno, zeitBis, timeUntil)
+    content = mail.finalNewsletterEveryone(compID, compName, shortName, openingDE, openingEN, systemJRS, systemJRSGerman, tutorialWhenDE, tutorialWhenEN)
 
 util.writeOutputFileForID(compID, f'mail_{mailType}.txt', content)
 
