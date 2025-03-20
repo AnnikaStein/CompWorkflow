@@ -168,6 +168,9 @@ for rou, rouValue in evRound_dict.items():
                 minHeatsFirstRound = 2 if roundNumber < len([1 for k in evRound_dict.keys() if eve in k]) else 1
             else:
                 minHeatsFirstRound = 2 if roundNumber == 1 else 1
+        elif eve in ['666', '777']:
+            factor = 1.5
+            minHeatsFirstRound = 2 if roundNumber < len([1 for k in evRound_dict.keys() if eve in k]) else 1
         else:
             factor = 1.5
             minHeatsFirstRound = 1

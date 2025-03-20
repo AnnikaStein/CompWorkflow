@@ -325,7 +325,7 @@ for p in persons:
                 }
                 assignmentsToKeep.append(thisAssignment)
             currentAssignments = util.getUniqueListEntriesOfDicts(assignmentsToKeep, 'activityId')
-            currentAssignments = []
+            #currentAssignments = []
         else:
             # if person has unregistered in the meantime, remove their assignments completely
             currentAssignments = []

@@ -54,7 +54,7 @@ Alle, die bereits auf einer WCA Competition waren und eine WCA-Id besitzen, müs
 Namensschilder: Bring-Your-Own-Badge
 
 Falls du noch ein Namensschild von einer unserer vergangenen Competitions hast (z.B. RLP Open 2024, Nationals 2024), bringe es gerne zum Wiederverwenden mit - es gibt vor Ort dann ein neues Blatt zum Einlegen, u.a. mit deinen Einteilungen für die ersten Runden.
-Wenn dies dein erster Wettbewerb ist oder du noch kein Standard-Plastiknamensschild von einer früheren Competition in unserer Region erhalten hast, erhältst du ein solches neues Lanyard samt Badge zum Umhängen. Bitte beim nächsten Mal wieder mitbringen.
+Wenn dies dein erster Wettbewerb ist oder du noch kein Standard-Plastiknamensschild von einer früheren Competition in unserer Region erhalten hast, erhältst du ein solches neues Bändel samt Badge zum Umhängen. Bitte beim nächsten Mal wieder mitbringen.
 
 Alle Teilnehmer sollten ihr Namensschild tragen, damit es beim Aufrufen zur Teilnahme nicht zu Verwechslungen kommt.
 

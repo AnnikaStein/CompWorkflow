@@ -65,6 +65,7 @@ with open('CompWorkflow/config/'+config_path) as f:
 compID = config['comp']['ID']
 compName = config['comp']['name']
 logo_path = config['setup']['logoPath']
+assignRoles = config['setup']['assignRoles']
 
 # performs a check for the output destination
 # such that further writing of files will work
@@ -328,7 +329,10 @@ for p in person_slicing:
                     table_row_counter += 1
             else:
                 # one-column format
-                backside_tex_inside += '\\begin{tabular}{|>{\\hspace{-0.2em}}c<{\\hspace{-0.2em}}|>{\\hspace{-0.2em}}c<{\\hspace{-0.2em}}|>{\\hspace{-0.2em}}c<{\\hspace{-0.2em}}|>{\\hspace{-0.2em}}c<{\\hspace{-0.2em}}|>{\\hspace{-0.2em}}c<{\\hspace{-0.2em}}|}\\hline\\rowcolor[HTML]{DAE8FC}{\color[HTML]{000000} Event} & {\color[HTML]{000000} C} & {\color[HTML]{000000} S} &	{\color[HTML]{000000} R} & {\color[HTML]{000000} J} \\\\ \\hline'
+                if 'r' in assignRoles:
+                    backside_tex_inside += '\\begin{tabular}{|>{\\hspace{-0.2em}}c<{\\hspace{-0.2em}}|>{\\hspace{-0.2em}}c<{\\hspace{-0.2em}}|>{\\hspace{-0.2em}}c<{\\hspace{-0.2em}}|>{\\hspace{-0.2em}}c<{\\hspace{-0.2em}}|>{\\hspace{-0.2em}}c<{\\hspace{-0.2em}}|}\\hline\\rowcolor[HTML]{DAE8FC}{\color[HTML]{000000} Event} & {\color[HTML]{000000} C} & {\color[HTML]{000000} S} &	{\color[HTML]{000000} R} & {\color[HTML]{000000} J} \\\\ \\hline'
+                else:
+                    backside_tex_inside += '\\begin{tabular}{|>{\\hspace{-0.2em}}c<{\\hspace{-0.2em}}|>{\\hspace{-0.2em}}c<{\\hspace{-0.2em}}|>{\\hspace{-0.2em}}c<{\\hspace{-0.2em}}|>{\\hspace{-0.2em}}c<{\\hspace{-0.2em}}|}\\hline\\rowcolor[HTML]{DAE8FC}{\color[HTML]{000000} Event} & {\color[HTML]{000000} C} & {\color[HTML]{000000} S} & {\color[HTML]{000000} J} \\\\ \\hline'
                 table_row_counter = 1
                 for k in assignmentsSorted:
                     if table_row_counter % 2 == 1:
@@ -337,12 +341,17 @@ for p in person_slicing:
                     else:
                         # even row light grey
                         backside_tex_inside += '\\rowcolor[HTML]{EFEFEF}'
-                    backside_tex_inside += '\\raisebox{-0.2em}{\\includesvg[height=1em]{' + svgs_path + k + '.svg}}' + '&' + util.numeric_order_assignments(str(assignmentsSorted[k][0])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[k][1])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[k][2])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[k][3])) + '\\\\ \\hline'
+                    if 'r' in assignRoles:
+                        backside_tex_inside += '\\raisebox{-0.2em}{\\includesvg[height=1em]{' + svgs_path + k + '.svg}}' + '&' + util.numeric_order_assignments(str(assignmentsSorted[k][0])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[k][1])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[k][2])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[k][3])) + '\\\\ \\hline'
+                    else:
+                        backside_tex_inside += '\\raisebox{-0.2em}{\\includesvg[height=1em]{' + svgs_path + k + '.svg}}' + '&' + util.numeric_order_assignments(str(assignmentsSorted[k][0])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[k][1])) + '&' + util.numeric_order_assignments(str(assignmentsSorted[k][3])) + '\\\\ \\hline'
                     table_row_counter += 1
 
 
-            backside_tex_inside += '\\end{tabular}\\end{table}}\\vspace{-1.4em}\\selectlanguage{english}\\hspace{1.1em}\\footnotesize\\parbox{27em}{C = Competitor, S = Scrambler, R = Runner, J = Judge.\\\\ The table above shows first rounds only. \\\\ \\ \\\\Please check WCA Live and competitiongroups.com for information about next rounds. Your following assignments will appear there. Your ID: ' + str(person['registrantId']) + '.} \\raisebox{-3.65\\baselineskip}{\\includegraphics[height=7.2\\baselineskip]{' + qrcode_path + '}}}'
-
+            if 'r' in assignRoles:
+                backside_tex_inside += '\\end{tabular}\\end{table}}\\vspace{-1.4em}\\selectlanguage{english}\\hspace{1.1em}\\footnotesize\\parbox{27em}{C = Competitor, S = Scrambler, R = Runner, J = Judge.\\\\ The table above shows first rounds only. \\\\ \\ \\\\Please check WCA Live and competitiongroups.com for information about next rounds. Your following assignments will appear there. Your ID: ' + str(person['registrantId']) + '.} \\raisebox{-3.65\\baselineskip}{\\includegraphics[height=7.2\\baselineskip]{' + qrcode_path + '}}}'
+            else:
+                backside_tex_inside += '\\end{tabular}\\end{table}}\\vspace{-1.4em}\\selectlanguage{english}\\hspace{1.1em}\\footnotesize\\parbox{27em}{C = Competitor, S = Scrambler, J = Judge.\\\\ The table above shows first rounds only. \\\\ \\ \\\\Please check WCA Live and competitiongroups.com for information about next rounds. Your following assignments will appear there. Your ID: ' + str(person['registrantId']) + '.} \\raisebox{-3.65\\baselineskip}{\\includegraphics[height=7.2\\baselineskip]{' + qrcode_path + '}}}'
             backside_tex_all += backside_tex_inside + '\n'
 
 backside_tex = nametags_tex.back_nametags(backside_tex_all)
