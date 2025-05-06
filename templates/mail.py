@@ -223,7 +223,7 @@ The results have already been added to the WCA database and can be found here:
 
 https://www.worldcubeassociation.org/competitions/{compID}
 
-For all those who competed this weekend participant certificates have been created. Those contain your personal best rankings:
+For all those who competed this weekend certificates of participation have been created. Those contain your personal best rankings:
 
 {partCertLink}
 
