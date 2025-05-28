@@ -28,6 +28,42 @@ Your {shortName} team
 '''
     return str
 
+def secondNewsletterEveryone(compName, shortName, fristStorno, deadlineStorno, zeitBis, timeUntil):
+    str = f'''------ English Version Below ------
+
+Liebe Teilnehmende,
+
+in {zeitBis} ist es soweit und {compName} findet statt.
+
+Wenn du deine Anmeldung bis zum {fristStorno} stornierst, wirst du eine Rückerstattung von 100 % der Anmeldegebühr erhalten. Antworte in diesem Fall einfach auf diese Email.
+
+Hier nochmal ein Hinweis auf die Whatsapp-Community, in der ihr euch u.a. zur Anreise bzw. Unterkunft zusammenfinden könnt: https://chat.whatsapp.com/EZmTlmsA8id1Ed9sPHScDY
+
+An dieser Stelle geben wir gerne weiter, dass jemand auf der Suche nach einer Fahrgemeinschaft aus dem Raum Mainz ist. Vielleicht findet sich ja jemand, der sich dazu bereiterklärt. :-)
+
+Viele Grüße
+
+Euer {shortName} Orgateam
+
+--------
+
+Dear participants,
+
+In {timeUntil}, {compName} will take place.
+
+If you cancel your registration until {deadlineStorno}, you will receive a 100% refund of the registration fee. In that case, simply answer this email.
+
+Here we would like to announce the Whatsapp-Community again, where you can for example discuss and plan your arrival and accomodation: https://chat.whatsapp.com/EZmTlmsA8id1Ed9sPHScDY
+
+At this point we also want to pass along that someone is looking for car pooling options from the Mainz area. Perhaps someone is willing to help out. :-)
+
+Best regards,
+
+Your {shortName} team
+
+'''
+    return str
+
 def finalNewsletterEveryone(compID, compName, shortName, openingDE, openingEN, systemJRS, systemJRSGerman, tutorialWhenDE = None, tutorialWhenEN = None):
     str = f'''------ English Version Below ------
 
@@ -53,7 +89,7 @@ Alle, die bereits auf einer WCA Competition waren und eine WCA-Id besitzen, müs
 
 Namensschilder: Bring-Your-Own-Badge
 
-Falls du noch ein Namensschild von einer unserer vergangenen Competitions hast (z.B. RLP Open 2024, Nationals 2024), bringe es gerne zum Wiederverwenden mit - es gibt vor Ort dann ein neues Blatt zum Einlegen, u.a. mit deinen Einteilungen für die ersten Runden.
+Falls du noch ein Namensschild von einer unserer vergangenen Competitions hast (z.B. RLP Open 2024, Nationals 2024, Mainzelcubing 2025), bringe es gerne zum Wiederverwenden mit - es gibt vor Ort dann ein neues Blatt zum Einlegen, u.a. mit deinen Einteilungen für die ersten Runden.
 Wenn dies dein erster Wettbewerb ist oder du noch kein Standard-Plastiknamensschild von einer früheren Competition in unserer Region erhalten hast, erhältst du ein solches neues Bändel samt Badge zum Umhängen. Bitte beim nächsten Mal wieder mitbringen.
 
 Alle Teilnehmer sollten ihr Namensschild tragen, damit es beim Aufrufen zur Teilnahme nicht zu Verwechslungen kommt.
@@ -88,11 +124,6 @@ Zusätzlich findest du alle weiteren Infos auf der Website der Competition mit z
 Dort findest du auch speziell für Neulinge geeignete Tutorials im Newcomer-Tab, also schau dort gerne rein.
 
 
-Wichtiges zur Venue
-
-Bitte beachte die Hinweise bzgl. Teppichboden bzw. sauberen Schuhen und bzgl. Parkplätzen auf der Website.
-
-
 Fragen?
 
 Gerne beantworten wir weitere Fragen, stelle sie dazu einfach als Antwort auf diese Mail.
@@ -125,7 +156,7 @@ All returning competitors with a WCA Id do not need to arrive early for the chec
 
 Nametags: Bring-Your-Own-Badge
 
-If you already have a nametag from one of our previous competitions (e.g. RLP Open 2024, Nationals 2024), please take it with you for reusing it - you'll receive a new paper inlay covering for example your first round assignments.
+If you already have a nametag from one of our previous competitions (e.g. RLP Open 2024, Nationals 2024, Mainzelcubing 2025), please take it with you for reusing it - you'll receive a new paper inlay covering for example your first round assignments.
 If this is your first competition or you do not own a standard nametag as used in our region yet, you'll receive a new lanyard and badge. Next time you can use this one again.
 
 All competitors are asked to wear their nametag visibly to reduce possibilities of mix-ups when called to compete.
@@ -158,11 +189,6 @@ During the competition we will enter all results in (almost) real time and you c
 Further, you can read more on various topics on our website, where we put additional information into extra tabs: https://www.worldcubeassociation.org/competitions/{compID}
 
 There, you will also find specific instructions for newcomers, so feel free to take a look.
-
-
-Important aspects regarding our venue
-
-Please refer to the notes regarding carpeted floor / clean shoes and regarding parking spaces on the website.
 
 
 Questions?

@@ -31,3 +31,7 @@ orga:
     certificateBgPath : /Users/annikastein/Documents/Speedcubing/Competitions/RLP25/Urkunden/certificate_RLP25.jpg
     fristStorno: Montag, 26. Mai 2025 um 17:00 MESZ
     deadlineStorno: Monday, May 26, 2025 at 5:00 PM GMT+2
+    openingDE: 'Am Freitag öffnet die Venue um 09:00 Uhr, am Samstag und Sonntag um 08:00 Uhr.'
+    openingEN: 'On Friday, the venue will be open at 09:00, on Saturday and Sunday from 08:00.'
+    tutorialWhenDE: 'am Samstag um 08:15 Uhr, am Sonntag um 08:10 Uhr'
+    tutorialWhenEN: 'on Saturday at 08:15, on Sunday at 08:10'

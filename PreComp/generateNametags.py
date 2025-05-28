@@ -115,7 +115,10 @@ for i in range(len(persons)):
             frontside_tex_inside = '\\addresslabel{\\centering{\\vspace{-0.7em}\\selectlanguage{english} ' + compName + '\\\\ \\vspace{0.5em}\\raisebox{-1.75\\baselineskip}{\\includegraphics[height=4\\baselineskip]{' + logo_path + '}} \\vspace{0.5em} \Huge \\\\ '
         else:
             frontside_tex_inside = '\\addresslabel{\\centering{\\vspace{-1em}\\selectlanguage{english} \\hspace{1em} ' + compName + '\\qquad \\raisebox{-1.75\\baselineskip}{\\includegraphics[height=4\\baselineskip]{' + logo_path + '}} \\vspace{0.5em} \Huge \\\\ '
-        country_string = f'{pycountry.countries.get(alpha_2=person["countryIso2"]).name}'
+        if person["countryIso2"] == 'XK':
+            country_string = f'Kosovo'
+        else:
+            country_string = f'{pycountry.countries.get(alpha_2=person["countryIso2"]).name}'
         if person["wcaId"] == None:
             wca_id_string = '\\textcolor{ForestGreen}{Newcomer}'
         else:
@@ -186,7 +189,11 @@ if add_non_competing:
             frontside_tex_inside = '\\addresslabel{\\centering{\\vspace{-0.7em}\\selectlanguage{english} ' + compName + '\\\\ \\vspace{0.5em}\\raisebox{-1.75\\baselineskip}{\\includegraphics[height=4\\baselineskip]{' + logo_path + '}} \\vspace{0.5em} \Huge \\\\ '
         else:
             frontside_tex_inside = '\\addresslabel{\\centering{\\vspace{-1em}\\selectlanguage{english} \\hspace{1em} ' + compName + '\\qquad \\raisebox{-1.75\\baselineskip}{\\includegraphics[height=4\\baselineskip]{' + logo_path + '}} \\vspace{0.5em} \Huge \\\\ '
-        country_string = f'{pycountry.countries.get(alpha_2=person["countryIso2"]).name}'
+        
+        if person["countryIso2"] == 'XK':
+            country_string = f'Kosovo'
+        else:
+            country_string = f'{pycountry.countries.get(alpha_2=person["countryIso2"]).name}'
 
         optional_role_string = 'Organizer'
 

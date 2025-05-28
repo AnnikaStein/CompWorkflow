@@ -13,7 +13,7 @@ parser = ArgumentParser(description='Generate new precomp mail.')
 parser.add_argument('-c', '--config', required=True,
                     help='Name of config file, e.g. rlp25.yml (required argument)')
 parser.add_argument('-m', '--mailType', required=True,
-                    help='Type of precomp mail (firstNewsletterEveryone, finalNewsletterEveryone)')
+                    help='Type of precomp mail (firstNewsletterEveryone, secondNewsletterEveryone, finalNewsletterEveryone)')
 parser.add_argument('-xDE', '--zeitBis', required=False,
                     help='Time until competition (in GERMAN)')
 parser.add_argument('-xEN', '--timeUntil', required=False,
@@ -75,6 +75,8 @@ with open(f'CompWorkflow/output/{compID}/wcif_private.json') as file:
 # === *** === *** === CONTENT OF MAIL === *** === *** === #
 if mailType == 'firstNewsletterEveryone':
     content = mail.firstNewsletterEveryone(compName, shortName, fristStorno, deadlineStorno, zeitBis, timeUntil)
+elif mailType == 'secondNewsletterEveryone':
+    content = mail.secondNewsletterEveryone(compName, shortName, fristStorno, deadlineStorno, zeitBis, timeUntil)
 elif mailType == 'finalNewsletterEveryone':
     content = mail.finalNewsletterEveryone(compID, compName, shortName, openingDE, openingEN, systemJRS, systemJRSGerman, tutorialWhenDE, tutorialWhenEN)
 
@@ -85,8 +87,9 @@ util.writeOutputFileForID(compID, f'mail_{mailType}.txt', content)
 acceptedMails = []
 
 for person in wcif_private['persons']:
-    if person['registration']['status'] == 'accepted' and person['registration']['isCompeting'] == True:
-        acceptedMails.append(person['email'])
+    if person['registration'] != None:
+        if person['registration']['status'] == 'accepted' and person['registration']['isCompeting'] == True:
+            acceptedMails.append(person['email'])
 
 mailsSepBySemicolon = ''
 for c in acceptedMails:

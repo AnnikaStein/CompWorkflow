@@ -58,19 +58,34 @@ for p in range(nPersons):
         if wcif_private['registrationInfo']['openTime'] < str(datetime.now()):
             # reg open
             if person['registration']['status'] == 'accepted' and person['registration']['isCompeting'] == True:
-                registration_list_.append([person["name"],person["birthdate"],pycountry.countries.get(alpha_2=person["countryIso2"]).name,person["wcaId"]])
-                registration_list_csvString += f'"{person["name"]}",{person["birthdate"]},{pycountry.countries.get(alpha_2=person["countryIso2"]).name},{person["wcaId"]},,\n'
-                if person["wcaId"] == None:
-                    registration_list_NewcomersOnly_.append([person["name"],person["birthdate"],pycountry.countries.get(alpha_2=person["countryIso2"]).name])
-                    registration_list_NewcomersOnly_csvString += f'"{person["name"]}",{person["birthdate"]},"{pycountry.countries.get(alpha_2=person["countryIso2"]).name}",,\n'
+                #print(person)
+                if person["countryIso2"] == 'XK':
+                    registration_list_.append([person["name"],person["birthdate"],'Kosovo',person["wcaId"]])
+                    registration_list_csvString += f'"{person["name"]}",{person["birthdate"]},Kosovo,{person["wcaId"]},,\n'
+                    if person["wcaId"] == None:
+                        registration_list_NewcomersOnly_.append([person["name"],person["birthdate"],'Kosovo'])
+                        registration_list_NewcomersOnly_csvString += f'"{person["name"]}",{person["birthdate"]},Kosovo,,\n'
+                else:
+                    registration_list_.append([person["name"],person["birthdate"],pycountry.countries.get(alpha_2=person["countryIso2"]).name,person["wcaId"]])
+                    registration_list_csvString += f'"{person["name"]}",{person["birthdate"]},{pycountry.countries.get(alpha_2=person["countryIso2"]).name},{person["wcaId"]},,\n'
+                    if person["wcaId"] == None:
+                        registration_list_NewcomersOnly_.append([person["name"],person["birthdate"],pycountry.countries.get(alpha_2=person["countryIso2"]).name])
+                        registration_list_NewcomersOnly_csvString += f'"{person["name"]}",{person["birthdate"]},"{pycountry.countries.get(alpha_2=person["countryIso2"]).name}",,\n'
         else:
             # reg not open yet
             if person['registration']['isCompeting'] == True:
-                registration_list_.append([person["name"],person["birthdate"],pycountry.countries.get(alpha_2=person["countryIso2"]).name,person["wcaId"]])
-                registration_list_csvString += f'"{person["name"]}",{person["birthdate"]},{pycountry.countries.get(alpha_2=person["countryIso2"]).name},{person["wcaId"]},,\n'
-                if person["wcaId"] == None:
-                    registration_list_NewcomersOnly_.append([person["name"],person["birthdate"],pycountry.countries.get(alpha_2=person["countryIso2"]).name])
-                    registration_list_NewcomersOnly_csvString += f'"{person["name"]}",{person["birthdate"]},"{pycountry.countries.get(alpha_2=person["countryIso2"]).name}",,\n'
+                if person["countryIso2"] == 'XK':
+                    registration_list_.append([person["name"],person["birthdate"],'Kosovo',person["wcaId"]])
+                    registration_list_csvString += f'"{person["name"]}",{person["birthdate"]},Kosovo,{person["wcaId"]},,\n'
+                    if person["wcaId"] == None:
+                        registration_list_NewcomersOnly_.append([person["name"],person["birthdate"],'Kosovo'])
+                        registration_list_NewcomersOnly_csvString += f'"{person["name"]}",{person["birthdate"]},Kosovo,,\n'
+                else:
+                    registration_list_.append([person["name"],person["birthdate"],pycountry.countries.get(alpha_2=person["countryIso2"]).name,person["wcaId"]])
+                    registration_list_csvString += f'"{person["name"]}",{person["birthdate"]},{pycountry.countries.get(alpha_2=person["countryIso2"]).name},{person["wcaId"]},,\n'
+                    if person["wcaId"] == None:
+                        registration_list_NewcomersOnly_.append([person["name"],person["birthdate"],pycountry.countries.get(alpha_2=person["countryIso2"]).name])
+                        registration_list_NewcomersOnly_csvString += f'"{person["name"]}",{person["birthdate"]},"{pycountry.countries.get(alpha_2=person["countryIso2"]).name}",,\n'
 
 
 registration_list_csvString_sorted = 'Name,Birthdate,Country,WCA ID,Checked?,Comment\n'

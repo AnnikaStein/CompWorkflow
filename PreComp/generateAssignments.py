@@ -220,6 +220,7 @@ if round == 'allFirst':
                         })
         else:
             thisFirstRound = se + '-r1'
+            #print(thisFirstRound)
             thisRoundDescription = round_description[thisFirstRound]
             thisAssignmentStrategy = main_config['assignmentStrategies'][thisRoundDescription][se]
             nHeatsThisRound = heatsDict[thisFirstRound]
@@ -273,8 +274,11 @@ if round == 'allFirst':
                 nAvailableStagesForHeat = len(groups)
                 chunkedPsychThisHeat = util.chunks(thisHeatChunk, nAvailableStagesForHeat)
                 for s in range(nAvailableStagesForHeat):
+                    #print(s)
                     thisGroupChunk = chunkedPsychThisHeat[s]
                     thisGroupName = groups[s]
+                    #print(thisGroupChunk)
+                    #print(thisGroupName)
                     for v in wcif_private['schedule']['venues']:
                         for r in v['rooms']:
                             for a in r['activities']:
@@ -282,6 +286,7 @@ if round == 'allFirst':
                                     if thisGroupName in chAc['activityCode']:
                                         relevantActivityId = chAc['id']
                     for groupMemberIndex, groupMember in enumerate(thisGroupChunk):
+                        #print(groupMember['registrantId'])
                         assignments[groupMember['registrantId']].append({
                             'activityId':relevantActivityId,
                             'assignmentCode':'competitor'
